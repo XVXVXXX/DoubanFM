@@ -1,5 +1,6 @@
 DoubanFM
 ========
+---
 
 The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController  
 
@@ -12,6 +13,7 @@ The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController
    * 第二view是选择频道界面
    * 第三view是登陆界面 
    * 第四X是取消sidebar的选取  
+   
 ---   
 
 ![](https://github.com/XVXVXXX/DoubanFM/raw/master/readmeImage/page0.png)
@@ -23,7 +25,7 @@ The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController
 2. 当前播放歌曲所属专辑的cover 用的是AFN的[UIImageViewController setImageWithURL:(NSURL *)url];
 3. 歌曲进度条Progressbar 用了NStimer
 4. 歌曲的title,artist
-5. buttons,包括pause/play,like,ban,skip.都是通过AFN像豆瓣发送request获取新的playlist  
+5. buttons,包括pause/play,like,ban,skip.都是通过AFN向douban发送request获取新的playlist  
 
 ---
 
@@ -65,13 +67,14 @@ The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController
 ###登陆成功界面
 1. 登陆成功就会更新信息，包括头像、昵称、自己在douban电台的播放信息，包括了played,liked,banned
 2. 头像其实还是刚才的登陆的图片，还是用AFN的setimagewithurl:,然后把图片的交互关闭就好了，_loginImage.userInteractionEnabled = NO;同时将下面原本hidden的but显示n登出，button.hidden = 
-3. 点击登出就会进行登出操作，实际上也是向douban发送一个request，parameter中带了之前登录时返回的一个cookies。有问题的话，会登出失败的（囧）  
---- 
+3. 点击登出就会进行登出操作，实际上也是向douban发送一个request，parameter中带了之前登录时返回的一个cookies。有问题的话，会登出失败的（囧)  
+  
+---  
 
 ![](https://github.com/XVXVXXX/DoubanFM/raw/master/readmeImage/page5.png)
 
 ---
-###remote control1
+###remote control
 1. 从屏幕底部滑出处进行remotecontrol  
 ![](https://github.com/XVXVXXX/DoubanFM/raw/master/readmeImage/page6.png)
 2. 在lock情况下进行remotecontrol  
