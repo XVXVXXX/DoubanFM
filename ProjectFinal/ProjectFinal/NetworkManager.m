@@ -83,6 +83,11 @@ static NSMutableString *captchaID;
             NSLog(@"COOKIES:%@",appDelegate.userInfo.cookies);
             [self.delegate loginSuccess];
         }
+        else{
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"登陆失败" message:[tempLoginInfoDictionary valueForKey:@"err_msg"] delegate:self cancelButtonTitle:@"GET" otherButtonTitles: nil];
+            [alertView show];
+            [self loadCaptchaImage];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"LOGIN_ERROR:%@",error);
     }];

@@ -1,8 +1,22 @@
 DoubanFM
 ========
 ---
+github:@[XVXVXXX](https://github.com/XVXVXXX)  
+csdn:@[XVXVXXX](http://blog.csdn.net/xwj0918030230)  
+please open DoubanFM.xcworkspace in ProjectFinal
 
-The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController  
+---
+
+---
+
+
+The DoubanFM for iPhone,using MPMoviePlayer
+ 
+&AFNetworking@[AFNetworking/AFNetworking](https://github.com/AFNetworking/AFNetworking)
+  
+&doubanAPI@[ampm/Douban-FM-sdk](https://github.com/ampm/Douban-FM-sdk)  @[HakurouKen/douban.fm-api](https://github.com/HakurouKen/douban.fm-api)
+
+&CDSideBarController @[christophedellac/CDSideBarController](https://github.com/christophedellac/CDSideBarController)
 
 ---
 
@@ -45,7 +59,7 @@ The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController
 ---
 
 ###用户信息界面
-1. 未登陆时只提供一个登陆的借口，下面的数据在每登陆的情况下，只会显示0，在登陆后则会根据用户信息更新
+1. 未登陆时只提供一个登陆的接口，下面的数据在没登陆的情况下，只会显示0，在登陆后则会根据用户信息更新
 2. 其中的登陆不是一个button，而是一个imageView添加了手势功能  
 3. 用户点击上面的登陆之后，会presentViewController: LoginViewController
 
@@ -57,7 +71,7 @@ The DoubanFM for iPhone,using AFN and MPMoviePlayer and CDSideBarController
 ###登录界面
 1. 登陆界面包括账号、密码和验证码
 2. 验证码也是来自douban方提供的，原理是先向douban申请一个captchaID，然后用这个返回的captchaID申请一个验证码图片。
-3. 点击登陆的时候，parameter包括账号、密码、验证码、验证码ID，如果登陆成果就会dismiss:self,然后回到之前的界面，更新信息；登陆失败则没有反应，其实登陆失败会返回失败信息的，偷懒了，没写。下次写吧。登陆成功要记录用户登陆的一系列数据，之后设置有用。
+3. 点击登陆的时候，parameter包括账号、密码、验证码、验证码ID，如果登陆成果就会dismiss:self,然后回到之前的界面，更新信息；登陆失败则有相应的错误信息用alertview显示。登陆成功要记录用户登陆的一系列数据，之后设置有用。
 4. 点击取消则是直接dismiss：self，给了一个退出 LogginViewController的接口。
 
 ---
