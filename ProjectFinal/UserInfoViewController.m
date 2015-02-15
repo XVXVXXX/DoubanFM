@@ -65,9 +65,13 @@
 }
 
 -(void)setUserInfo{
-    if (appDelegate.userInfo.cookies != nil) {
+    if (appDelegate.userInfo.cookies) {
         [_loginImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img3.douban.com/icon/ul%@-1.jpg",appDelegate.userInfo.userID]]];
         _loginImage.userInteractionEnabled = NO;
+        _loginImage.layer.cornerRadius = _loginImage.frame.size.width/2;
+        if (!_loginImage.clipsToBounds) {
+            _loginImage.clipsToBounds = YES;
+        }
         _usernameLabel.text = appDelegate.userInfo.name;
         _playedLabel.text = appDelegate.userInfo.played;
         _likedLabel.text = appDelegate.userInfo.liked;
