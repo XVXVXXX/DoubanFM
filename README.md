@@ -93,3 +93,5 @@ The DoubanFM for iPhone,using MPMoviePlayer
 ![](https://github.com/XVXVXXX/DoubanFM/raw/master/readmeImage/page6.png)
 2. 在lock情况下进行remotecontrol  
 ![](https://github.com/XVXVXXX/DoubanFM/raw/master/readmeImage/page7.png)
+
+---

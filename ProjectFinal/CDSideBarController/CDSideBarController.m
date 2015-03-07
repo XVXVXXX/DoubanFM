@@ -45,8 +45,9 @@
 {
     _menuButton.frame = CGRectMake(position.x, position.y, _menuButton.frame.size.width, _menuButton.frame.size.height);
     [view addSubview:_menuButton];
-//    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMenu)];
-//    [view addGestureRecognizer:singleTap];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMenu)];
+    singleTap.cancelsTouchesInView = NO;
+    [view addGestureRecognizer:singleTap];
     
     for (UIButton *button in _buttonList)
     {

@@ -34,6 +34,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setUserInfo];
 }
 - (void)didReceiveMemoryWarning {
@@ -41,6 +42,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    _loginImage.layer.cornerRadius = _loginImage.frame.size.width/2.0;
+    if (!_loginImage.clipsToBounds) {
+        _loginImage.clipsToBounds = YES;
+    }
+}
 - (void)loginImageTapped{
     LoginViewController *loginVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginVC"];
     loginVC.delegate = (id)self;
@@ -68,10 +76,7 @@
     if (appDelegate.userInfo.cookies) {
         [_loginImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img3.douban.com/icon/ul%@-1.jpg",appDelegate.userInfo.userID]]];
         _loginImage.userInteractionEnabled = NO;
-        _loginImage.layer.cornerRadius = _loginImage.frame.size.width/2;
-        if (!_loginImage.clipsToBounds) {
-            _loginImage.clipsToBounds = YES;
-        }
+
         _usernameLabel.text = appDelegate.userInfo.name;
         _playedLabel.text = appDelegate.userInfo.played;
         _likedLabel.text = appDelegate.userInfo.liked;
