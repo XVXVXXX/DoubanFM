@@ -15,7 +15,7 @@
 
 @interface NetworkManager : NSObject
 @property id<DoubanDelegate>delegate;
-@property NSMutableString *captchaID;
+@property (nonatomic) NSMutableString *captchaID;
 
 -(instancetype)init;
 -(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString;

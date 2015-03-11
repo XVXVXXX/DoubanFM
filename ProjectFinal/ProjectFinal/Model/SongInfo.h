@@ -10,13 +10,13 @@
 
 @interface SongInfo : NSObject
 @property int index;
-@property NSString *title;
-@property NSString *artist;
-@property NSString *picture;
-@property NSString *length;
-@property NSString *like;
-@property NSString *url;
-@property NSString *sid;
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *artist;
+@property (nonatomic) NSString *picture;
+@property (nonatomic) NSString *length;
+@property (nonatomic) NSString *like;
+@property (nonatomic) NSString *url;
+@property (nonatomic) NSString *sid;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ChannelInfo : NSObject
-@property NSString *ID;
-@property NSString *name;
+@property (nonatomic) NSString *ID;
+@property (nonatomic) NSString *name;
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

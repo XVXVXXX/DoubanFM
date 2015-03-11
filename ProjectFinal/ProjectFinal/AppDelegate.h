@@ -14,15 +14,15 @@
 #import "UserInfo.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-@property MPMoviePlayerController *player;
-@property NSMutableArray *playList;
-@property SongInfo *currentSong;
-@property int currentSongIndex;
-@property ChannelInfo *currentChannel;
-@property UserInfo *userInfo;
+@property (nonatomic) MPMoviePlayerController *player;
+@property (nonatomic) NSMutableArray *playList;
+@property (nonatomic) SongInfo *currentSong;
+@property (nonatomic) int currentSongIndex;
+@property (nonatomic) ChannelInfo *currentChannel;
+@property (nonatomic) UserInfo *userInfo;
 
-@property NSArray *channelsTitle;
-@property NSMutableArray *channels;
+@property (nonatomic) NSArray *channelsTitle;
+@property (nonatomic) NSMutableArray *channels;
 
 @end
 

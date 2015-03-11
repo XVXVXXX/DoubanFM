@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface UserInfo : NSObject <NSCoding>
-@property NSString *isNotLogin;
-@property NSString *cookies;
-@property NSString *userID;
-@property NSString *name;
-@property NSString *banned;
-@property NSString *liked;
-@property NSString *played;
+@property (nonatomic) NSString *isNotLogin;
+@property (nonatomic) NSString *cookies;
+@property (nonatomic) NSString *userID;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *banned;
+@property (nonatomic) NSString *liked;
+@property (nonatomic) NSString *played;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (void)archiverUserInfo;
 

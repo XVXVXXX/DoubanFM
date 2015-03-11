@@ -236,16 +236,16 @@
 		F9B9D0D81A4EC83E00F25C13 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F9B99DD01AB0330200B4978A /* ChannelsTableViewController.h */,
-				F9B99DD11AB0330200B4978A /* LoginViewController.h */,
-				F9B99DD21AB0330200B4978A /* PlayerViewController.h */,
 				F9B99DD31AB0330200B4978A /* SidebarController.h */,
 				F9B99DD41AB0330200B4978A /* SidebarController.m */,
-				F9B99DD51AB0330200B4978A /* UserInfoViewController.h */,
+				F9B99DD01AB0330200B4978A /* ChannelsTableViewController.h */,
 				F9B99DD61AB0330200B4978A /* ChannelsTableViewController.m */,
-				F9B99DD71AB0330200B4978A /* LoginViewController.m */,
+				F9B99DD21AB0330200B4978A /* PlayerViewController.h */,
 				F9B99DD81AB0330200B4978A /* PlayerViewController.m */,
+				F9B99DD51AB0330200B4978A /* UserInfoViewController.h */,
 				F9B99DD91AB0330200B4978A /* UserInfoViewController.m */,
+				F9B99DD11AB0330200B4978A /* LoginViewController.h */,
+				F9B99DD71AB0330200B4978A /* LoginViewController.m */,
 			);
 			name = Controller;
 			path = ..;
