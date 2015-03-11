@@ -19,6 +19,8 @@
 -(void)initSongInfomation;
 //初始化用户信息delegate
 -(void)setUserInfo;
+
+-(void)menuButtonClicked:(int)index;
 @end
 
 @interface ProtocolClass : NSObject

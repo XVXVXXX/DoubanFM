@@ -63,7 +63,7 @@
     [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 40)];
 }
 
-#pragma mark - SDSidebar Delegate
+#pragma mark - CDSidebar Delegate
 -(void)menuButtonClicked:(int)index{
     self.selectedIndex = index;
     switch (index) {
