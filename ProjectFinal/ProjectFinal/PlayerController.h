@@ -11,12 +11,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
 #import "NetworkManager.h"
+#import "ProtocolClass.h"
 
-@protocol PlayerControllerDelegate <NSObject>
--(void)initSongInfomation;
-@end
 @interface PlayerController : NSObject
-@property id<PlayerControllerDelegate> songInfoDelegate;
+@property id<DoubanDelegate> songInfoDelegate;
 -(instancetype)init;
 -(void)startPlay;
 

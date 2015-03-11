@@ -13,7 +13,6 @@
     PlayerViewController *playerVC;
     ChannelsTableViewController *channelsVC;
     UserInfoViewController *userInfoVC;
-    LoginViewController *loginVC;
     AppDelegate *appDelegate;
 }
 
@@ -25,16 +24,21 @@
     [super viewDidLoad];
     appDelegate = [[UIApplication sharedApplication]delegate];
     // Do any additional setup after loading the view from its nib.
-    NSArray *imageList = @[[UIImage imageNamed:@"menuPlayer"], [UIImage imageNamed:@"menuChannel"], [UIImage imageNamed:@"menuLogin"], [UIImage imageNamed:@"menuClose.png"]];
+    NSArray *imageList = @[[UIImage imageNamed:@"menuPlayer"],
+                           [UIImage imageNamed:@"menuChannel"],
+                           [UIImage imageNamed:@"menuLogin"],
+                           [UIImage imageNamed:@"menuClose.png"]];
+    
     sideBar = [[CDSideBarController alloc] initWithImages:imageList];
     sideBar.delegate = self;
     
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     playerVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"playerVC"];
+    
     channelsVC = [[ChannelsTableViewController alloc]init];
     channelsVC.delegate = (id)self;
+    
     userInfoVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"userInfoVC"];
-    loginVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginVC"];
     self.viewControllers = @[playerVC, channelsVC, userInfoVC];
 }
 
@@ -55,6 +59,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBar.hidden = YES;
+    NSLog(@"%@",[self.view class]);
     [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 40)];
 }
 

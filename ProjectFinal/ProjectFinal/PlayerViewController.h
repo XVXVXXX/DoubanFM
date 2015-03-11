@@ -15,7 +15,8 @@
 #import "AppDelegate.h"
 #import "SongInfo.h"
 #import "PlayerController.h"
-@interface PlayerViewController : UIViewController < NetworManagerDelegate, PlayerControllerDelegate>{
+#import "ProtocolClass.h"
+@interface PlayerViewController : UIViewController <DoubanDelegate>{
 }
 @property (strong, nonatomic) IBOutlet UILabel *songTitle;
 @property (strong, nonatomic) IBOutlet UILabel *songArtist;

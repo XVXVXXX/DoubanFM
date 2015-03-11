@@ -22,6 +22,7 @@
 		F93D68861A42EA8C005D5232 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F93D68851A42EA8C005D5232 /* libPods.a */; };
 		F96097941A50EF8500776274 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96097931A50EF8500776274 /* UserInfoViewController.m */; };
 		F96097971A50F83600776274 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F96097961A50F83600776274 /* UserInfo.m */; };
+		F97367461AB0267500043D79 /* ProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F97367451AB0267500043D79 /* ProtocolClass.m */; };
 		F9A701751A47D0B10081DA64 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A701741A47D0B10081DA64 /* SongInfo.m */; };
 		F9B9D0DC1A4EC9AF00F25C13 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B9D0DA1A4EC9AF00F25C13 /* LoginViewController.m */; };
 		F9B9D0E11A4EE40D00F25C13 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B9D0DF1A4EE40D00F25C13 /* SidebarController.m */; };
@@ -71,6 +72,8 @@
 		F96097931A50EF8500776274 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		F96097951A50F83600776274 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		F96097961A50F83600776274 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		F97367441AB0267500043D79 /* ProtocolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolClass.h; path = ProjectFinal/Model/ProtocolClass.h; sourceTree = "<group>"; };
+		F97367451AB0267500043D79 /* ProtocolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProtocolClass.m; path = ProjectFinal/Model/ProtocolClass.m; sourceTree = "<group>"; };
 		F9A701731A47D0B10081DA64 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
 		F9A701741A47D0B10081DA64 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
 		F9B9D0D91A4EC9AF00F25C13 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ProjectFinal/LoginViewController.h; sourceTree = "<group>"; };
@@ -198,8 +201,8 @@
 		F9A701721A47D0650081DA64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F90BEF411A48084E00C4CF92 /* PlayerController.h */,
 				F90BEF421A48084E00C4CF92 /* PlayerController.m */,
+				F90BEF411A48084E00C4CF92 /* PlayerController.h */,
 				F9FB027D1A42CE2D00015127 /* NetworkManager.h */,
 				F9FB027E1A42CE2D00015127 /* NetworkManager.m */,
 				F9FEB31E1A472AB9009DB0A7 /* ChannelInfo.h */,
@@ -210,6 +213,8 @@
 				F9FEB31A1A470DA9009DB0A7 /* ChannelsTableViewCell.m */,
 				F96097951A50F83600776274 /* UserInfo.h */,
 				F96097961A50F83600776274 /* UserInfo.m */,
+				F97367441AB0267500043D79 /* ProtocolClass.h */,
+				F97367451AB0267500043D79 /* ProtocolClass.m */,
 			);
 			name = Model;
 			path = ..;
@@ -306,7 +311,6 @@
 				TargetAttributes = {
 					F91B40191A42AFB8006876DE = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 6ADJ2TL5DB;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -404,6 +408,7 @@
 				F91B40231A42AFB8006876DE /* AppDelegate.m in Sources */,
 				F96097941A50EF8500776274 /* UserInfoViewController.m in Sources */,
 				F9B9D0E11A4EE40D00F25C13 /* SidebarController.m in Sources */,
+				F97367461AB0267500043D79 /* ProtocolClass.m in Sources */,
 				F9C60DA91A44053C0046CF04 /* CDSideBarController.m in Sources */,
 				F9A701751A47D0B10081DA64 /* SongInfo.m in Sources */,
 				F9FB027F1A42CE2D00015127 /* NetworkManager.m in Sources */,

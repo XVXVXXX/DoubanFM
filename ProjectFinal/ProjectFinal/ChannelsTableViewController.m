@@ -31,10 +31,18 @@
     //初始化tableviewCell
     UINib *cell = [UINib nibWithNibName:@"ChannelsTableViewCell" bundle:nil];
     [self.tableView registerNib:cell forCellReuseIdentifier:@"theReuseIdentifier"];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self initChannelInfo];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+-(void)initChannelInfo{
     if (appDelegate.userInfo.cookies == nil) {
         [networkManager setChannel:1 withURLWithString:@"http://douban.fm/j/explore/get_recommend_chl"];
     }
@@ -43,11 +51,6 @@
     }
     [networkManager setChannel:2 withURLWithString:@"http://douban.fm/j/explore/up_trending_channels"];
     [networkManager setChannel:3 withURLWithString:@"http://douban.fm/j/explore/hot_channels"];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Table view data source

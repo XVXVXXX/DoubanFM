@@ -14,18 +14,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    _player = [[MPMoviePlayerController alloc]init];
-    _playList = [NSMutableArray array];
-    _currentSong = [[SongInfo alloc]init];
-    
-    [self loadArchiver];
-    //[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    [self initChannelsData];
-    //后台播放
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [session setActive:YES error:nil];
-    return YES;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _player = [[MPMoviePlayerController alloc]init];
+        _playList = [NSMutableArray array];
+        _currentSong = [[SongInfo alloc]init];
+        
+        [self loadArchiver];
+        //[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+        [self initChannelsData];
+        //后台播放
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [session setActive:YES error:nil];
+    });
+        return YES;
 }
 
 

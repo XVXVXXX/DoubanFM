@@ -12,7 +12,8 @@
 #import "LoginViewController.h"
 #import "NetworkManager.h"
 #import "AppDelegate.h"
-@interface UserInfoViewController : UIViewController <LoginViewControllerDelegate,NetworManagerDelegate,UIAlertViewDelegate>
+#import "ProtocolClass.h"
+@interface UserInfoViewController : UIViewController <DoubanDelegate,UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *loginImage;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playedLabel;
