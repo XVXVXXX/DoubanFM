@@ -8,12 +8,15 @@
 
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
+
 static NSMutableString *captchaID;
+
 @interface NetworkManager(){
     AppDelegate *appDelegate;
     AFHTTPRequestOperationManager *manager;
 }
 @end
+
 @implementation NetworkManager
 -(instancetype)init{
     if (self = [super init]) {
@@ -187,7 +190,5 @@ static NSMutableString *captchaID;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
 }
-
-
 
 @end

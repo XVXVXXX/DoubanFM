@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "NetworkManager.h"
-#import <UIKit+AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 @interface LoginViewController (){
     NSMutableString *captchaID;
     NetworkManager *networkManager;
@@ -34,6 +34,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self loadCaptchaImage];
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

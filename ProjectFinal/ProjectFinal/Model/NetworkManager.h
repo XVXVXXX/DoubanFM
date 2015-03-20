@@ -14,6 +14,7 @@
 #import "ProtocolClass.h"
 
 @interface NetworkManager : NSObject
+
 @property id<DoubanDelegate>delegate;
 @property (nonatomic) NSMutableString *captchaID;
 

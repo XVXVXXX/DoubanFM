@@ -21,12 +21,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(startPlay)
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:appDelegate.player];
+                                               object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(initSongInfomation)
                                                  name: MPMoviePlayerLoadStateDidChangeNotification
-                                               object:appDelegate.player];
-
-    
+                                               object:nil];
     return self;
 }
 

@@ -44,11 +44,10 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-}
 
 -(void)viewWillAppear:(BOOL)animated{
     [self initSongInfomation];
+    [super viewWillAppear:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

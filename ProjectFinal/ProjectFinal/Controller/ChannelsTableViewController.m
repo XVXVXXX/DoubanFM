@@ -35,6 +35,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self initChannelInfo];
+    [super viewWillAppear:animated];
 }
 
 

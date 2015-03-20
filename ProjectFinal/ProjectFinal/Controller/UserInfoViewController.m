@@ -37,12 +37,15 @@
     [super viewWillAppear:animated];
     [self setUserInfo];
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillLayoutSubviews{
+-(void)viewDidLayoutSubviews{
     [super viewWillLayoutSubviews];
     _loginImage.layer.cornerRadius = _loginImage.frame.size.width/2.0;
     if (!_loginImage.clipsToBounds) {
