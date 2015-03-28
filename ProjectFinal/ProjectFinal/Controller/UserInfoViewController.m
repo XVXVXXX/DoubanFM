@@ -56,6 +56,10 @@
     LoginViewController *loginVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginVC"];
     loginVC.delegate = (id)self;
     [self presentViewController:loginVC animated:YES completion:nil];
+    if ([[CDSideBarController sharedInstance] isOpen]) {
+        [[CDSideBarController sharedInstance] dismissMenu];
+    }
+    
 }
 
 - (IBAction)logoutButtonTapped:(UIButton *)sender {

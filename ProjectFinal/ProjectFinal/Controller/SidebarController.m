@@ -29,7 +29,7 @@
                            [UIImage imageNamed:@"menuLogin"],
                            [UIImage imageNamed:@"menuClose.png"]];
     
-    sideBar = [[CDSideBarController alloc] initWithImages:imageList];
+    sideBar = [CDSideBarController sharedInstanceWithImages:imageList];
     sideBar.delegate = self;
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

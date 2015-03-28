@@ -17,7 +17,7 @@
 
 @interface ChannelsTableViewController : UITableViewController <DoubanDelegate>
 
-@property (nonatomic, retain) id<DoubanDelegate> delegate;
+@property (nonatomic, weak) id<DoubanDelegate> delegate;
 
 @property (nonatomic) NSMutableArray *channels;
 @property (nonatomic) NSArray *channelsTitle;

@@ -182,10 +182,9 @@ static NSMutableString *captchaID;
         NSMutableString *tempCaptchaID = [[NSMutableString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         [tempCaptchaID replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tempCaptchaID length])];
         captchaID = tempCaptchaID;
-        NSLog(@"CAPTCHAID:%@",captchaID);
-        NSString *chatchaURL = [NSString stringWithFormat:@"http://douban.fm/misc/captcha?size=m&id=%@",tempCaptchaID];
+        NSString *captchaImgURL = [NSString stringWithFormat:@"http://douban.fm/misc/captcha?size=m&id=%@",tempCaptchaID];
         //加载验证码图片
-        [self.delegate setCaptchaImageWithURLInString:chatchaURL];
+        [self.delegate setCaptchaImageWithURLInString:captchaImgURL];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];

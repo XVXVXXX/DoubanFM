@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UITextField *captcha;
-@property id<DoubanDelegate>delegate;
+@property (weak, nonatomic)id<DoubanDelegate>delegate;
 - (IBAction)submitButtonTapped:(UIButton *)sender;
 - (IBAction)cancelButtonTapped:(UIButton *)sender;
 - (IBAction)backgroundTap:(id)sender;

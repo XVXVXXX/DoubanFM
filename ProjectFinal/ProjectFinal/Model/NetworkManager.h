@@ -15,7 +15,7 @@
 
 @interface NetworkManager : NSObject
 
-@property id<DoubanDelegate>delegate;
+@property (weak, nonatomic)id<DoubanDelegate>delegate;
 @property (nonatomic) NSMutableString *captchaID;
 
 -(instancetype)init;
