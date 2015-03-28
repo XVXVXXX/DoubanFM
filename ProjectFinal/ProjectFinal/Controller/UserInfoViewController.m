@@ -7,7 +7,7 @@
 //
 
 #import "UserInfoViewController.h"
-
+#import "CDSideBarController.h"
 @interface UserInfoViewController (){
     NetworkManager *networkManager;
     UIStoryboard *mainStoryboard;
@@ -55,11 +55,8 @@
 - (void)loginImageTapped{
     LoginViewController *loginVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"loginVC"];
     loginVC.delegate = (id)self;
+    [[CDSideBarController sharedInstance] dismissMenu];
     [self presentViewController:loginVC animated:YES completion:nil];
-    if ([[CDSideBarController sharedInstance] isOpen]) {
-        [[CDSideBarController sharedInstance] dismissMenu];
-    }
-    
 }
 
 - (IBAction)logoutButtonTapped:(UIButton *)sender {

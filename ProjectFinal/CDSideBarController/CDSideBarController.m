@@ -25,7 +25,6 @@ static CDSideBarController *sharedInstance;
 }
 
 +(CDSideBarController *)sharedInstance{
-    //整个片断在程序运行过程中只执行一遍
     if (sharedInstance != nil) {
         return sharedInstance;
     }
@@ -47,7 +46,7 @@ static CDSideBarController *sharedInstance;
 - (CDSideBarController*)initWithImages:(NSArray*)images
 {
     _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _menuButton.frame = CGRectMake(0, 0, 40, 40);
+    _menuButton.bounds = CGRectMake(0, 0, 40, 40);
     [_menuButton setImage:[UIImage imageNamed:@"menuIcon.png"] forState:UIControlStateNormal];
     [_menuButton addTarget:self action:@selector(showMenu) forControlEvents:UIControlEventTouchUpInside];
     
@@ -62,6 +61,7 @@ static CDSideBarController *sharedInstance;
         [button setImage:image forState:UIControlStateNormal];
         button.frame = CGRectMake(20, 50 + (80 * index), 50, 50);
         button.tag = index;
+        button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 70, 0);
         [button addTarget:self action:@selector(onMenuButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [_buttonList addObject:button];
         ++index;
@@ -71,7 +71,7 @@ static CDSideBarController *sharedInstance;
 
 - (void)insertMenuButtonOnView:(UIView*)view atPosition:(CGPoint)position
 {
-    _menuButton.frame = CGRectMake(position.x, position.y, _menuButton.frame.size.width, _menuButton.frame.size.height);
+    _menuButton.frame = CGRectMake(position.x, position.y, _menuButton.bounds.size.width, _menuButton.bounds.size.height);
     [view addSubview:_menuButton];
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissMenu)];
     singleTap.cancelsTouchesInView = NO;
@@ -134,11 +134,18 @@ static CDSideBarController *sharedInstance;
 
 - (void)performDismissAnimation
 {
-    [UIView animateWithDuration:0.4 animations:^{
+    [UIView animateWithDuration:0.4f animations:^{
         _menuButton.alpha = 1.0f;
         _menuButton.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0);
         _backgroundMenuView.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0);
     }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        for (UIButton *button in _buttonList) {
+            [UIView animateWithDuration:0.4f animations:^{
+                button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 70, 0);
+            }];
+        }
+    });
 }
 
 - (void)performOpenAnimation
@@ -154,10 +161,9 @@ static CDSideBarController *sharedInstance;
     {
         [NSThread sleepForTimeInterval:0.02f];
         dispatch_async(dispatch_get_main_queue(), ^{
-            button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 20, 0);
             [UIView animateWithDuration:0.3f
                                   delay:0.3f
-                 usingSpringWithDamping:.3f
+                 usingSpringWithDamping:.7f
                   initialSpringVelocity:10.f
                                 options:0 animations:^{
                                     button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0);

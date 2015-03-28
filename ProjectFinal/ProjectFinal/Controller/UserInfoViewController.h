@@ -13,7 +13,6 @@
 #import "NetworkManager.h"
 #import "AppDelegate.h"
 #import "ProtocolClass.h"
-#import "CDSideBarController.h"
 @interface UserInfoViewController : UIViewController <DoubanDelegate,UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *loginImage;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;

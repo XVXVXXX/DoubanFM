@@ -59,7 +59,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBar.hidden = YES;
-    NSLog(@"%@",[self.view class]);
     [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 40)];
 }
 
