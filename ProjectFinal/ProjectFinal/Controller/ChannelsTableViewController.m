@@ -73,11 +73,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuseIdentifier = @"theReuseIdentifier";
     ChannelsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = [[[appDelegate.channels objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]valueForKey:@"name"];
+    cell.textLabel.text = [[[appDelegate.channels objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
 
-
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 64;
+}
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:

@@ -9,6 +9,12 @@
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
 
+#define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
+#define LOGINURLSTRING @"http://douban.fm/partner/logout"
+#define LOGOUTURLSTRING @"http://douban.fm/partner/logout"
+#define CAPTCHAIDURLSTRING @"http://douban.fm/j/new_captcha"
+#define CAPTCHAIMGURLFORMATSTRING @"http://douban.fm/misc/captcha?size=m&id=%@"
+
 static NSMutableString *captchaID;
 
 @interface NetworkManager(){
@@ -74,9 +80,8 @@ static NSMutableString *captchaID;
                                       @"alias": username,
                                       @"form_password":password,
                                       @"captcha_id":captchaID};
-    NSString *loginURL = @"http://douban.fm/j/login";
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager POST:loginURL parameters:loginParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:LOGINURLSTRING parameters:loginParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *tempLoginInfoDictionary = responseObject;
         //r=0 登陆成功
         if ([(NSNumber *)[tempLoginInfoDictionary valueForKey:@"r"] intValue] == 0) {
@@ -107,10 +112,9 @@ static NSMutableString *captchaID;
     NSDictionary *logoutParameters = @{@"source": @"radio",
                                       @"ck": appDelegate.userInfo.cookies,
                                       @"no_login": @"y"};
-    NSString *logoutURL = @"http://douban.fm/partner/logout";
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:logoutURL parameters:logoutParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:LOGOUTURLSTRING parameters:logoutParameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"LOGOUT_SUCCESSFUL");
         appDelegate.userInfo = [[UserInfo alloc]init];
         [appDelegate.userInfo archiverUserInfo];
@@ -131,10 +135,10 @@ static NSMutableString *captchaID;
 //p : Use to get a song list when the song in playlist was all played.
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
-    NSString *playlistURL = [NSString stringWithFormat:@"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite",type,appDelegate.currentSong.sid,appDelegate.player.currentPlaybackTime,appDelegate.currentChannel.ID];
+    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, appDelegate.currentSong.sid, appDelegate.player.currentPlaybackTime, appDelegate.currentChannel.ID];
     [appDelegate.playList removeAllObjects];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    [manager GET:playlistURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *songDictionary = responseObject;
         for (NSDictionary *song in [songDictionary objectForKey:@"song"]) {
             //subtype=T为广告标识位，如果是T，则不加入播放列表(去广告)
@@ -166,7 +170,7 @@ static NSMutableString *captchaID;
         }
         [self.delegate reloadTableviewData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦" otherButtonTitles: nil];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦,酱紫" otherButtonTitles: nil];
         [alertView show];
         NSLog(@"LOADPLAYLIST_ERROR:%@",error);
     }];
@@ -177,12 +181,11 @@ static NSMutableString *captchaID;
 //验证码图片
 -(void)loadCaptchaImage{
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    NSString *captchaIDURL = @"http://douban.fm/j/new_captcha";
-    [manager GET:captchaIDURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:CAPTCHAIDURLSTRING parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableString *tempCaptchaID = [[NSMutableString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         [tempCaptchaID replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [tempCaptchaID length])];
         captchaID = tempCaptchaID;
-        NSString *captchaImgURL = [NSString stringWithFormat:@"http://douban.fm/misc/captcha?size=m&id=%@",tempCaptchaID];
+        NSString *captchaImgURL = [NSString stringWithFormat:CAPTCHAIMGURLFORMATSTRING,tempCaptchaID];
         //加载验证码图片
         [self.delegate setCaptchaImageWithURLInString:captchaImgURL];
 

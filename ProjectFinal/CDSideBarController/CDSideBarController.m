@@ -165,7 +165,8 @@ static CDSideBarController *sharedInstance;
                                   delay:0.3f
                  usingSpringWithDamping:.7f
                   initialSpringVelocity:10.f
-                                options:0 animations:^{
+                                options:0
+                             animations:^{
                                     button.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0);
                                 }
                              completion:^(BOOL finished) {
