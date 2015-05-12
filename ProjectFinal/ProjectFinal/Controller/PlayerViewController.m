@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 #import "PlayerViewController.h"
+#import <QuartzCore/QuartzCore.h>
 #import <UIKit+AFNetworking.h>
 @interface PlayerViewController (){
     AppDelegate *appDelegate;
@@ -26,28 +27,29 @@
 @end
 
 @implementation PlayerViewController
-#pragma mark - System
+#pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     manager = [AFHTTPRequestOperationManager manager];
     appDelegate = [[UIApplication sharedApplication]delegate];
     
     networkManager = [[NetworkManager alloc]init];
-    isPlaying = YES;
     [self loadPlaylist];
-    self.picture.userInteractionEnabled = YES;
+    self.pictureBlock.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseButton:)];
     [singleTap setNumberOfTapsRequired:1];
-    [self.picture addGestureRecognizer:singleTap];
+    [self.pictureBlock addGestureRecognizer:singleTap];
     playerController = [[PlayerController alloc]init];
     playerController.songInfoDelegate = self;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 }
 
-
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
+    self.picture.layer.cornerRadius = self.picture.bounds.size.width/2.0;
+    self.picture.layer.masksToBounds = YES;
+    [super viewDidAppear:animated];
     [self initSongInfomation];
-    [super viewWillAppear:animated];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -61,9 +63,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
 #pragma mark - Buttons
 - (IBAction)pauseButton:(UIButton *)sender {
     if (isPlaying) {
@@ -72,23 +71,25 @@
         self.pictureBlock.image = [UIImage imageNamed:@"albumBlock2"];
         [playerController pauseSong];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [timer setFireDate:[NSDate distantFuture]];
     }
     else{
         isPlaying = YES;
         self.picture.alpha = 1.0f;
         self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
         [playerController restartSong];
+        [timer setFireDate:[NSDate date]];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        
     }
 }
 
 - (IBAction)skipButton:(UIButton *)sender{
+    [timer setFireDate:[NSDate distantFuture]];
+    [playerController pauseSong];
     if(isPlaying == NO){
-        isPlaying = YES;
         self.picture.alpha = 1.0f;
         self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
-        [playerController restartSong];
-        [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     }
     [playerController skipSong];
 }
@@ -106,7 +107,7 @@
 }
 
 - (IBAction)deleteButton:(UIButton *)sender {
-    if(isPlaying == NO){
+    if (isPlaying == NO) {
         isPlaying = YES;
         self.picture.alpha = 1.0f;
         self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
@@ -121,16 +122,26 @@
 }
 
 -(void)initSongInfomation{
+    isPlaying = YES;
     if (![self isFirstResponder]) {
         //远程控制
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
         [self becomeFirstResponder];
     }
-    [self.picture setImageWithURL:[NSURL URLWithString:appDelegate.currentSong.picture]];
+    //重置旋转图片角度
+    __weak __typeof(self) weakSelf = self;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:appDelegate.currentSong.picture]];
+    self.picture.image = nil;
+    [self.picture setImageWithURLRequest:request placeholderImage:nil success:nil failure:nil];
+    [self.picture setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        if ((double)appDelegate.player.currentPlaybackTime < 10.000f) {
+            strongSelf.picture.transform = CGAffineTransformMakeRotation(0.0);
+        }
+    } failure:nil];
     self.songArtist.text = appDelegate.currentSong.artist;
     self.songTitle.text = appDelegate.currentSong.title;
     self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",appDelegate.currentChannel.name];
-    
     //初始化timeLabel的总时间
     TotalTimeSeconds = [appDelegate.currentSong.length intValue]%60;
     TotalTimeMinutes = [appDelegate.currentSong.length intValue]/60;
@@ -140,7 +151,6 @@
     else{
         totalTimeString = [NSMutableString stringWithFormat:@"%d:%d",TotalTimeMinutes,TotalTimeSeconds];
     }
-    
     //初始化likeButon的图像
     if (![appDelegate.currentSong.like intValue]) {
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
@@ -148,9 +158,10 @@
     else{
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart2"] forState:UIControlStateNormal];
     }
-    
+    [timer setFireDate:[NSDate date]];
     [self configPlayingInfo];
 }
+
 - (void)configPlayingInfo
 {
     if (NSClassFromString(@"MPNowPlayingInfoCenter")) {
@@ -193,6 +204,8 @@
 -(void)updateProgress{
     currentTimeMinutes = (unsigned)appDelegate.player.currentPlaybackTime/60;
     currentTimeSeconds = (unsigned)appDelegate.player.currentPlaybackTime%60;
+    //专辑图片旋转
+    self.picture.transform = CGAffineTransformRotate(self.picture.transform, M_PI / 1440);
     if (currentTimeSeconds < 10) {
         currentTimeString = [NSMutableString stringWithFormat:@"%d:0%d",currentTimeMinutes,currentTimeSeconds];
     }

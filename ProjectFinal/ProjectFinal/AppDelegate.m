@@ -35,9 +35,9 @@
 
 
 - (void)loadArchiver{
-    
     NSString *homePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];//添加储存的文件名
+    NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];
+    //添加储存的文件名
     NSData *data = [[NSData alloc]initWithContentsOfFile:appdelegatePath];
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
     _userInfo = [unarchiver decodeObjectForKey:@"userInfo"];

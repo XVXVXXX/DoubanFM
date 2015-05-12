@@ -52,7 +52,8 @@
     [archiver encodeObject:self forKey:@"userInfo"];
     [archiver finishEncoding];
     NSString *homePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];//添加储存的文件名
+    NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];
+    //添加储存的文件名
     if ([data writeToFile:appdelegatePath atomically:YES]) {
         NSLog(@"UesrInfo存储成功");
     }

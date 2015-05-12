@@ -21,8 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.sectionHeaderHeight = 84;
-    self.tableView.sectionIndexTrackingBackgroundColor = [UIColor redColor];
+    self.tableView.sectionHeaderHeight = 80;
+    self.tableView.rowHeight = 60;
     //初始化工具类
     appDelegate = [[UIApplication sharedApplication]delegate];
     networkManager = [[NetworkManager alloc]init];
@@ -54,7 +54,7 @@
     [networkManager setChannel:3 withURLWithString:@"http://douban.fm/j/explore/hot_channels"];
 }
 
-#pragma mark - Table view data source
+#pragma mark - <UITableViewDataSource>
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
@@ -77,12 +77,8 @@
     return cell;
 }
 
--(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 64;
-}
-#pragma mark - Table view delegate
+#pragma mark - <UITableViewDelegate>
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     appDelegate.currentChannel = [[appDelegate.channels objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [networkManager loadPlaylistwithType:@"n"];
