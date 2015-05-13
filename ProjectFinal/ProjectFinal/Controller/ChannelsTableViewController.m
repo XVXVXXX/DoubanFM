@@ -7,7 +7,7 @@
 //
 
 #import "ChannelsTableViewController.h"
-
+#import <MJRefresh/MJRefresh.h>
 @interface ChannelsTableViewController (){
     AFHTTPRequestOperationManager *manager;
     AppDelegate *appDelegate;
@@ -31,10 +31,28 @@
     //初始化tableviewCell
     UINib *cell = [UINib nibWithNibName:@"ChannelsTableViewCell" bundle:nil];
     [self.tableView registerNib:cell forCellReuseIdentifier:@"theReuseIdentifier"];
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self initChannelInfo];
+    //用MJRefresh做下来刷新
+    [self.tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(initChannelInfo)];
+    
+    // 设置文字
+    [self.tableView.header setTitle:@"往下拉可刷新哦" forState:MJRefreshHeaderStateIdle];
+    [self.tableView.header setTitle:@"松开来就刷新啦" forState:MJRefreshHeaderStatePulling];
+    [self.tableView.header setTitle:@"~~刷~~新~~中~~" forState:MJRefreshHeaderStateRefreshing];
+    
+    // 设置字体
+    self.tableView.header.font = [UIFont systemFontOfSize:15];
+    
+    // 设置颜色
+    self.tableView.header.textColor = [UIColor grayColor];
+    // 马上进入刷新状态
+    [self.tableView.header beginRefreshing];
+    
+    // 此时self.tableView.header == self.tableView.legendHeader
     [super viewWillAppear:animated];
 }
 
@@ -52,6 +70,8 @@
     }
     [networkManager setChannel:2 withURLWithString:@"http://douban.fm/j/explore/up_trending_channels"];
     [networkManager setChannel:3 withURLWithString:@"http://douban.fm/j/explore/hot_channels"];
+    //MJRefresh停止刷新
+    [self.tableView.header endRefreshing];
 }
 
 #pragma mark - <UITableViewDataSource>
