@@ -100,7 +100,7 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    appDelegate.currentChannel = [[[ChannelInfo channels] objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    [ChannelInfo updateCurrentCannel:[[[ChannelInfo channels] objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]];
     [networkManager loadPlaylistwithType:@"n"];
     [self.delegate menuButtonClicked:0];
 }

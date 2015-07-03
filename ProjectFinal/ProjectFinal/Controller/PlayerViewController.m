@@ -8,6 +8,7 @@
 #import "PlayerViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit+AFNetworking.h>
+#import "ChannelInfo.h"
 @interface PlayerViewController (){
     AppDelegate *appDelegate;
     AFHTTPRequestOperationManager *manager;
@@ -141,7 +142,7 @@
     } failure:nil];
     self.songArtist.text = [SongInfo currentSong].artist;
     self.songTitle.text = [SongInfo currentSong].title;
-    self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",appDelegate.currentChannel.name];
+    self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",[ChannelInfo currentChannel].name];
     //初始化timeLabel的总时间
     TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
     TotalTimeMinutes = [[SongInfo currentSong].length intValue]/60;

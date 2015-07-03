@@ -42,10 +42,11 @@
     _userInfo = [unarchiver decodeObjectForKey:@"userInfo"];
     [unarchiver finishDecoding];
     
-    if (_currentChannel == nil) {
-        _currentChannel = [[ChannelInfo alloc]init];
-        _currentChannel.name = @"我的私人";
-        _currentChannel.ID = @"0";
+    if ([ChannelInfo currentChannel].ID == nil) {
+        ChannelInfo *currentChannel = [[ChannelInfo alloc]init];
+        currentChannel.name = @"我的私人";
+        currentChannel.ID = @"0";
+        [ChannelInfo updateCurrentCannel:currentChannel];
     }
     if (_userInfo == nil) {
         _userInfo = [[UserInfo alloc]init];

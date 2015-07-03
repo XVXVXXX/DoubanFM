@@ -7,6 +7,7 @@
 //
 
 #import "ChannelInfo.h"
+static ChannelInfo *currentChannel;
 
 @implementation ChannelInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
@@ -24,5 +25,16 @@
         channels = [NSMutableArray array];
     });
     return channels;
+}
+
++ (instancetype)currentChannel{
+    if (!currentChannel) {
+        currentChannel = [[self alloc] init];
+    }
+    return currentChannel;
+}
+
++ (void)updateCurrentCannel:(ChannelInfo *)channel{
+    currentChannel = channel;
 }
 @end

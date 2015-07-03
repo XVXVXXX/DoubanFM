@@ -137,7 +137,7 @@ static NSMutableString *captchaID;
 //p : Use to get a song list when the song in playlist was all played.
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
-    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, appDelegate.player.currentPlaybackTime, appDelegate.currentChannel.ID];
+    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, appDelegate.player.currentPlaybackTime, [ChannelInfo currentChannel].ID];
     [appDelegate.playList removeAllObjects];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -167,7 +167,7 @@ static NSMutableString *captchaID;
                 ChannelInfo *myPrivateChannel = [[ChannelInfo alloc]init];
                 myPrivateChannel.name = @"我的私人";
                 myPrivateChannel.ID = @"0";
-                appDelegate.currentChannel = myPrivateChannel;
+                [ChannelInfo updateCurrentCannel:myPrivateChannel];
             }
         }
         [self.delegate reloadTableviewData];

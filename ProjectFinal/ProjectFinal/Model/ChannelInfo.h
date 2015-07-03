@@ -16,4 +16,7 @@
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 + (NSMutableArray *)channels;
+
++ (instancetype)currentChannel;
++ (void)updateCurrentCannel:(ChannelInfo *)channel;
 @end
