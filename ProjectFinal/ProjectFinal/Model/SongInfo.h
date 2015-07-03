@@ -19,4 +19,8 @@
 @property (nonatomic) NSString *sid;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
+
++ (instancetype) currentSong;
++ (void)setCurrentSong:(SongInfo *)songInfo;
+
 @end

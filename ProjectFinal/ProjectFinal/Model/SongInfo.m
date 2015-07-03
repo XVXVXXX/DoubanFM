@@ -8,6 +8,8 @@
 
 #import "SongInfo.h"
 
+static SongInfo *currentSong;
+
 @implementation SongInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [super init]) {
@@ -21,4 +23,20 @@
     }
     return self;
 }
+
++ (instancetype)currentSong{
+    if (!currentSong) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            currentSong = [[SongInfo alloc] init];
+        });
+    }
+    return currentSong;
+}
+
++ (void)setCurrentSong:(SongInfo *)songInfo
+{
+    currentSong = songInfo;
+}
+
 @end
