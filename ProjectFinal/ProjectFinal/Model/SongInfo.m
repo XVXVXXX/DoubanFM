@@ -9,6 +9,7 @@
 #import "SongInfo.h"
 
 static SongInfo *currentSong;
+static int currentSongIndex;
 
 @implementation SongInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
@@ -39,4 +40,11 @@ static SongInfo *currentSong;
     currentSong = songInfo;
 }
 
++ (int)currentSongIndex{
+    return currentSongIndex;
+}
+
++ (void)setCurrentSongIndex:(int)songIndex{
+    currentSongIndex = songIndex;
+}
 @end

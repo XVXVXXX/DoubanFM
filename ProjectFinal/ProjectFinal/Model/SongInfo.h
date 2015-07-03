@@ -23,4 +23,7 @@
 + (instancetype) currentSong;
 + (void)setCurrentSong:(SongInfo *)songInfo;
 
++ (int) currentSongIndex;
++ (void)setCurrentSongIndex:(int)songIndex;
+
 @end

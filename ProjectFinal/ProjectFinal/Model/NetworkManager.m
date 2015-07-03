@@ -151,12 +151,12 @@ static NSMutableString *captchaID;
             [appDelegate.playList addObject:tempSong];
         }
         if ([type isEqualToString:@"r"]) {
-            appDelegate.currentSongIndex = -1;
+            [SongInfo setCurrentSongIndex:-1];
         }
         else{
             if ([appDelegate.playList count] != 0) {
-                appDelegate.currentSongIndex = 0;
-                [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:appDelegate.currentSongIndex]];
+                [SongInfo setCurrentSongIndex:0];
+                [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:[SongInfo currentSongIndex]]];
                 [appDelegate.player setContentURL:[NSURL URLWithString:[SongInfo currentSong].url]];
                 [appDelegate.player play];
             }
