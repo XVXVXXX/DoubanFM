@@ -39,8 +39,8 @@
         }
         else{
             ++appDelegate.currentSongIndex;
-            appDelegate.currentSong = [appDelegate.playList objectAtIndex:appDelegate.currentSongIndex];
-            [appDelegate.player setContentURL:[NSURL URLWithString:[appDelegate.currentSong valueForKey:@"url"]]];
+            [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:appDelegate.currentSongIndex]];
+            [appDelegate.player setContentURL:[NSURL URLWithString:[[SongInfo currentSong] valueForKey:@"url"]]];
             [appDelegate.player play];
         }
     }

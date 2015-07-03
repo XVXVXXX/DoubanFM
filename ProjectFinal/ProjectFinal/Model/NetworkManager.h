@@ -7,10 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <AFNetworking/AFNetworking.h>
-#import "AppDelegate.h"
-#import "SongInfo.h"
 #import "ProtocolClass.h"
 
 @interface NetworkManager : NSObject

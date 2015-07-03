@@ -16,7 +16,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic) MPMoviePlayerController *player;
 @property (nonatomic) NSMutableArray *playList;
-@property (nonatomic) SongInfo *currentSong;
 @property (nonatomic) int currentSongIndex;
 @property (nonatomic) ChannelInfo *currentChannel;
 @property (nonatomic) UserInfo *userInfo;

@@ -8,7 +8,9 @@
 
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "SongInfo.h"
 #define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
 #define LOGINURLSTRING @"http://douban.fm/partner/logout"
 #define LOGOUTURLSTRING @"http://douban.fm/partner/logout"
@@ -135,7 +137,7 @@ static NSMutableString *captchaID;
 //p : Use to get a song list when the song in playlist was all played.
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
-    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, appDelegate.currentSong.sid, appDelegate.player.currentPlaybackTime, appDelegate.currentChannel.ID];
+    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, appDelegate.player.currentPlaybackTime, appDelegate.currentChannel.ID];
     [appDelegate.playList removeAllObjects];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -154,8 +156,8 @@ static NSMutableString *captchaID;
         else{
             if ([appDelegate.playList count] != 0) {
                 appDelegate.currentSongIndex = 0;
-                appDelegate.currentSong = [appDelegate.playList objectAtIndex:appDelegate.currentSongIndex];
-                [appDelegate.player setContentURL:[NSURL URLWithString:appDelegate.currentSong.url]];
+                [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:appDelegate.currentSongIndex]];
+                [appDelegate.player setContentURL:[NSURL URLWithString:[SongInfo currentSong].url]];
                 [appDelegate.player play];
             }
             //如果是未登录用户第一次使用红心列表，会导致列表中无歌曲

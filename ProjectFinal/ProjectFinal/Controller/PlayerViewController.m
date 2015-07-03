@@ -95,13 +95,13 @@
 }
 
 - (IBAction)likeButton:(UIButton *)sender {
-    if (![appDelegate.currentSong.like intValue]) {
-        appDelegate.currentSong.like = @"1";
+    if (![[SongInfo currentSong].like intValue]) {
+        [SongInfo currentSong].like = @"1";
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart2"] forState:UIControlStateNormal];
         [playerController likeSong];
     }
     else{
-        appDelegate.currentSong.like = @"0";
+        [SongInfo currentSong].like = @"0";
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
     }
 }
@@ -130,7 +130,7 @@
     }
     //重置旋转图片角度
     __weak __typeof(self) weakSelf = self;
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:appDelegate.currentSong.picture]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[SongInfo currentSong].picture]];
     self.picture.image = nil;
     [self.picture setImageWithURLRequest:request placeholderImage:nil success:nil failure:nil];
     [self.picture setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
@@ -139,12 +139,12 @@
             strongSelf.picture.transform = CGAffineTransformMakeRotation(0.0);
         }
     } failure:nil];
-    self.songArtist.text = appDelegate.currentSong.artist;
-    self.songTitle.text = appDelegate.currentSong.title;
+    self.songArtist.text = [SongInfo currentSong].artist;
+    self.songTitle.text = [SongInfo currentSong].title;
     self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",appDelegate.currentChannel.name];
     //初始化timeLabel的总时间
-    TotalTimeSeconds = [appDelegate.currentSong.length intValue]%60;
-    TotalTimeMinutes = [appDelegate.currentSong.length intValue]/60;
+    TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
+    TotalTimeMinutes = [[SongInfo currentSong].length intValue]/60;
     if (TotalTimeSeconds < 10) {
         totalTimeString = [NSMutableString stringWithFormat:@"%d:0%d",TotalTimeMinutes,TotalTimeSeconds];
     }
@@ -152,7 +152,7 @@
         totalTimeString = [NSMutableString stringWithFormat:@"%d:%d",TotalTimeMinutes,TotalTimeSeconds];
     }
     //初始化likeButon的图像
-    if (![appDelegate.currentSong.like intValue]) {
+    if (![[SongInfo currentSong].like intValue]) {
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
     }
     else{
@@ -165,18 +165,18 @@
 - (void)configPlayingInfo
 {
     if (NSClassFromString(@"MPNowPlayingInfoCenter")) {
-        if (appDelegate.currentSong.title != nil) {
+        if ([SongInfo currentSong].title != nil) {
             NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-            [dict setObject:appDelegate.currentSong.title
+            [dict setObject:[SongInfo currentSong].title
                      forKey:MPMediaItemPropertyTitle];
-            [dict setObject:appDelegate.currentSong.artist
+            [dict setObject:[SongInfo currentSong].artist
                      forKey:MPMediaItemPropertyArtist];
             UIImage *tempImage = _picture.image;
             if (tempImage != nil) {
                 [dict setObject:[[MPMediaItemArtwork alloc]initWithImage:tempImage] forKey:MPMediaItemPropertyArtwork];
             }
             [dict
-             setObject:[NSNumber numberWithFloat:[appDelegate.currentSong.length floatValue]]
+             setObject:[NSNumber numberWithFloat:[[SongInfo currentSong].length floatValue]]
                 forKey:MPMediaItemPropertyPlaybackDuration];
             [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
         }
@@ -214,7 +214,7 @@
     }
     timerLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,totalTimeString];
     self.timerLabel.text = timerLabelString;
-    self.timerProgressBar.progress = appDelegate.player.currentPlaybackTime/[appDelegate.currentSong.length intValue];
+    self.timerProgressBar.progress = appDelegate.player.currentPlaybackTime/[[SongInfo currentSong].length intValue];
 }
 
 
