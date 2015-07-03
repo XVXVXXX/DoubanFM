@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "SongInfo.h"
+#import "ChannelInfo.h"
 #define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
 #define LOGINURLSTRING @"http://douban.fm/partner/logout"
 #define LOGOUTURLSTRING @"http://douban.fm/partner/logout"

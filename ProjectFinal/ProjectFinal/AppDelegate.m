@@ -7,6 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "ChannelInfo.h"
+#import "SongInfo.h"
+
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+
 @interface AppDelegate ()
 @end
 
@@ -55,7 +61,7 @@
 
 - (void)initChannelsData{
     //初始化数据源Array
-    _channelsTitle = @[@"我的兆赫",@"推荐频道",@"上升最快兆赫",@"热门兆赫"];
+    [ChannelInfo updateChannelsTitleArray:@[@"我的兆赫",@"推荐频道",@"上升最快兆赫",@"热门兆赫"]];
     NSMutableArray *channels = [ChannelInfo channels];
     //我的兆赫
     ChannelInfo *myPrivateChannel = [[ChannelInfo alloc]init];

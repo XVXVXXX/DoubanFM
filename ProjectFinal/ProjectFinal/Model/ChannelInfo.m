@@ -8,6 +8,7 @@
 
 #import "ChannelInfo.h"
 static ChannelInfo *currentChannel;
+static NSArray *channelsTitleArray;
 
 @implementation ChannelInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
@@ -36,5 +37,16 @@ static ChannelInfo *currentChannel;
 
 + (void)updateCurrentCannel:(ChannelInfo *)channel{
     currentChannel = channel;
+}
+
++ (NSArray *)channelsTitleArray{
+    if (!channelsTitleArray) {
+        channelsTitleArray = [NSArray array];
+    }
+    return channelsTitleArray;
+}
+
++ (void)updateChannelsTitleArray:(NSArray *)array{
+    channelsTitleArray = array;
 }
 @end

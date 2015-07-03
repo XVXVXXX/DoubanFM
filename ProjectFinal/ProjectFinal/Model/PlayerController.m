@@ -7,6 +7,7 @@
 //
 
 #import "PlayerController.h"
+#import "SongInfo.h"
 @interface PlayerController(){
     AppDelegate* appDelegate;
     NetworkManager *networkManager;

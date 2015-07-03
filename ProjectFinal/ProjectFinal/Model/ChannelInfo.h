@@ -19,4 +19,7 @@
 
 + (instancetype)currentChannel;
 + (void)updateCurrentCannel:(ChannelInfo *)channel;
+
++ (NSArray *)channelsTitleArray;
++ (void)updateChannelsTitleArray:(NSArray *)array;
 @end

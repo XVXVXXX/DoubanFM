@@ -6,11 +6,8 @@
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVFoundation.h>
-#import "ChannelInfo.h"
-#import "SongInfo.h"
+
 #import "UserInfo.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
@@ -18,7 +15,6 @@
 @property (nonatomic) NSMutableArray *playList;
 @property (nonatomic) UserInfo *userInfo;
 
-@property (nonatomic) NSArray *channelsTitle;
 
 @end
 
