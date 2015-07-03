@@ -19,6 +19,7 @@ The DoubanFM for iPhone,using MPMoviePlayer
 
 ---
 #Update
+* 2015.7.3:代码重构，渣渣渣结构变为渣渣结构，把一些原来放在AppDelegate里面的属性放在各自的实体中了。
 * 2015.5.13:频道下拉刷新
 * 2015.5.12:专辑图片旋转
 
