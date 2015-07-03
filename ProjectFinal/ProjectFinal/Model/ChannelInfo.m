@@ -16,4 +16,13 @@
     }
     return self;
 }
+
++ (NSMutableArray *)channels{
+    static NSMutableArray *channels;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        channels = [NSMutableArray array];
+    });
+    return channels;
+}
 @end

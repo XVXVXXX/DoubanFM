@@ -20,7 +20,6 @@
 @property (nonatomic) UserInfo *userInfo;
 
 @property (nonatomic) NSArray *channelsTitle;
-@property (nonatomic) NSMutableArray *channels;
 
 @end
 

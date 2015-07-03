@@ -37,13 +37,13 @@ static NSMutableString *captchaID;
 //设置播放列表
 -(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString{
     [manager GET:urlWithString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [[appDelegate.channels objectAtIndex:channelIndex]removeAllObjects];
+        [[[ChannelInfo channels] objectAtIndex:channelIndex]removeAllObjects];
         NSDictionary *channelsDictionary = responseObject;
         NSDictionary *tempChannel = [channelsDictionary objectForKey:@"data"];
         if (channelIndex != 1) {
             for (NSDictionary *channels in [tempChannel objectForKey:@"channels"]) {
                 ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:channels];
-                [[appDelegate.channels objectAtIndex:channelIndex] addObject:channelInfo];
+                [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
             }
         }
         else{
@@ -51,13 +51,13 @@ static NSMutableString *captchaID;
             if ([[channels allKeys]containsObject:@"rec_chls"]) {
                 for (NSDictionary *tempRecCannels in [channels objectForKey:@"rec_chls"]) {
                     ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:tempRecCannels];
-                    [[appDelegate.channels objectAtIndex:channelIndex] addObject:channelInfo];
+                    [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
                 }
             }
             else{
                 NSDictionary *channels = [tempChannel objectForKey:@"res"];
                 ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:channels];
-                [[appDelegate.channels objectAtIndex:channelIndex] addObject:channelInfo];
+                [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
             }
         }
         [self.delegate reloadTableviewData];

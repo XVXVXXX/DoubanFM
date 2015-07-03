@@ -55,7 +55,7 @@
 - (void)initChannelsData{
     //初始化数据源Array
     _channelsTitle = @[@"我的兆赫",@"推荐频道",@"上升最快兆赫",@"热门兆赫"];
-    _channels = [NSMutableArray array];
+    NSMutableArray *channels = [ChannelInfo channels];
     //我的兆赫
     ChannelInfo *myPrivateChannel = [[ChannelInfo alloc]init];
     myPrivateChannel.name = @"我的私人";
@@ -64,16 +64,16 @@
     myRedheartChannel.name = @"我的红心";
     myRedheartChannel.ID = @"-3";
     NSArray *myChannels = @[myPrivateChannel, myRedheartChannel];
-    [_channels addObject:myChannels];
+    [channels addObject:myChannels];
     //推荐兆赫
     NSArray *recommendChannels = [NSMutableArray array];
-    [_channels addObject:recommendChannels];
+    [channels addObject:recommendChannels];
     //上升最快兆赫
     NSMutableArray *upTrendingChannels = [NSMutableArray array];
-    [_channels addObject:upTrendingChannels];
+    [channels addObject:upTrendingChannels];
     //热门兆赫
     NSMutableArray *hotChannels = [NSMutableArray array];
-    [_channels addObject:hotChannels];
+    [channels addObject:hotChannels];
 
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

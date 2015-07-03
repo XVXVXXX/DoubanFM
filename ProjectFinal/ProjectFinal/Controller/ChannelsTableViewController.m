@@ -83,7 +83,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [[appDelegate.channels objectAtIndex:section]count];
+    return [[[ChannelInfo channels] objectAtIndex:section]count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -93,14 +93,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuseIdentifier = @"theReuseIdentifier";
     ChannelsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = [[[appDelegate.channels objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.text = [[[[ChannelInfo channels] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
 
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    appDelegate.currentChannel = [[appDelegate.channels objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
+    appDelegate.currentChannel = [[[ChannelInfo channels] objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     [networkManager loadPlaylistwithType:@"n"];
     [self.delegate menuButtonClicked:0];
 }

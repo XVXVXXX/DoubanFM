@@ -14,4 +14,6 @@
 @property (nonatomic) NSString *name;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
++ (NSMutableArray *)channels;
 @end
