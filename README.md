@@ -1,13 +1,12 @@
-DoubanFM
+#DoubanFM  
+
 ========
 ---
 github:@[XVXVXXX](https://github.com/XVXVXXX)  
 csdn:@[XVXVXXX](http://blog.csdn.net/xwj0918030230)  
 please open DoubanFM.xcworkspace in ProjectFinal
 
----
-
----
+---  
 
 
 The DoubanFM for iPhone,using MPMoviePlayer
@@ -19,6 +18,13 @@ The DoubanFM for iPhone,using MPMoviePlayer
 &CDSideBarController @[christophedellac/CDSideBarController](https://github.com/christophedellac/CDSideBarController)
 
 ---
+#Update
+* 2015.5.13:频道下拉刷新
+* 2015.5.12:专辑图片旋转
+
+--- 
+
+
 
 ###侧栏界面
 1. 侧栏采用了CDSideBarController  
