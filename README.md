@@ -1,13 +1,11 @@
 #DoubanFM  
 
-========
 ---
 github:@[XVXVXXX](https://github.com/XVXVXXX)  
 csdn:@[XVXVXXX](http://blog.csdn.net/xwj0918030230)  
 please open DoubanFM.xcworkspace
 
 ---  
-
 
 The DoubanFM for iPhone,using MPMoviePlayer
  
