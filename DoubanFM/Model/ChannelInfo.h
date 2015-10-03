@@ -10,8 +10,8 @@
 
 @interface ChannelInfo : NSObject
 
-@property (nonatomic) NSString *ID;
-@property (nonatomic) NSString *name;
+@property (nonatomic, copy) NSString *ID;
+@property (nonatomic, copy) NSString *name;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

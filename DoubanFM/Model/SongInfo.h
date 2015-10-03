@@ -9,21 +9,31 @@
 #import <Foundation/Foundation.h>
 
 @interface SongInfo : NSObject
-@property int index;
-@property (nonatomic) NSString *title;
-@property (nonatomic) NSString *artist;
-@property (nonatomic) NSString *picture;
-@property (nonatomic) NSString *length;
-@property (nonatomic) NSString *like;
-@property (nonatomic) NSString *url;
-@property (nonatomic) NSString *sid;
+
+@property (nonatomic, assign) NSInteger index;
+
+@property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, copy) NSString *artist;
+
+@property (nonatomic, copy) NSString *picture;
+
+@property (nonatomic, copy) NSString *length;
+
+@property (nonatomic, copy) NSString *like;
+
+@property (nonatomic, copy) NSString *url;
+
+@property (nonatomic, copy) NSString *sid;
 
 - (instancetype) initWithDictionary:(NSDictionary *)dictionary;
 
 + (instancetype) currentSong;
+
 + (void)setCurrentSong:(SongInfo *)songInfo;
 
-+ (int) currentSongIndex;
++ (NSInteger) currentSongIndex;
+
 + (void)setCurrentSongIndex:(int)songIndex;
 
 @end

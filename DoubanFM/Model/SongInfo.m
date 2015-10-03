@@ -40,7 +40,7 @@ static int currentSongIndex;
     currentSong = songInfo;
 }
 
-+ (int)currentSongIndex{
++ (NSInteger)currentSongIndex{
     return currentSongIndex;
 }
 

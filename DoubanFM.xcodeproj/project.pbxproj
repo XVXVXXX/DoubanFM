@@ -15,7 +15,6 @@
 		F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* SidebarController.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC54981BB2A3CF000400E1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549A1BB2A3CF000400E1 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54861BB2A3CF000400E1 /* ChannelsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* NetworkManager.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC549C1BB2A3D0000400E1 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548A1BB2A3CF000400E1 /* PlayerController.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +24,7 @@
 		F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		F9DC54A61BB2A41D000400E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		F9F85B511BB2A08F00D0C0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B501BB2A08F00D0C0DE /* main.m */; };
 		F9F85B541BB2A08F00D0C0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B531BB2A08F00D0C0DE /* AppDelegate.m */; };
 		F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B561BB2A08F00D0C0DE /* ViewController.m */; };
@@ -68,8 +68,6 @@
 		F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F9DC54831BB2A3CF000400E1 /* ChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfo.h; sourceTree = "<group>"; };
 		F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfo.m; sourceTree = "<group>"; };
-		F9DC54851BB2A3CF000400E1 /* ChannelsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelsTableViewCell.h; sourceTree = "<group>"; };
-		F9DC54861BB2A3CF000400E1 /* ChannelsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelsTableViewCell.m; sourceTree = "<group>"; };
 		F9DC54871BB2A3CF000400E1 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		F9DC54881BB2A3CF000400E1 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NetworkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F9DC54891BB2A3CF000400E1 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
@@ -84,6 +82,8 @@
 		F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelsTableViewController.xib; sourceTree = "<group>"; };
 		F9DC54A21BB2A416000400E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9DC54A41BB2A41D000400E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F9DC54A71BB2DCF5000400E1 /* ChannelsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelsTableViewCell.h; sourceTree = "<group>"; };
+		F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelsTableViewCell.m; sourceTree = "<group>"; };
 		F9F85B4C1BB2A08F00D0C0DE /* DoubanFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F85B501BB2A08F00D0C0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9F85B521BB2A08F00D0C0DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,8 +176,6 @@
 			children = (
 				F9DC54831BB2A3CF000400E1 /* ChannelInfo.h */,
 				F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */,
-				F9DC54851BB2A3CF000400E1 /* ChannelsTableViewCell.h */,
-				F9DC54861BB2A3CF000400E1 /* ChannelsTableViewCell.m */,
 				F9DC54871BB2A3CF000400E1 /* NetworkManager.h */,
 				F9DC54881BB2A3CF000400E1 /* NetworkManager.m */,
 				F9DC54891BB2A3CF000400E1 /* PlayerController.h */,
@@ -195,6 +193,8 @@
 		F9DC54911BB2A3CF000400E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9DC54A71BB2DCF5000400E1 /* ChannelsTableViewCell.h */,
+				F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */,
 				F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */,
 				F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */,
 				F9DC54A21BB2A416000400E1 /* Main.storyboard */,
@@ -439,12 +439,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */,
+				F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */,
 				F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */,
 				F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */,
 				F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */,
 				F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */,
 				F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */,
-				F9DC549A1BB2A3CF000400E1 /* ChannelsTableViewCell.m in Sources */,
 				F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */,
 				F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */,
 				F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */,
