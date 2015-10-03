@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, DFMChannelType) {
+    DFMChannelTypeReccommend = 1,
+    DFMChannelTypeUpTrending,
+    DFMChannelTypeHot,
+};
+
 @interface ChannelInfo : NSObject
 
 @property (nonatomic, copy) NSString *ID;

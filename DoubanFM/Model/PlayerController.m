@@ -35,12 +35,12 @@
 
 -(void)startPlay{
     @try {
-        if ([SongInfo currentSongIndex] >= ((int)[appDelegate.playList count]-1)) {
+        if ([SongInfo currentSongIndex] >= ((int)[appDelegate.playList.song count]-1)) {
             [networkManager loadPlaylistwithType:@"p"];
         }
         else{
             [SongInfo setCurrentSongIndex:[SongInfo currentSongIndex] + 1];
-            [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:[SongInfo currentSongIndex]]];
+            [SongInfo setCurrentSong:[appDelegate.playList.song objectAtIndex:[SongInfo currentSongIndex]]];
             [appDelegate.player setContentURL:[NSURL URLWithString:[[SongInfo currentSong] valueForKey:@"url"]]];
             [appDelegate.player play];
         }

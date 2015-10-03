@@ -6,15 +6,16 @@
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 
+#import "UserInfo.h"
+#import "DFMPlaylist.h"
+
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "UserInfo.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic) MPMoviePlayerController *player;
-@property (nonatomic) NSMutableArray *playList;
+@property (nonatomic) DFMPlaylist *playList;
 @property (nonatomic) UserInfo *userInfo;
-
 
 @end
 

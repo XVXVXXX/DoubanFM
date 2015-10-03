@@ -49,4 +49,11 @@ static NSArray *channelsTitleArray;
 + (void)updateChannelsTitleArray:(NSArray *)array{
     channelsTitleArray = array;
 }
+
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"ID" : @"id",
+             };
+}
+
 @end

@@ -8,10 +8,17 @@
 
 #import "NetworkManager.h"
 #import <AFNetworking/AFNetworking.h>
-#import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "SongInfo.h"
 #import "ChannelInfo.h"
+
+#import "DFMUpChannelsEntity.h"
+#import "DFMHotChannelsEntity.h"
+#import "DFMRecChannelsEntity.h"
+
+#import <UIKit/UIKit.h>
+#import <MJExtension.h>
+
 #define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
 #define LOGINURLSTRING @"http://douban.fm/partner/logout"
 #define LOGOUTURLSTRING @"http://douban.fm/partner/logout"
@@ -38,26 +45,30 @@ static NSMutableString *captchaID;
 //设置播放列表
 -(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString{
     [manager GET:urlWithString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [[[ChannelInfo channels] objectAtIndex:channelIndex]removeAllObjects];
         NSDictionary *channelsDictionary = responseObject;
         NSDictionary *tempChannel = [channelsDictionary objectForKey:@"data"];
-        if (channelIndex != 1) {
-            for (NSDictionary *channels in [tempChannel objectForKey:@"channels"]) {
-                ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:channels];
-                [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
-            }
+        
+        if (channelIndex == DFMChannelTypeUpTrending) {
+            DFMUpChannelsEntity *entity = [DFMUpChannelsEntity objectWithKeyValues:tempChannel];
+            [ChannelInfo channels][channelIndex] = entity.channels;
         }
+        
+        else if (channelIndex == DFMChannelTypeHot) {
+            DFMHotChannelsEntity *entity = [DFMHotChannelsEntity objectWithKeyValues:tempChannel];
+            [ChannelInfo channels][channelIndex] = entity.channels;
+        }
+        
         else{
             NSDictionary *channels = [tempChannel objectForKey:@"res"];
             if ([[channels allKeys]containsObject:@"rec_chls"]) {
                 for (NSDictionary *tempRecCannels in [channels objectForKey:@"rec_chls"]) {
-                    ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:tempRecCannels];
+                ChannelInfo *channelInfo = [ChannelInfo objectWithKeyValues:tempRecCannels];
                     [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
                 }
             }
             else{
                 NSDictionary *channels = [tempChannel objectForKey:@"res"];
-                ChannelInfo *channelInfo = [[ChannelInfo alloc]initWithDictionary:channels];
+                ChannelInfo *channelInfo = [ChannelInfo objectWithKeyValues:channels];
                 [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
             }
         }
@@ -139,25 +150,19 @@ static NSMutableString *captchaID;
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
     NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, appDelegate.player.currentPlaybackTime, [ChannelInfo currentChannel].ID];
-    [appDelegate.playList removeAllObjects];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *songDictionary = responseObject;
-        for (NSDictionary *song in [songDictionary objectForKey:@"song"]) {
-            //subtype=T为广告标识位，如果是T，则不加入播放列表(去广告)
-            if ([[song objectForKey:@"subtype"] isEqualToString:@"T"]) {
-                continue;
-            }
-            SongInfo *tempSong = [[SongInfo alloc] initWithDictionary:song];
-            [appDelegate.playList addObject:tempSong];
-        }
+        
+        appDelegate.playList = [DFMPlaylist objectWithKeyValues:songDictionary];
+        
         if ([type isEqualToString:@"r"]) {
             [SongInfo setCurrentSongIndex:-1];
         }
         else{
-            if ([appDelegate.playList count] != 0) {
+            if ([appDelegate.playList.song count] != 0) {
                 [SongInfo setCurrentSongIndex:0];
-                [SongInfo setCurrentSong:[appDelegate.playList objectAtIndex:[SongInfo currentSongIndex]]];
+                [SongInfo setCurrentSong:[appDelegate.playList.song objectAtIndex:[SongInfo currentSongIndex]]];
                 [appDelegate.player setContentURL:[NSURL URLWithString:[SongInfo currentSong].url]];
                 [appDelegate.player play];
             }
@@ -178,8 +183,6 @@ static NSMutableString *captchaID;
         NSLog(@"LOADPLAYLIST_ERROR:%@",error);
     }];
 }
-
-
 
 //验证码图片
 -(void)loadCaptchaImage{

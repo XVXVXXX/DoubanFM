@@ -23,7 +23,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _player = [[MPMoviePlayerController alloc]init];
-        _playList = [NSMutableArray array];
         
         [self loadArchiver];
         //[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];

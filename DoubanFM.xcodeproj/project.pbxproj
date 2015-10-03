@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		ED525C3E4FAFDC953423B01D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE54A7106845D97AA5FF62F /* libPods.a */; };
+		F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */; settings = {ASSET_TAGS = (); }; };
+		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
+		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
+		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC54941BB2A3CF000400E1 /* ChannelsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +58,14 @@
 /* Begin PBXFileReference section */
 		37527992BB36B1175EFF2EE0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6AE54A7106845D97AA5FF62F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9D0F6591BBFCF7000284B67 /* DFMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlaylist.h; sourceTree = "<group>"; };
+		F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlaylist.m; sourceTree = "<group>"; };
+		F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUpChannelsEntity.h; sourceTree = "<group>"; };
+		F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUpChannelsEntity.m; sourceTree = "<group>"; };
+		F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMHotChannelsEntity.h; sourceTree = "<group>"; };
+		F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMHotChannelsEntity.m; sourceTree = "<group>"; };
+		F9D0F6621BBFF5CC00284B67 /* DFMRecChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMRecChannelsEntity.h; sourceTree = "<group>"; };
+		F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMRecChannelsEntity.m; sourceTree = "<group>"; };
 		F9DC54741BB2A3A9000400E1 /* CDSideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSideBarController.h; sourceTree = "<group>"; };
 		F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSideBarController.m; sourceTree = "<group>"; };
 		F9DC54781BB2A3CF000400E1 /* ChannelsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelsTableViewController.h; sourceTree = "<group>"; };
@@ -186,6 +198,14 @@
 				F9DC548E1BB2A3CF000400E1 /* SongInfo.m */,
 				F9DC548F1BB2A3CF000400E1 /* UserInfo.h */,
 				F9DC54901BB2A3CF000400E1 /* UserInfo.m */,
+				F9D0F6591BBFCF7000284B67 /* DFMPlaylist.h */,
+				F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */,
+				F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */,
+				F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */,
+				F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */,
+				F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */,
+				F9D0F6621BBFF5CC00284B67 /* DFMRecChannelsEntity.h */,
+				F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,12 +458,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */,
 				F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */,
 				F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */,
+				F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */,
+				F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */,
 				F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */,
 				F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */,
 				F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */,
 				F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */,
+				F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */,
 				F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */,
 				F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */,
 				F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */,

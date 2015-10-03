@@ -32,7 +32,6 @@
     UINib *cell = [UINib nibWithNibName:@"ChannelsTableViewCell" bundle:nil];
     [self.tableView registerNib:cell forCellReuseIdentifier:@"theReuseIdentifier"];
     
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
