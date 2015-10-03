@@ -6,9 +6,11 @@
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 #import "PlayerViewController.h"
+#import "ChannelInfo.h"
+
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit+AFNetworking.h>
-#import "ChannelInfo.h"
+#import <UIImageView+WebCache.h>
 @interface PlayerViewController (){
     AppDelegate *appDelegate;
     AFHTTPRequestOperationManager *manager;
@@ -28,6 +30,7 @@
 @end
 
 @implementation PlayerViewController
+
 #pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -131,18 +134,18 @@
     }
     //重置旋转图片角度
     __weak __typeof(self) weakSelf = self;
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[SongInfo currentSong].picture]];
     self.picture.image = nil;
-    [self.picture setImageWithURLRequest:request placeholderImage:nil success:nil failure:nil];
-    [self.picture setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        __strong __typeof(weakSelf) strongSelf = weakSelf;
-        if ((double)appDelegate.player.currentPlaybackTime < 10.000f) {
-            strongSelf.picture.transform = CGAffineTransformMakeRotation(0.0);
-        }
-    } failure:nil];
+    [self.picture sd_setImageWithURL:[NSURL URLWithString:[SongInfo currentSong].picture]
+                    placeholderImage:nil
+                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                               __strong __typeof(weakSelf) strongSelf = weakSelf;
+                               strongSelf.picture.transform = CGAffineTransformMakeRotation(0.0);
+                           }];
+   
     self.songArtist.text = [SongInfo currentSong].artist;
     self.songTitle.text = [SongInfo currentSong].title;
     self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",[ChannelInfo currentChannel].name];
+    
     //初始化timeLabel的总时间
     TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
     TotalTimeMinutes = [[SongInfo currentSong].length intValue]/60;
@@ -152,6 +155,7 @@
     else{
         totalTimeString = [NSMutableString stringWithFormat:@"%d:%d",TotalTimeMinutes,TotalTimeSeconds];
     }
+    
     //初始化likeButon的图像
     if (![[SongInfo currentSong].like intValue]) {
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];

@@ -17,10 +17,12 @@ The DoubanFM for iPhone,using MPMoviePlayer
 
 ---
 #Update
-* 2015.9.23:把代码整个结构弄好了，再也不是之前的ProjectFinal了，iOS9的http问题，目前看douban那边获取的一些url还是http，只能在info.plist里面改http了。
-* 2015.7.3:代码重构，渣渣渣结构变为渣渣结构，把一些原来放在AppDelegate里面的属性放在各自的实体中了。
-* 2015.5.13:频道下拉刷新
-* 2015.5.12:专辑图片旋转
+* 2015.10.03: 播放器页面的封面现在用了SDWebImage，加载速度感觉比原来快了很多
+* 2015.10.02: 实体类现在一部分没用手动自己解了，用了MJExtension
+* 2015.09.23: 把代码整个结构弄好了，再也不是之前的ProjectFinal了，iOS9的http问题，目前看douban那边获取的一些url还是http，只能在info.plist里面改http了
+* 2015.07.03: 代码重构，渣渣渣结构变为渣渣结构，把一些原来放在AppDelegate里面的属性放在各自的实体中了
+* 2015.05.13: 频道下拉刷新
+* 2015.05.12: 专辑图片旋转
 
 --- 
 

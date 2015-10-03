@@ -178,9 +178,10 @@ static NSMutableString *captchaID;
         }
         [self.delegate reloadTableviewData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦,酱紫" otherButtonTitles: nil];
-        [alertView show];
-        NSLog(@"LOADPLAYLIST_ERROR:%@",error);
+        //FIXME: 或许信息失败有点bug，先这样把 = =
+        //        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦,酱紫" otherButtonTitles: nil];
+//        [alertView show];
+//        NSLog(@"LOADPLAYLIST_ERROR:%@",error);
     }];
 }
 
