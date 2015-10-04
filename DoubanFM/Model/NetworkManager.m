@@ -20,7 +20,7 @@
 #import <MJExtension.h>
 
 #define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
-#define LOGINURLSTRING @"http://douban.fm/partner/logout"
+#define LOGINURLSTRING @"http://douban.fm/j/login"
 #define LOGOUTURLSTRING @"http://douban.fm/partner/logout"
 #define CAPTCHAIDURLSTRING @"http://douban.fm/j/new_captcha"
 #define CAPTCHAIMGURLFORMATSTRING @"http://douban.fm/misc/captcha?size=m&id=%@"
