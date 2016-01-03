@@ -13,8 +13,13 @@
 #import "NetworkManager.h"
 #import "ProtocolClass.h"
 
-@interface PlayerController : NSObject
+@interface PlayerController : MPMoviePlayerController
 @property id<DoubanDelegate> songInfoDelegate;
+
+@property (nonatomic) DFMPlaylist *playList;
+
++ (instancetype)sharedInstance;
+
 -(instancetype)init;
 -(void)startPlay;
 

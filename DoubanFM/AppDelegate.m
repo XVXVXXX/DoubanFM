@@ -22,8 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _player = [[MPMoviePlayerController alloc]init];
-        
         [self loadArchiver];
         //[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
         [self initChannelsData];

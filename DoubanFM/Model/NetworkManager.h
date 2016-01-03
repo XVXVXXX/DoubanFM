@@ -14,10 +14,20 @@
 @property (weak, nonatomic)id<DoubanDelegate>delegate;
 @property (nonatomic) NSMutableString *captchaID;
 
++ (instancetype)sharedInstancd;
+
 -(instancetype)init;
+
 -(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString;
--(void)LoginwithUsername:(NSString *)username Password:(NSString *)password  Captcha:(NSString *)captcha RememberOnorOff:(NSString *)rememberOnorOff;
+
+-(void)LoginwithUsername:(NSString *)username
+                Password:(NSString *)password
+                 Captcha:(NSString *)captcha
+         RememberOnorOff:(NSString *)rememberOnorOff;
+
 -(void)logout;
+
 -(void)loadCaptchaImage;
+
 -(void)loadPlaylistwithType:(NSString *)type;
 @end

@@ -5,35 +5,39 @@
 //  Created by xvxvxxx on 12/18/14.
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
-#import "PlayerViewController.h"
-#import "ChannelInfo.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit+AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
 
+#import <AFNetworking/AFNetworking.h>
+#import <MediaPlayer/MediaPlayer.h>
+
+#import "PlayerViewController.h"
+#import "PlayerController.h"
+#import "ChannelInfo.h"
+
+#import "NetworkManager.h"
+#import "ChannelsTableViewController.h"
+#import "LoginViewController.h"
+#import "AppDelegate.h"
+#import "SongInfo.h"
+#import "PlayerController.h"
+#import "ProtocolClass.h"
+
 #define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define RGB(r,g,b) RGBA(r,g,b,1)
 
 #define kGoldColor RGB(219, 196, 175)
 
-@interface PlayerViewController (){
-    AppDelegate *appDelegate;
-    AFHTTPRequestOperationManager *manager;
-    NetworkManager *networkManager;
-    PlayerController *playerController;
-    
+@interface PlayerViewController ()<DoubanDelegate>
+{
     BOOL isPlaying;
     NSTimer *timer;
-    int currentTimeMinutes;
-    int currentTimeSeconds;
-    NSMutableString *currentTimeString;
-    int TotalTimeMinutes;
-    int TotalTimeSeconds;
     NSMutableString *totalTimeString;
-    NSMutableString *timeLabelString;
 }
+
 @property (strong, nonatomic) UILabel *channelTitleLabel;
 
 @property (strong, nonatomic) UIImageView *albumCoverImage;
@@ -61,19 +65,13 @@
     
     [self p_addSubViews];
     [self p_configConstrains];
-    
-    manager = [AFHTTPRequestOperationManager manager];
-    appDelegate = [[UIApplication sharedApplication]delegate];
-    
-    networkManager = [[NetworkManager alloc]init];
-    [self loadPlaylist];
-    self.albumCoverMaskImage.userInteractionEnabled = YES;
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseButtonDidTapped:)];
-    [singleTap setNumberOfTapsRequired:1];
-    [self.albumCoverMaskImage addGestureRecognizer:singleTap];
-    playerController = [[PlayerController alloc]init];
-    playerController.songInfoDelegate = self;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
+    [self p_loadPlaylist];
+    [PlayerController sharedInstance].songInfoDelegate = self;
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.02
+                                             target:self
+                                           selector:@selector(updateProgress)
+                                           userInfo:nil
+                                            repeats:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -101,7 +99,7 @@
         isPlaying = NO;
         self.albumCoverImage.alpha = 0.2f;
         self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock2"];
-        [playerController pauseSong];
+        [[PlayerController sharedInstance] pauseSong];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [timer setFireDate:[NSDate distantFuture]];
     }
@@ -109,7 +107,7 @@
         isPlaying = YES;
         self.albumCoverImage.alpha = 1.0f;
         self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
-        [playerController restartSong];
+        [[PlayerController sharedInstance] restartSong];
         [timer setFireDate:[NSDate date]];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     }
@@ -117,19 +115,19 @@
 
 - (void)skipButtonDidTapped:(UIButton *)sender{
     [timer setFireDate:[NSDate distantFuture]];
-    [playerController pauseSong];
+    [[PlayerController sharedInstance] pauseSong];
     if(isPlaying == NO){
         self.albumCoverImage.alpha = 1.0f;
         self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
     }
-    [playerController skipSong];
+    [[PlayerController sharedInstance] skipSong];
 }
 
 - (void)likeButtonDidTapped:(UIButton *)sender {
     if (![[SongInfo currentSong].like intValue]) {
         [SongInfo currentSong].like = @"1";
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart2"] forState:UIControlStateNormal];
-        [playerController likeSong];
+        [[PlayerController sharedInstance] likeSong];
     }
     else{
         [SongInfo currentSong].like = @"0";
@@ -142,14 +140,15 @@
         isPlaying = YES;
         self.albumCoverImage.alpha = 1.0f;
         self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
-        [playerController restartSong];
+        [[PlayerController sharedInstance] restartSong];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     }
-    [playerController deleteSong];
+    [[PlayerController sharedInstance] deleteSong];
 }
+
 #pragma mark - SongInfomation
--(void)loadPlaylist{
-    [networkManager loadPlaylistwithType:@"n"];
+-(void)p_loadPlaylist{
+    [[NetworkManager sharedInstancd] loadPlaylistwithType:@"n"];
 }
 
 -(void)initSongInfomation{
@@ -174,8 +173,8 @@
     self.channelTitleLabel.text = [NSString stringWithFormat:@"♪%@♪",[ChannelInfo currentChannel].name];
     
     //初始化timeLabel的总时间
-    TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
-    TotalTimeMinutes = [[SongInfo currentSong].length intValue]/60;
+    int TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
+    int TotalTimeMinutes = [[SongInfo currentSong].length intValue]/60;
     if (TotalTimeSeconds < 10) {
         totalTimeString = [NSMutableString stringWithFormat:@"%d:0%d",TotalTimeMinutes,TotalTimeSeconds];
     }
@@ -326,6 +325,12 @@
         UIImageView *imageView = [[UIImageView alloc]init];
         imageView.image = [UIImage imageNamed:@"albumBlock"];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+        imageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseButtonDidTapped:)];
+        [singleTap setNumberOfTapsRequired:1];
+        [imageView addGestureRecognizer:singleTap];
+        
         _albumCoverMaskImage = imageView;
     }
     return _albumCoverMaskImage;
@@ -423,7 +428,7 @@
     if (!_skipButton) {
         _skipButton = ({
             UIButton *button = [[UIButton alloc]init];
-            [button addTarget:self action:@selector(deleteButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(skipButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
             [button setBackgroundImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
             button;
         });
@@ -450,8 +455,9 @@
 }
 
 -(void)updateProgress{
-    currentTimeMinutes = (unsigned)appDelegate.player.currentPlaybackTime/60;
-    currentTimeSeconds = (unsigned)appDelegate.player.currentPlaybackTime%60;
+    int currentTimeMinutes = (unsigned)[PlayerController sharedInstance].currentPlaybackTime/60;
+    int currentTimeSeconds = (unsigned)[PlayerController sharedInstance].currentPlaybackTime%60;
+    NSMutableString *currentTimeString;
     //专辑图片旋转
     self.albumCoverImage.transform = CGAffineTransformRotate(self.albumCoverImage.transform, M_PI / 1440);
     if (currentTimeSeconds < 10) {
@@ -460,9 +466,10 @@
     else{
         currentTimeString = [NSMutableString stringWithFormat:@"%d:%d",currentTimeMinutes,currentTimeSeconds];
     }
-    timeLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,totalTimeString];
+    
+    NSMutableString *timeLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,totalTimeString];
     self.timeLabel.text = timeLabelString;
-    self.timerProgressBar.progress = appDelegate.player.currentPlaybackTime/[[SongInfo currentSong].length intValue];
+    self.timerProgressBar.progress = [PlayerController sharedInstance].currentPlaybackTime/[[SongInfo currentSong].length intValue];
 }
 @end
 

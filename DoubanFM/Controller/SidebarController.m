@@ -8,6 +8,7 @@
 
 #import "SidebarController.h"
 #import "PlayerViewController.h"
+#import "ChannelsTableViewController.h"
 
 @interface SidebarController (){
     CDSideBarController *sideBar;

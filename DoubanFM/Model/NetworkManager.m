@@ -7,17 +7,20 @@
 //
 
 #import "NetworkManager.h"
-#import <AFNetworking/AFNetworking.h>
 #import "AppDelegate.h"
 #import "SongInfo.h"
 #import "ChannelInfo.h"
+
+#import "PlayerController.h"
 
 #import "DFMUpChannelsEntity.h"
 #import "DFMHotChannelsEntity.h"
 #import "DFMRecChannelsEntity.h"
 
 #import <UIKit/UIKit.h>
+
 #import <MJExtension.h>
+#import <AFNetworking/AFNetworking.h>
 
 #define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
 #define LOGINURLSTRING @"http://douban.fm/j/login"
@@ -36,10 +39,20 @@ static NSMutableString *captchaID;
 @implementation NetworkManager
 -(instancetype)init{
     if (self = [super init]) {
-        appDelegate = [[UIApplication sharedApplication]delegate];
+        appDelegate = [[UIApplication sharedApplication] delegate];
         manager = [AFHTTPRequestOperationManager manager];
     }
     return self;
+}
+
++ (instancetype)sharedInstancd
+{
+    static NetworkManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[self alloc] init];
+    });
+    return sharedManager;
 }
 
 //设置播放列表
@@ -149,22 +162,25 @@ static NSMutableString *captchaID;
 //p : Use to get a song list when the song in playlist was all played.
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
-    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, appDelegate.player.currentPlaybackTime, [ChannelInfo currentChannel].ID];
+    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, [PlayerController sharedInstance].currentPlaybackTime, [ChannelInfo currentChannel].ID];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        DFMPlaylist *playList = [PlayerController sharedInstance].playList;
+        
         NSDictionary *songDictionary = responseObject;
         
-        appDelegate.playList = [DFMPlaylist objectWithKeyValues:songDictionary];
+        playList = [DFMPlaylist objectWithKeyValues:songDictionary];
         
         if ([type isEqualToString:@"r"]) {
             [SongInfo setCurrentSongIndex:-1];
         }
         else{
-            if ([appDelegate.playList.song count] != 0) {
+            if ([playList.song count] != 0) {
                 [SongInfo setCurrentSongIndex:0];
-                [SongInfo setCurrentSong:[appDelegate.playList.song objectAtIndex:[SongInfo currentSongIndex]]];
-                [appDelegate.player setContentURL:[NSURL URLWithString:[SongInfo currentSong].url]];
-                [appDelegate.player play];
+                [SongInfo setCurrentSong:[playList.song objectAtIndex:[SongInfo currentSongIndex]]];
+                [[PlayerController sharedInstance] setContentURL:[NSURL URLWithString:[SongInfo currentSong].url]];
+                [[PlayerController sharedInstance] play];
             }
             //如果是未登录用户第一次使用红心列表，会导致列表中无歌曲
             else{

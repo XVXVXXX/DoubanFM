@@ -7,18 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AFNetworking/AFNetworking.h>
-#import <MediaPlayer/MediaPlayer.h>
-#import "NetworkManager.h"
-#import "ChannelsTableViewController.h"
-#import "LoginViewController.h"
-#import "AppDelegate.h"
-#import "SongInfo.h"
-#import "PlayerController.h"
-#import "ProtocolClass.h"
-@interface PlayerViewController : UIViewController <DoubanDelegate>{
-}
-
--(void)loadPlaylist;
+@interface PlayerViewController : UIViewController
+{}
 @end
 

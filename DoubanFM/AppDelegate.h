@@ -12,9 +12,9 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic) MPMoviePlayerController *player;
-@property (nonatomic) DFMPlaylist *playList;
+
 @property (nonatomic) UserInfo *userInfo;
 
 @end
