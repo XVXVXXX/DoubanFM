@@ -17,7 +17,7 @@ The DoubanFM for iPhone,using MPMoviePlayer
 
 ---
 #Update
-* 2016.01.03: 对播放器页面不再使用storyBoard，而是使用masonry重写了一下
+* 2016.01.03: 对播放器页面不再使用storyBoard，而是使用masonry重写了一下\代码重构
 * 2015.10.03: 播放器页面的封面现在用了SDWebImage，加载速度感觉比原来快了很多
 * 2015.10.02: 实体类现在一部分没用手动自己解了，用了MJExtension
 * 2015.09.23: 把代码整个结构弄好了，再也不是之前的ProjectFinal了，iOS9的http问题，目前看douban那边获取的一些url还是http，只能在info.plist里面改http了
