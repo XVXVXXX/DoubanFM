@@ -45,6 +45,9 @@ static NSNumberFormatter *numberFormatter_;
 + (void)load
 {
     numberFormatter_ = [[NSNumberFormatter alloc] init];
+    
+    // 默认设置
+    [self referenceReplacedKeyWhenCreatingKeyValues:YES];
 }
 
 #pragma mark - --公共方法--
@@ -74,13 +77,13 @@ static NSNumberFormatter *numberFormatter_;
     
     MJExtensionAssertError([keyValues isKindOfClass:[NSDictionary class]], self, error, @"keyValues参数不是一个字典");
     
-    @try {
-        Class aClass = [self class];
-        NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
-        NSArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
+    Class aClass = [self class];
+    NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
+    NSArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
         
         //通过封装的方法回调一个通过运行时编写的，用于返回属性列表的方法。
-        [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
+    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
+        @try {
             // 0.检测是否被忽略
             if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
             if ([ignoredPropertyNames containsObject:property.name]) return;
@@ -97,8 +100,7 @@ static NSNumberFormatter *numberFormatter_;
             }
             
             // 值的过滤
-            id newValue = [aClass getNewValueFromObject:self oldValue:value property:property];
-            if (newValue) value = newValue;
+            value = [aClass getNewValueFromObject:self oldValue:value property:property];
             
             // 如果没有值，就直接返回
             if (!value || value == [NSNull null]) return;
@@ -157,15 +159,15 @@ static NSNumberFormatter *numberFormatter_;
             
             // 4.赋值
             [property setValue:value forObject:self];
-        }];
-        
-        // 转换完毕
-        if ([self respondsToSelector:@selector(keyValuesDidFinishConvertingToObject)]) {
-            [self keyValuesDidFinishConvertingToObject];
+        } @catch (NSException *exception) {
+            MJExtensionBuildError(error, exception.reason);
+            NSLog(@"%@", exception);
         }
-    } @catch (NSException *exception) {
-        MJExtensionBuildError(error, exception.reason);
-        NSLog(@"%@", exception);
+    }];
+    
+    // 转换完毕
+    if ([self respondsToSelector:@selector(keyValuesDidFinishConvertingToObject)]) {
+        [self keyValuesDidFinishConvertingToObject];
     }
     return self;
 }
@@ -323,12 +325,12 @@ static NSNumberFormatter *numberFormatter_;
     
     id keyValues = [NSMutableDictionary dictionary];
     
-    @try {
-        Class aClass = [self class];
-        NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
-        NSArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
-        
-        [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
+    Class aClass = [self class];
+    NSArray *allowedPropertyNames = [aClass totalAllowedPropertyNames];
+    NSArray *ignoredPropertyNames = [aClass totalIgnoredPropertyNames];
+    
+    [aClass enumerateProperties:^(MJProperty *property, BOOL *stop) {
+        @try {
             // 0.检测是否被忽略
             if (allowedPropertyNames.count && ![allowedPropertyNames containsObject:property.name]) return;
             if ([ignoredPropertyNames containsObject:property.name]) return;
@@ -399,20 +401,15 @@ static NSNumberFormatter *numberFormatter_;
             } else {
                 keyValues[property.name] = value;
             }
-        }];
-        
-        // 去除系统自动增加的元素
-        if ([keyValues isKindOfClass:[NSMutableDictionary class]]) {
-            [keyValues removeObjectsForKeys:@[@"superclass", @"debugDescription", @"description", @"hash"]];
+        } @catch (NSException *exception) {
+            MJExtensionBuildError(error, exception.reason);
+            NSLog(@"%@", exception);
         }
-        
-        // 转换完毕
-        if ([self respondsToSelector:@selector(objectDidFinishConvertingToKeyValues)]) {
-            [self objectDidFinishConvertingToKeyValues];
-        }
-    } @catch (NSException *exception) {
-        MJExtensionBuildError(error, exception.reason);
-        NSLog(@"%@", exception);
+    }];
+    
+    // 转换完毕
+    if ([self respondsToSelector:@selector(objectDidFinishConvertingToKeyValues)]) {
+        [self objectDidFinishConvertingToKeyValues];
     }
     
     return keyValues;

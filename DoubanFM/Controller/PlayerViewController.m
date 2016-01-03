@@ -11,6 +11,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit+AFNetworking.h>
 #import <UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
+
+#define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define RGB(r,g,b) RGBA(r,g,b,1)
+
+#define kGoldColor RGB(219, 196, 175)
+
 @interface PlayerViewController (){
     AppDelegate *appDelegate;
     AFHTTPRequestOperationManager *manager;
@@ -25,8 +32,24 @@
     int TotalTimeMinutes;
     int TotalTimeSeconds;
     NSMutableString *totalTimeString;
-    NSMutableString *timerLabelString;
+    NSMutableString *timeLabelString;
 }
+@property (strong, nonatomic) UILabel *channelTitleLabel;
+
+@property (strong, nonatomic) UIImageView *albumCoverImage;
+@property (strong, nonatomic) UIImageView *albumCoverMaskImage;
+
+@property (strong, nonatomic) UIProgressView *timerProgressBar;
+@property (strong, nonatomic) UILabel *timeLabel;
+
+@property (strong, nonatomic) UILabel *songTitleLabel;
+@property (strong, nonatomic) UILabel *songArtistLabel;
+
+@property (strong, nonatomic) UIButton *pauseButton;
+@property (strong, nonatomic) UIButton *likeButton;
+@property (strong, nonatomic) UIButton *deleteButton;
+@property (strong, nonatomic) UIButton *skipButton;
+
 @end
 
 @implementation PlayerViewController
@@ -34,29 +57,35 @@
 #pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = RGB(239, 239, 244);
+    
+    [self p_addSubViews];
+    [self p_configConstrains];
+    
     manager = [AFHTTPRequestOperationManager manager];
     appDelegate = [[UIApplication sharedApplication]delegate];
     
     networkManager = [[NetworkManager alloc]init];
     [self loadPlaylist];
-    self.pictureBlock.userInteractionEnabled = YES;
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseButton:)];
+    self.albumCoverMaskImage.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pauseButtonDidTapped:)];
     [singleTap setNumberOfTapsRequired:1];
-    [self.pictureBlock addGestureRecognizer:singleTap];
+    [self.albumCoverMaskImage addGestureRecognizer:singleTap];
     playerController = [[PlayerController alloc]init];
     playerController.songInfoDelegate = self;
     timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(updateProgress) userInfo:nil repeats:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    self.picture.layer.cornerRadius = self.picture.bounds.size.width/2.0;
-    self.picture.layer.masksToBounds = YES;
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.albumCoverImage.layer.cornerRadius = self.albumCoverImage.bounds.size.width/2.0;
+    self.albumCoverImage.layer.masksToBounds = YES;
     [super viewDidAppear:animated];
     [self initSongInfomation];
-
 }
 
--(void)viewWillDisappear:(BOOL)animated{
+-(void)viewWillDisappear:(BOOL)animated
+{
     [super viewWillDisappear:YES];
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     [self resignFirstResponder];
@@ -64,41 +93,39 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Buttons
-- (IBAction)pauseButton:(UIButton *)sender {
+- (void)pauseButtonDidTapped:(UIButton *)sender {
     if (isPlaying) {
         isPlaying = NO;
-        self.picture.alpha = 0.2f;
-        self.pictureBlock.image = [UIImage imageNamed:@"albumBlock2"];
+        self.albumCoverImage.alpha = 0.2f;
+        self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock2"];
         [playerController pauseSong];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
         [timer setFireDate:[NSDate distantFuture]];
     }
     else{
         isPlaying = YES;
-        self.picture.alpha = 1.0f;
-        self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
+        self.albumCoverImage.alpha = 1.0f;
+        self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
         [playerController restartSong];
         [timer setFireDate:[NSDate date]];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-        
     }
 }
 
-- (IBAction)skipButton:(UIButton *)sender{
+- (void)skipButtonDidTapped:(UIButton *)sender{
     [timer setFireDate:[NSDate distantFuture]];
     [playerController pauseSong];
     if(isPlaying == NO){
-        self.picture.alpha = 1.0f;
-        self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
+        self.albumCoverImage.alpha = 1.0f;
+        self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
     }
     [playerController skipSong];
 }
 
-- (IBAction)likeButton:(UIButton *)sender {
+- (void)likeButtonDidTapped:(UIButton *)sender {
     if (![[SongInfo currentSong].like intValue]) {
         [SongInfo currentSong].like = @"1";
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart2"] forState:UIControlStateNormal];
@@ -110,11 +137,11 @@
     }
 }
 
-- (IBAction)deleteButton:(UIButton *)sender {
+- (void)deleteButtonDidTapped:(UIButton *)sender {
     if (isPlaying == NO) {
         isPlaying = YES;
-        self.picture.alpha = 1.0f;
-        self.pictureBlock.image = [UIImage imageNamed:@"albumBlock"];
+        self.albumCoverImage.alpha = 1.0f;
+        self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
         [playerController restartSong];
         [self.pauseButton setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
     }
@@ -134,17 +161,17 @@
     }
     //重置旋转图片角度
     __weak __typeof(self) weakSelf = self;
-    self.picture.image = nil;
-    [self.picture sd_setImageWithURL:[NSURL URLWithString:[SongInfo currentSong].picture]
-                    placeholderImage:nil
-                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                               __strong __typeof(weakSelf) strongSelf = weakSelf;
-                               strongSelf.picture.transform = CGAffineTransformMakeRotation(0.0);
-                           }];
-   
-    self.songArtist.text = [SongInfo currentSong].artist;
-    self.songTitle.text = [SongInfo currentSong].title;
-    self.ChannelTitle.text = [NSString stringWithFormat:@"♪%@♪",[ChannelInfo currentChannel].name];
+    self.albumCoverImage.image = nil;
+    [self.albumCoverImage sd_setImageWithURL:[NSURL URLWithString:[SongInfo currentSong].picture]
+                            placeholderImage:nil
+                                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                       __strong __typeof(weakSelf) strongSelf = weakSelf;
+                                       strongSelf.albumCoverImage.transform = CGAffineTransformMakeRotation(0.0);
+                                   }];
+    
+    self.songArtistLabel.text = [SongInfo currentSong].artist;
+    self.songTitleLabel.text = [SongInfo currentSong].title;
+    self.channelTitleLabel.text = [NSString stringWithFormat:@"♪%@♪",[ChannelInfo currentChannel].name];
     
     //初始化timeLabel的总时间
     TotalTimeSeconds = [[SongInfo currentSong].length intValue]%60;
@@ -176,16 +203,232 @@
                      forKey:MPMediaItemPropertyTitle];
             [dict setObject:[SongInfo currentSong].artist
                      forKey:MPMediaItemPropertyArtist];
-            UIImage *tempImage = _picture.image;
+            UIImage *tempImage = _albumCoverImage.image;
             if (tempImage != nil) {
                 [dict setObject:[[MPMediaItemArtwork alloc]initWithImage:tempImage] forKey:MPMediaItemPropertyArtwork];
             }
             [dict
              setObject:[NSNumber numberWithFloat:[[SongInfo currentSong].length floatValue]]
-                forKey:MPMediaItemPropertyPlaybackDuration];
+             forKey:MPMediaItemPropertyPlaybackDuration];
             [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
         }
     }
+}
+
+- (void)p_addSubViews
+{
+    NSArray *subView = @[self.channelTitleLabel,
+                         self.albumCoverImage,
+                         self.albumCoverMaskImage,
+                         self.timerProgressBar,
+                         self.timeLabel,
+                         self.songTitleLabel,
+                         self.songArtistLabel,
+                         self.pauseButton,
+                         self.likeButton,
+                         self.deleteButton,
+                         self.skipButton];
+    [subView enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        [self.view addSubview:view];
+    }];
+}
+
+
+- (void)p_configConstrains
+{
+    UIView *superView = self.view;
+    [self.channelTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(superView).offset(15);
+        make.right.equalTo(superView).offset(-15);
+        make.height.mas_equalTo(@40);
+    }];
+    
+    UIView __block *lastView = nil;
+    [@[self.channelTitleLabel,
+       self.albumCoverImage,
+       self.timerProgressBar,] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+           [view mas_makeConstraints:^(MASConstraintMaker *make) {
+               make.top.equalTo(lastView ? lastView.mas_bottom : superView.mas_top).offset(30);
+           }];
+           lastView = view;
+       }];
+    
+    lastView = nil;
+    [@[self.pauseButton,
+       self.likeButton,
+       self.deleteButton,
+       self.skipButton,] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+           [view mas_makeConstraints:^(MASConstraintMaker *make) {
+               make.bottom.equalTo(superView.mas_bottom).offset(-15);
+               make.height.equalTo(view.mas_width);
+               make.left.equalTo(lastView ? lastView.mas_right : superView.mas_left).offset(30);
+           }];
+           lastView = view;
+       }];
+    
+    [self.skipButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(superView.mas_right).offset(-30);
+        make.size.equalTo(@[self.pauseButton, self.likeButton, self.deleteButton]);
+    }];
+    
+    lastView = nil;
+    [@[self.songArtistLabel,self.songTitleLabel, self.timeLabel, self.timerProgressBar] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(superView).offset(15);
+            make.right.equalTo(superView).offset(-15);
+            make.bottom.equalTo(lastView ? lastView.mas_top : self.pauseButton.mas_top).offset(-15);
+        }];
+        lastView = view;
+    }];
+    
+    [self.songArtistLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@[self.songTitleLabel, self.timeLabel]);
+    }];
+    
+    [self.albumCoverImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(superView);
+        make.left.equalTo(superView).offset(20);
+        make.right.equalTo(superView).offset(-20);
+        make.width.equalTo(self.albumCoverImage.mas_height);
+    }];
+    
+    [self.albumCoverMaskImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.left.top.equalTo(self.albumCoverImage);
+    }];
+}
+
+#pragma mark - Getters
+- (UILabel *)channelTitleLabel
+{
+    if (!_channelTitleLabel) {
+        UILabel* label = [[UILabel alloc]init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:27.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = kGoldColor;
+        _channelTitleLabel = label;
+    }
+    return _channelTitleLabel;
+}
+
+- (UIImageView *)albumCoverImage
+{
+    if (!_albumCoverImage) {
+        UIImageView *imageView = [[UIImageView alloc]init];
+        _albumCoverImage = imageView;
+    }
+    return _albumCoverImage;
+}
+
+- (UIImageView *)albumCoverMaskImage
+{
+    if (!_albumCoverMaskImage) {
+        UIImageView *imageView = [[UIImageView alloc]init];
+        imageView.image = [UIImage imageNamed:@"albumBlock"];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        _albumCoverMaskImage = imageView;
+    }
+    return _albumCoverMaskImage;
+}
+
+- (UIProgressView *)timerProgressBar
+{
+    if (!_timerProgressBar) {
+        _timerProgressBar = [UIProgressView new];
+        _timerProgressBar.progressTintColor = kGoldColor;
+    }
+    return _timerProgressBar;
+}
+
+- (UILabel *)timeLabel
+{
+    if (!_timeLabel) {
+        UILabel* label = [[UILabel alloc]init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:17.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = kGoldColor;
+        _timeLabel = label;
+    }
+    return _timeLabel;
+}
+
+- (UILabel *)songTitleLabel
+{
+    if (!_songTitleLabel) {
+        UILabel* label = [[UILabel alloc]init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:22.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = kGoldColor;
+        _songTitleLabel = label;
+    }
+    return _songTitleLabel;
+}
+
+- (UILabel *)songArtistLabel
+{
+    if (!_songArtistLabel) {
+        UILabel* label = [[UILabel alloc]init];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:17.0f];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = kGoldColor;
+        _songArtistLabel = label;
+    }
+    return _songArtistLabel;
+}
+
+- (UIButton *)pauseButton
+{
+    if (!_pauseButton) {
+        _pauseButton = ({
+            UIButton *button = [[UIButton alloc]init];
+            [button addTarget:self action:@selector(pauseButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [button setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+            button;
+        });
+    }
+    return _pauseButton;
+}
+
+- (UIButton *)likeButton
+{
+    if (!_likeButton) {
+        _likeButton = ({
+            UIButton *button = [[UIButton alloc]init];
+            [button addTarget:self action:@selector(likeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [button setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
+            button;
+        });
+    }
+    return _likeButton;
+}
+
+- (UIButton *)deleteButton
+{
+    if (!_deleteButton) {
+        _deleteButton = ({
+            UIButton *button = [[UIButton alloc]init];
+            [button addTarget:self action:@selector(deleteButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [button setBackgroundImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+            button;
+        });
+    }
+    return _deleteButton;
+}
+
+- (UIButton *)skipButton
+{
+    if (!_skipButton) {
+        _skipButton = ({
+            UIButton *button = [[UIButton alloc]init];
+            [button addTarget:self action:@selector(deleteButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [button setBackgroundImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
+            button;
+        });
+    }
+    return _skipButton;
 }
 
 #pragma mark - RemoteControl
@@ -195,10 +438,10 @@
         switch (event.subtype) {
             case UIEventSubtypeRemoteControlPause:
             case UIEventSubtypeRemoteControlPlay:
-                [self pauseButton:nil]; // 切换播放、暂停按钮
+                [self pauseButtonDidTapped:nil]; // 切换播放、暂停按钮
                 break;
             case UIEventSubtypeRemoteControlNextTrack:
-                [self skipButton:nil]; // 播放下一曲按钮
+                [self skipButtonDidTapped:nil]; // 播放下一曲按钮
                 break;
             default:
                 break;
@@ -210,18 +453,16 @@
     currentTimeMinutes = (unsigned)appDelegate.player.currentPlaybackTime/60;
     currentTimeSeconds = (unsigned)appDelegate.player.currentPlaybackTime%60;
     //专辑图片旋转
-    self.picture.transform = CGAffineTransformRotate(self.picture.transform, M_PI / 1440);
+    self.albumCoverImage.transform = CGAffineTransformRotate(self.albumCoverImage.transform, M_PI / 1440);
     if (currentTimeSeconds < 10) {
         currentTimeString = [NSMutableString stringWithFormat:@"%d:0%d",currentTimeMinutes,currentTimeSeconds];
     }
     else{
         currentTimeString = [NSMutableString stringWithFormat:@"%d:%d",currentTimeMinutes,currentTimeSeconds];
     }
-    timerLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,totalTimeString];
-    self.timerLabel.text = timerLabelString;
+    timeLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,totalTimeString];
+    self.timeLabel.text = timeLabelString;
     self.timerProgressBar.progress = appDelegate.player.currentPlaybackTime/[[SongInfo currentSong].length intValue];
 }
-
-
 @end
 

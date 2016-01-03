@@ -18,19 +18,7 @@
 #import "ProtocolClass.h"
 @interface PlayerViewController : UIViewController <DoubanDelegate>{
 }
-@property (strong, nonatomic) IBOutlet UILabel *songTitle;
-@property (strong, nonatomic) IBOutlet UILabel *songArtist;
-@property (strong, nonatomic) IBOutlet UILabel *ChannelTitle;
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
-@property (strong, nonatomic) IBOutlet UIProgressView *timerProgressBar;
-@property (strong, nonatomic) IBOutlet UIImageView *picture;
-@property (strong, nonatomic) IBOutlet UIImageView *pictureBlock;
-@property (strong, nonatomic) IBOutlet UIButton *pauseButton;
-@property (strong, nonatomic) IBOutlet UIButton *likeButton;
-- (IBAction)pauseButton:(UIButton *)sender;
-- (IBAction)likeButton:(UIButton *)sender;
-- (IBAction)deleteButton:(UIButton *)sender;
-- (IBAction)skipButton:(UIButton *)sender;
+
 -(void)loadPlaylist;
 @end
 

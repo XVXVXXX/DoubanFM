@@ -12,7 +12,7 @@
 /**
  *  登陆界面delegate
  *
- *  @param url <#url description#>
+ *  @param url 
  */
 -(void)setCaptchaImageWithURLInString:(NSString *)url;
 

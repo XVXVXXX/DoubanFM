@@ -8,27 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		ED525C3E4FAFDC953423B01D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE54A7106845D97AA5FF62F /* libPods.a */; };
-		F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */; settings = {ASSET_TAGS = (); }; };
-		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
-		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
-		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54941BB2A3CF000400E1 /* ChannelsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547D1BB2A3CF000400E1 /* PlayerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* SidebarController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54981BB2A3CF000400E1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* NetworkManager.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549C1BB2A3D0000400E1 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548A1BB2A3CF000400E1 /* PlayerController.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549E1BB2A3D0000400E1 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548E1BB2A3CF000400E1 /* SongInfo.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54901BB2A3CF000400E1 /* UserInfo.m */; settings = {ASSET_TAGS = (); }; };
-		F9DC54A01BB2A3D0000400E1 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		F9DC54A61BB2A41D000400E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
-		F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */; };
+		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; };
+		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; };
+		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; };
+		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; };
+		F9DC54941BB2A3CF000400E1 /* ChannelsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */; };
+		F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */; };
+		F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547D1BB2A3CF000400E1 /* PlayerViewController.m */; };
+		F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* SidebarController.m */; };
+		F9DC54981BB2A3CF000400E1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */; };
+		F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */; };
+		F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* NetworkManager.m */; };
+		F9DC549C1BB2A3D0000400E1 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548A1BB2A3CF000400E1 /* PlayerController.m */; };
+		F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */; };
+		F9DC549E1BB2A3D0000400E1 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548E1BB2A3CF000400E1 /* SongInfo.m */; };
+		F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54901BB2A3CF000400E1 /* UserInfo.m */; };
+		F9DC54A01BB2A3D0000400E1 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */; };
+		F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */; };
+		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; };
+		F9DC54A61BB2A41D000400E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */; };
+		F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */; };
 		F9F85B511BB2A08F00D0C0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B501BB2A08F00D0C0DE /* main.m */; };
 		F9F85B541BB2A08F00D0C0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B531BB2A08F00D0C0DE /* AppDelegate.m */; };
 		F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B561BB2A08F00D0C0DE /* ViewController.m */; };
@@ -302,6 +302,7 @@
 				F9F85B491BB2A08F00D0C0DE /* Frameworks */,
 				F9F85B4A1BB2A08F00D0C0DE /* Resources */,
 				2D0BBE89462948A581E5B309 /* Copy Pods Resources */,
+				6B9836A6A2F27C17617410D2 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +450,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B9836A6A2F27C17617410D2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

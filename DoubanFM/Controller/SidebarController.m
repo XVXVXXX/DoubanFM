@@ -7,6 +7,7 @@
 //
 
 #import "SidebarController.h"
+#import "PlayerViewController.h"
 
 @interface SidebarController (){
     CDSideBarController *sideBar;
@@ -33,7 +34,7 @@
     sideBar.delegate = self;
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    playerVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"playerVC"];
+    playerVC = [[PlayerViewController alloc] init];
     
     channelsVC = [[ChannelsTableViewController alloc]init];
     channelsVC.delegate = (id)self;
@@ -68,7 +69,7 @@
         }
     }
     
-    [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 40)];
+    [sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 30)];
 }
 
 #pragma mark - CDSidebar Delegate
