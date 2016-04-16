@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED525C3E4FAFDC953423B01D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE54A7106845D97AA5FF62F /* libPods.a */; };
+		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
 		F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */; };
 		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; };
 		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; };
@@ -27,7 +28,6 @@
 		F9DC54A01BB2A3D0000400E1 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */; };
 		F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */; };
 		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; };
-		F9DC54A61BB2A41D000400E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */; };
 		F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */; };
 		F9F85B511BB2A08F00D0C0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B501BB2A08F00D0C0DE /* main.m */; };
 		F9F85B541BB2A08F00D0C0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B531BB2A08F00D0C0DE /* AppDelegate.m */; };
@@ -58,6 +58,7 @@
 /* Begin PBXFileReference section */
 		37527992BB36B1175EFF2EE0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6AE54A7106845D97AA5FF62F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F9D0F6591BBFCF7000284B67 /* DFMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlaylist.h; sourceTree = "<group>"; };
 		F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlaylist.m; sourceTree = "<group>"; };
 		F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUpChannelsEntity.h; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelsTableViewController.xib; sourceTree = "<group>"; };
 		F9DC54A21BB2A416000400E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F9DC54A41BB2A41D000400E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9DC54A71BB2DCF5000400E1 /* ChannelsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelsTableViewCell.h; sourceTree = "<group>"; };
 		F9DC54A81BB2DCF5000400E1 /* ChannelsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelsTableViewCell.m; sourceTree = "<group>"; };
 		F9F85B4C1BB2A08F00D0C0DE /* DoubanFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,7 +218,7 @@
 				F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */,
 				F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */,
 				F9DC54A21BB2A416000400E1 /* Main.storyboard */,
-				F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */,
+				F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 				F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */,
 				F9DC54A01BB2A3D0000400E1 /* ChannelsTableViewCell.xib in Resources */,
 				F9F85B5C1BB2A08F00D0C0DE /* Assets.xcassets in Resources */,
-				F9DC54A61BB2A41D000400E1 /* LaunchScreen.xib in Resources */,
+				F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */,
 				F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,15 +529,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F9DC54A51BB2A41D000400E1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9DC54A41BB2A41D000400E1 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = ../../../iOS/DoubanFM/ProjectFinal/ProjectFinal;
-			sourceTree = "<group>";
-		};
 		F9F85B5D1BB2A08F00D0C0DE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
