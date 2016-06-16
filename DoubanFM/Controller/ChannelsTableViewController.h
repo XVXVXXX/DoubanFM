@@ -19,11 +19,4 @@
 
 @property (nonatomic, weak) id<DoubanDelegate> delegate;
 
-@property (nonatomic) NSMutableArray *channels;
-@property (nonatomic) NSArray *channelsTitle;
-@property (nonatomic) NSArray *myChannels;
-@property (nonatomic) NSMutableArray *recommendChannels;
-@property (nonatomic) NSMutableArray *upTrendingChannels;
-@property (nonatomic) NSMutableArray *hotChannels;
-
 @end

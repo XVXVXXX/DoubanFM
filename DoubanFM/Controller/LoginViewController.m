@@ -15,6 +15,14 @@
     AppDelegate *appDelegate;
 }
 
+@property (strong, nonatomic) IBOutlet UIImageView *captchaImageview;
+@property (strong, nonatomic) IBOutlet UITextField *username;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UITextField *captcha;
+- (IBAction)submitButtonTapped:(UIButton *)sender;
+- (IBAction)cancelButtonTapped:(UIButton *)sender;
+- (IBAction)backgroundTap:(id)sender;
+
 @end
 
 @implementation LoginViewController

@@ -56,42 +56,6 @@ static NSMutableString *captchaID;
 }
 
 //设置播放列表
--(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString{
-    [manager GET:urlWithString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *channelsDictionary = responseObject;
-        NSDictionary *tempChannel = [channelsDictionary objectForKey:@"data"];
-        
-        if (channelIndex == DFMChannelTypeUpTrending) {
-            DFMUpChannelsEntity *entity = [DFMUpChannelsEntity objectWithKeyValues:tempChannel];
-            [ChannelInfo channels][channelIndex] = entity.channels;
-        }
-        
-        else if (channelIndex == DFMChannelTypeHot) {
-            DFMHotChannelsEntity *entity = [DFMHotChannelsEntity objectWithKeyValues:tempChannel];
-            [ChannelInfo channels][channelIndex] = entity.channels;
-        }
-        
-        else{
-            NSDictionary *channels = [tempChannel objectForKey:@"res"];
-            if ([[channels allKeys]containsObject:@"rec_chls"]) {
-                for (NSDictionary *tempRecCannels in [channels objectForKey:@"rec_chls"]) {
-                ChannelInfo *channelInfo = [ChannelInfo objectWithKeyValues:tempRecCannels];
-                    [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
-                }
-            }
-            else{
-                NSDictionary *channels = [tempChannel objectForKey:@"res"];
-                ChannelInfo *channelInfo = [ChannelInfo objectWithKeyValues:channels];
-                [[[ChannelInfo channels] objectAtIndex:channelIndex] addObject:channelInfo];
-            }
-        }
-        [self.delegate reloadTableviewData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@",error);
-    }];
-}
-
-
 //登陆数据格式
 //POST Params:
 //remember:on/off
@@ -162,7 +126,7 @@ static NSMutableString *captchaID;
 //p : Use to get a song list when the song in playlist was all played.
 //sid : the song's id
 -(void)loadPlaylistwithType:(NSString *)type{
-    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, [PlayerController sharedInstance].currentPlaybackTime, [ChannelInfo currentChannel].ID];
+    NSString *playlistURLString = [NSString stringWithFormat:PLAYLISTURLFORMATSTRING, type, [SongInfo currentSong].sid, [PlayerController sharedInstance].currentPlaybackTime, [ChannelInfo currentChannel].id];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     [manager GET:playlistURLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -188,7 +152,7 @@ static NSMutableString *captchaID;
                 [alertView show];
                 ChannelInfo *myPrivateChannel = [[ChannelInfo alloc]init];
                 myPrivateChannel.name = @"我的私人";
-                myPrivateChannel.ID = @"0";
+                myPrivateChannel.id = @"0";
                 [ChannelInfo updateCurrentCannel:myPrivateChannel];
             }
         }

@@ -18,7 +18,8 @@
         self.name = [tempUserInfoDic valueForKey:@"name"];
         NSDictionary *tempPlayRecordDic = [tempUserInfoDic valueForKey:@"play_record"];
         self.banned = [NSString stringWithFormat:@"%@",[tempPlayRecordDic valueForKey:@"banned"]];
-        self.liked = [NSString stringWithFormat:@"%@",[tempPlayRecordDic valueForKey:@"liked"]];        self.played = [NSString stringWithFormat:@"%@",[tempPlayRecordDic valueForKey:@"played"]];
+        self.liked = [NSString stringWithFormat:@"%@",[tempPlayRecordDic valueForKey:@"liked"]];
+        self.played = [NSString stringWithFormat:@"%@",[tempPlayRecordDic valueForKey:@"played"]];
     }
     return self;
 }

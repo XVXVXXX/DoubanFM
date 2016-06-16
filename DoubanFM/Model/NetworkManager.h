@@ -18,8 +18,6 @@
 
 -(instancetype)init;
 
--(void)setChannel:(NSUInteger)channelIndex withURLWithString:(NSString *)urlWithString;
-
 -(void)LoginwithUsername:(NSString *)username
                 Password:(NSString *)password
                  Captcha:(NSString *)captcha

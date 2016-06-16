@@ -13,7 +13,6 @@ static NSArray *channelsTitleArray;
 @implementation ChannelInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [super init]) {
-        self.ID = [dictionary objectForKey:@"id"];
         self.name = [dictionary objectForKey:@"name"];
     }
     return self;
@@ -39,16 +38,6 @@ static NSArray *channelsTitleArray;
     currentChannel = channel;
 }
 
-+ (NSArray *)channelsTitleArray{
-    if (!channelsTitleArray) {
-        channelsTitleArray = [NSArray array];
-    }
-    return channelsTitleArray;
-}
-
-+ (void)updateChannelsTitleArray:(NSArray *)array{
-    channelsTitleArray = array;
-}
 
 + (NSDictionary *)replacedKeyFromPropertyName
 {

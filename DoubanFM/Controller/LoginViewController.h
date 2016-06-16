@@ -13,13 +13,7 @@
 #import "ProtocolClass.h"
 
 @interface LoginViewController : UIViewController <DoubanDelegate>
-@property (strong, nonatomic) IBOutlet UIImageView *captchaImageview;
-@property (strong, nonatomic) IBOutlet UITextField *username;
-@property (strong, nonatomic) IBOutlet UITextField *password;
-@property (strong, nonatomic) IBOutlet UITextField *captcha;
+
 @property (weak, nonatomic)id<DoubanDelegate>delegate;
-- (IBAction)submitButtonTapped:(UIButton *)sender;
-- (IBAction)cancelButtonTapped:(UIButton *)sender;
-- (IBAction)backgroundTap:(id)sender;
 
 @end
