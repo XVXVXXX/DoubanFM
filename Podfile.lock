@@ -20,18 +20,34 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
   - Masonry (0.6.4)
   - MJExtension (2.5.16)
   - MJRefresh (1.4.7)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
-  - YYKit (1.0.7):
-    - YYKit/no-arc (= 1.0.7)
-  - YYKit/no-arc (1.0.7)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - BlocksKit
   - Masonry (~> 0.6.4)
   - MJExtension (~> 2.5.12)
   - MJRefresh (~> 1.4.5)
@@ -40,12 +56,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: b8c1321a77d91bcc007b94d38cbf5383c95ea30e
   MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  YYKit: 843d1b26e20b82c695790c9a89907eaa1e99907f
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9c8b5d4f1deed5bec2887723ec94d2fa55a26b9b
+PODFILE CHECKSUM: 0b0344ce41a711bf5cad8b874afb66c667f3dc5f
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

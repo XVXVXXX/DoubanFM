@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class DFMChannelInfo;
+
 @interface DFMHotChannelsEntity : NSObject
 
-@property (nonatomic, copy) NSMutableArray *channels;
+@property (nonatomic, strong) NSMutableArray<DFMChannelInfo *> *channels;
 
 @end

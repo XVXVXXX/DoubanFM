@@ -9,22 +9,22 @@
 /* Begin PBXBuildFile section */
 		994FA50E33D3D035213F4D0A /* libPods-DoubanFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF8D79B6A9E3C79B5860B7F /* libPods-DoubanFM.a */; };
 		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
-		F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */; };
+		F9D0F65B1BBFCF7000284B67 /* DFMPlayListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */; };
 		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; };
 		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; };
 		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; };
 		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; };
-		F9DC54941BB2A3CF000400E1 /* ChannelsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */; };
-		F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */; };
-		F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547D1BB2A3CF000400E1 /* PlayerViewController.m */; };
-		F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* SidebarController.m */; };
-		F9DC54981BB2A3CF000400E1 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */; };
-		F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */; };
-		F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* NetworkManager.m */; };
-		F9DC549C1BB2A3D0000400E1 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548A1BB2A3CF000400E1 /* PlayerController.m */; };
-		F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */; };
-		F9DC549E1BB2A3D0000400E1 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548E1BB2A3CF000400E1 /* SongInfo.m */; };
-		F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54901BB2A3CF000400E1 /* UserInfo.m */; };
+		F9DC54941BB2A3CF000400E1 /* DFMChannelsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54791BB2A3CF000400E1 /* DFMChannelsTableViewController.m */; };
+		F9DC54951BB2A3CF000400E1 /* DFMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547B1BB2A3CF000400E1 /* DFMLoginViewController.m */; };
+		F9DC54961BB2A3CF000400E1 /* DFMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547D1BB2A3CF000400E1 /* DFMPlayerViewController.m */; };
+		F9DC54971BB2A3CF000400E1 /* DFMSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* DFMSidebarController.m */; };
+		F9DC54981BB2A3CF000400E1 /* DFMUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54811BB2A3CF000400E1 /* DFMUserInfoViewController.m */; };
+		F9DC54991BB2A3CF000400E1 /* DFMChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54841BB2A3CF000400E1 /* DFMChannelInfo.m */; };
+		F9DC549B1BB2A3D0000400E1 /* DFMNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* DFMNetworkManager.m */; };
+		F9DC549C1BB2A3D0000400E1 /* DFMPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548A1BB2A3CF000400E1 /* DFMPlayerController.m */; };
+		F9DC549D1BB2A3D0000400E1 /* DFMProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* DFMProtocolClass.m */; };
+		F9DC549E1BB2A3D0000400E1 /* DFMSongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548E1BB2A3CF000400E1 /* DFMSongInfo.m */; };
+		F9DC549F1BB2A3D0000400E1 /* DFMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54901BB2A3CF000400E1 /* DFMUserInfo.m */; };
 		F9DC54A01BB2A3D0000400E1 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */; };
 		F9DC54A11BB2A3D0000400E1 /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */; };
 		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; };
@@ -60,8 +60,8 @@
 		D7B6E8E23717617DB503C190 /* Pods-DoubanFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.debug.xcconfig"; sourceTree = "<group>"; };
 		E75A2F48DB42A19E078B4FDB /* Pods-DoubanFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.release.xcconfig"; sourceTree = "<group>"; };
 		F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		F9D0F6591BBFCF7000284B67 /* DFMPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlaylist.h; sourceTree = "<group>"; };
-		F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlaylist.m; sourceTree = "<group>"; };
+		F9D0F6591BBFCF7000284B67 /* DFMPlayListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlayListEntity.h; sourceTree = "<group>"; };
+		F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayListEntity.m; sourceTree = "<group>"; };
 		F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUpChannelsEntity.h; sourceTree = "<group>"; };
 		F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUpChannelsEntity.m; sourceTree = "<group>"; };
 		F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMHotChannelsEntity.h; sourceTree = "<group>"; };
@@ -70,28 +70,28 @@
 		F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMRecChannelsEntity.m; sourceTree = "<group>"; };
 		F9DC54741BB2A3A9000400E1 /* CDSideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSideBarController.h; sourceTree = "<group>"; };
 		F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSideBarController.m; sourceTree = "<group>"; };
-		F9DC54781BB2A3CF000400E1 /* ChannelsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelsTableViewController.h; sourceTree = "<group>"; };
-		F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ChannelsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F9DC547A1BB2A3CF000400E1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		F9DC547C1BB2A3CF000400E1 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
-		F9DC547D1BB2A3CF000400E1 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
-		F9DC547E1BB2A3CF000400E1 /* SidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarController.h; sourceTree = "<group>"; };
-		F9DC547F1BB2A3CF000400E1 /* SidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarController.m; sourceTree = "<group>"; };
-		F9DC54801BB2A3CF000400E1 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
-		F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UserInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F9DC54831BB2A3CF000400E1 /* ChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfo.h; sourceTree = "<group>"; };
-		F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfo.m; sourceTree = "<group>"; };
-		F9DC54871BB2A3CF000400E1 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
-		F9DC54881BB2A3CF000400E1 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NetworkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F9DC54891BB2A3CF000400E1 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerController.h; sourceTree = "<group>"; };
-		F9DC548A1BB2A3CF000400E1 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerController.m; sourceTree = "<group>"; };
-		F9DC548B1BB2A3CF000400E1 /* ProtocolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolClass.h; sourceTree = "<group>"; };
-		F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolClass.m; sourceTree = "<group>"; };
-		F9DC548D1BB2A3CF000400E1 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
-		F9DC548E1BB2A3CF000400E1 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
-		F9DC548F1BB2A3CF000400E1 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
-		F9DC54901BB2A3CF000400E1 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		F9DC54781BB2A3CF000400E1 /* DFMChannelsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelsTableViewController.h; sourceTree = "<group>"; };
+		F9DC54791BB2A3CF000400E1 /* DFMChannelsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DFMChannelsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F9DC547A1BB2A3CF000400E1 /* DFMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMLoginViewController.h; sourceTree = "<group>"; };
+		F9DC547B1BB2A3CF000400E1 /* DFMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMLoginViewController.m; sourceTree = "<group>"; };
+		F9DC547C1BB2A3CF000400E1 /* DFMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlayerViewController.h; sourceTree = "<group>"; };
+		F9DC547D1BB2A3CF000400E1 /* DFMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayerViewController.m; sourceTree = "<group>"; };
+		F9DC547E1BB2A3CF000400E1 /* DFMSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMSidebarController.h; sourceTree = "<group>"; };
+		F9DC547F1BB2A3CF000400E1 /* DFMSidebarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMSidebarController.m; sourceTree = "<group>"; };
+		F9DC54801BB2A3CF000400E1 /* DFMUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUserInfoViewController.h; sourceTree = "<group>"; };
+		F9DC54811BB2A3CF000400E1 /* DFMUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DFMUserInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F9DC54831BB2A3CF000400E1 /* DFMChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelInfo.h; sourceTree = "<group>"; };
+		F9DC54841BB2A3CF000400E1 /* DFMChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelInfo.m; sourceTree = "<group>"; };
+		F9DC54871BB2A3CF000400E1 /* DFMNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMNetworkManager.h; sourceTree = "<group>"; };
+		F9DC54881BB2A3CF000400E1 /* DFMNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DFMNetworkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F9DC54891BB2A3CF000400E1 /* DFMPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlayerController.h; sourceTree = "<group>"; };
+		F9DC548A1BB2A3CF000400E1 /* DFMPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayerController.m; sourceTree = "<group>"; };
+		F9DC548B1BB2A3CF000400E1 /* DFMProtocolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMProtocolClass.h; sourceTree = "<group>"; };
+		F9DC548C1BB2A3CF000400E1 /* DFMProtocolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMProtocolClass.m; sourceTree = "<group>"; };
+		F9DC548D1BB2A3CF000400E1 /* DFMSongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMSongInfo.h; sourceTree = "<group>"; };
+		F9DC548E1BB2A3CF000400E1 /* DFMSongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMSongInfo.m; sourceTree = "<group>"; };
+		F9DC548F1BB2A3CF000400E1 /* DFMUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUserInfo.h; sourceTree = "<group>"; };
+		F9DC54901BB2A3CF000400E1 /* DFMUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUserInfo.m; sourceTree = "<group>"; };
 		F9DC54921BB2A3CF000400E1 /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		F9DC54931BB2A3CF000400E1 /* ChannelsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChannelsTableViewController.xib; sourceTree = "<group>"; };
 		F9DC54A21BB2A416000400E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -169,16 +169,16 @@
 		F9DC54771BB2A3CF000400E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F9DC54781BB2A3CF000400E1 /* ChannelsTableViewController.h */,
-				F9DC54791BB2A3CF000400E1 /* ChannelsTableViewController.m */,
-				F9DC547A1BB2A3CF000400E1 /* LoginViewController.h */,
-				F9DC547B1BB2A3CF000400E1 /* LoginViewController.m */,
-				F9DC547C1BB2A3CF000400E1 /* PlayerViewController.h */,
-				F9DC547D1BB2A3CF000400E1 /* PlayerViewController.m */,
-				F9DC547E1BB2A3CF000400E1 /* SidebarController.h */,
-				F9DC547F1BB2A3CF000400E1 /* SidebarController.m */,
-				F9DC54801BB2A3CF000400E1 /* UserInfoViewController.h */,
-				F9DC54811BB2A3CF000400E1 /* UserInfoViewController.m */,
+				F9DC54781BB2A3CF000400E1 /* DFMChannelsTableViewController.h */,
+				F9DC54791BB2A3CF000400E1 /* DFMChannelsTableViewController.m */,
+				F9DC547A1BB2A3CF000400E1 /* DFMLoginViewController.h */,
+				F9DC547B1BB2A3CF000400E1 /* DFMLoginViewController.m */,
+				F9DC547C1BB2A3CF000400E1 /* DFMPlayerViewController.h */,
+				F9DC547D1BB2A3CF000400E1 /* DFMPlayerViewController.m */,
+				F9DC547E1BB2A3CF000400E1 /* DFMSidebarController.h */,
+				F9DC547F1BB2A3CF000400E1 /* DFMSidebarController.m */,
+				F9DC54801BB2A3CF000400E1 /* DFMUserInfoViewController.h */,
+				F9DC54811BB2A3CF000400E1 /* DFMUserInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,20 +186,20 @@
 		F9DC54821BB2A3CF000400E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9DC54831BB2A3CF000400E1 /* ChannelInfo.h */,
-				F9DC54841BB2A3CF000400E1 /* ChannelInfo.m */,
-				F9DC54871BB2A3CF000400E1 /* NetworkManager.h */,
-				F9DC54881BB2A3CF000400E1 /* NetworkManager.m */,
-				F9DC54891BB2A3CF000400E1 /* PlayerController.h */,
-				F9DC548A1BB2A3CF000400E1 /* PlayerController.m */,
-				F9DC548B1BB2A3CF000400E1 /* ProtocolClass.h */,
-				F9DC548C1BB2A3CF000400E1 /* ProtocolClass.m */,
-				F9DC548D1BB2A3CF000400E1 /* SongInfo.h */,
-				F9DC548E1BB2A3CF000400E1 /* SongInfo.m */,
-				F9DC548F1BB2A3CF000400E1 /* UserInfo.h */,
-				F9DC54901BB2A3CF000400E1 /* UserInfo.m */,
-				F9D0F6591BBFCF7000284B67 /* DFMPlaylist.h */,
-				F9D0F65A1BBFCF7000284B67 /* DFMPlaylist.m */,
+				F9DC54831BB2A3CF000400E1 /* DFMChannelInfo.h */,
+				F9DC54841BB2A3CF000400E1 /* DFMChannelInfo.m */,
+				F9DC54871BB2A3CF000400E1 /* DFMNetworkManager.h */,
+				F9DC54881BB2A3CF000400E1 /* DFMNetworkManager.m */,
+				F9DC54891BB2A3CF000400E1 /* DFMPlayerController.h */,
+				F9DC548A1BB2A3CF000400E1 /* DFMPlayerController.m */,
+				F9DC548B1BB2A3CF000400E1 /* DFMProtocolClass.h */,
+				F9DC548C1BB2A3CF000400E1 /* DFMProtocolClass.m */,
+				F9DC548D1BB2A3CF000400E1 /* DFMSongInfo.h */,
+				F9DC548E1BB2A3CF000400E1 /* DFMSongInfo.m */,
+				F9DC548F1BB2A3CF000400E1 /* DFMUserInfo.h */,
+				F9DC54901BB2A3CF000400E1 /* DFMUserInfo.m */,
+				F9D0F6591BBFCF7000284B67 /* DFMPlayListEntity.h */,
+				F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */,
 				F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */,
 				F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */,
 				F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */,
@@ -434,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DC1FD3D69A2B773B8BA5B2AD /* [CP] Embed Pods Frameworks */ = {
@@ -474,26 +474,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9D0F65B1BBFCF7000284B67 /* DFMPlaylist.m in Sources */,
-				F9DC549F1BB2A3D0000400E1 /* UserInfo.m in Sources */,
+				F9D0F65B1BBFCF7000284B67 /* DFMPlayListEntity.m in Sources */,
+				F9DC549F1BB2A3D0000400E1 /* DFMUserInfo.m in Sources */,
 				F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */,
 				F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */,
 				F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */,
-				F9DC54961BB2A3CF000400E1 /* PlayerViewController.m in Sources */,
+				F9DC54961BB2A3CF000400E1 /* DFMPlayerViewController.m in Sources */,
 				F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */,
 				F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */,
-				F9DC54991BB2A3CF000400E1 /* ChannelInfo.m in Sources */,
+				F9DC54991BB2A3CF000400E1 /* DFMChannelInfo.m in Sources */,
 				F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */,
-				F9DC549B1BB2A3D0000400E1 /* NetworkManager.m in Sources */,
-				F9DC549D1BB2A3D0000400E1 /* ProtocolClass.m in Sources */,
-				F9DC54951BB2A3CF000400E1 /* LoginViewController.m in Sources */,
-				F9DC54971BB2A3CF000400E1 /* SidebarController.m in Sources */,
-				F9DC54941BB2A3CF000400E1 /* ChannelsTableViewController.m in Sources */,
-				F9DC549C1BB2A3D0000400E1 /* PlayerController.m in Sources */,
+				F9DC549B1BB2A3D0000400E1 /* DFMNetworkManager.m in Sources */,
+				F9DC549D1BB2A3D0000400E1 /* DFMProtocolClass.m in Sources */,
+				F9DC54951BB2A3CF000400E1 /* DFMLoginViewController.m in Sources */,
+				F9DC54971BB2A3CF000400E1 /* DFMSidebarController.m in Sources */,
+				F9DC54941BB2A3CF000400E1 /* DFMChannelsTableViewController.m in Sources */,
+				F9DC549C1BB2A3D0000400E1 /* DFMPlayerController.m in Sources */,
 				F9F85B541BB2A08F00D0C0DE /* AppDelegate.m in Sources */,
 				F9F85B511BB2A08F00D0C0DE /* main.m in Sources */,
-				F9DC54981BB2A3CF000400E1 /* UserInfoViewController.m in Sources */,
-				F9DC549E1BB2A3D0000400E1 /* SongInfo.m in Sources */,
+				F9DC54981BB2A3CF000400E1 /* DFMUserInfoViewController.m in Sources */,
+				F9DC549E1BB2A3D0000400E1 /* DFMSongInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

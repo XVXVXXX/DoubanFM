@@ -1405,7 +1405,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         void *tmp = calloc(1, destLength);
         if (tmp) {
             vImage_Buffer src = {destBytes, canvasHeight, canvasWidth, bytesPerRow};
-            vImage_Buffer dest = {destBytes, canvasHeight, canvasWidth, bytesPerRow};
+            vImage_Buffer dest = {tmp, canvasHeight, canvasWidth, bytesPerRow};
             vImage_CGAffineTransform transform = {1, 0, 0, 1, iter.x_offset, -iter.y_offset};
             uint8_t backColor[4] = {0};
             vImageAffineWarpCG_ARGB8888(&src, &dest, NULL, &transform, backColor, kvImageBackgroundColorFill);
@@ -2450,13 +2450,13 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
             } else if ([imageSrc isKindOfClass:[NSURL class]]) {
                 CGImageSourceRef source = CGImageSourceCreateWithURL((CFURLRef)imageSrc, NULL);
                 if (source) {
-                    CGImageDestinationAddImageFromSource(destination, source, i, (CFDictionaryRef)frameProperty);
+                    CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)frameProperty);
                     CFRelease(source);
                 }
             } else if ([imageSrc isKindOfClass:[NSData class]]) {
                 CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)imageSrc, NULL);
                 if (source) {
-                    CGImageDestinationAddImageFromSource(destination, source, i, (CFDictionaryRef)frameProperty);
+                    CGImageDestinationAddImageFromSource(destination, source, 0, (CFDictionaryRef)frameProperty);
                     CFRelease(source);
                 }
             }
@@ -2623,7 +2623,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
                 chunk_fcTL.sequence_number = apngSequenceIndex;
                 chunk_fcTL.width = frame->header.width;
                 chunk_fcTL.height = frame->header.height;
-                yy_png_delay_to_fraction([(NSNumber *)_durations[0] doubleValue], &chunk_fcTL.delay_num, &chunk_fcTL.delay_den);
+                yy_png_delay_to_fraction([(NSNumber *)_durations[i] doubleValue], &chunk_fcTL.delay_num, &chunk_fcTL.delay_den);
                 chunk_fcTL.delay_num = chunk_fcTL.delay_num;
                 chunk_fcTL.delay_den = chunk_fcTL.delay_den;
                 chunk_fcTL.dispose_op = YY_PNG_DISPOSE_OP_BACKGROUND;

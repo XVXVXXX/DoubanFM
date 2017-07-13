@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 
-#import "UserInfo.h"
-#import "DFMPlaylist.h"
+#import "DFMUserInfo.h"
+#import "DFMPlayListEntity.h"
 
 #import <MediaPlayer/MediaPlayer.h>
 
@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic) UserInfo *userInfo;
+@property (nonatomic) DFMUserInfo *userInfo;
 
 @end
 

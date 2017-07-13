@@ -6,5 +6,6 @@ pod 'MJRefresh', '~> 1.4.5'
 pod 'MJExtension', '~> 2.5.12'
 pod 'SDWebImage', '~> 3.7.3'
 pod 'Masonry', '~> 0.6.4'
-pod ‘YYKit’
+pod 'YYKit'
+pod 'BlocksKit'
 end

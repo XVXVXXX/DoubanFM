@@ -7,14 +7,14 @@
 //
 
 #import "DFMHotChannelsEntity.h"
-#import "ChannelInfo.h"
+#import "DFMChannelInfo.h"
 
 @implementation DFMHotChannelsEntity
 
 + (NSDictionary *)objectClassInArray
 {
     return @{
-             @"channels" : NSStringFromClass([ChannelInfo class]),
+             @"channels" : NSStringFromClass([DFMChannelInfo class]),
              };
 }
 
