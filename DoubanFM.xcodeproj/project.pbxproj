@@ -10,7 +10,6 @@
 		994FA50E33D3D035213F4D0A /* libPods-DoubanFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF8D79B6A9E3C79B5860B7F /* libPods-DoubanFM.a */; };
 		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
 		F9D0F65B1BBFCF7000284B67 /* DFMPlayListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */; };
-		F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */; };
 		F9D0F6611BBFF5BF00284B67 /* DFMHotChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */; };
 		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; };
 		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; };
@@ -62,8 +61,6 @@
 		F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F9D0F6591BBFCF7000284B67 /* DFMPlayListEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlayListEntity.h; sourceTree = "<group>"; };
 		F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayListEntity.m; sourceTree = "<group>"; };
-		F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUpChannelsEntity.h; sourceTree = "<group>"; };
-		F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUpChannelsEntity.m; sourceTree = "<group>"; };
 		F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMHotChannelsEntity.h; sourceTree = "<group>"; };
 		F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMHotChannelsEntity.m; sourceTree = "<group>"; };
 		F9D0F6621BBFF5CC00284B67 /* DFMRecChannelsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMRecChannelsEntity.h; sourceTree = "<group>"; };
@@ -200,8 +197,6 @@
 				F9DC54901BB2A3CF000400E1 /* DFMUserInfo.m */,
 				F9D0F6591BBFCF7000284B67 /* DFMPlayListEntity.h */,
 				F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */,
-				F9D0F65C1BBFF5AC00284B67 /* DFMUpChannelsEntity.h */,
-				F9D0F65D1BBFF5AC00284B67 /* DFMUpChannelsEntity.m */,
 				F9D0F65F1BBFF5BF00284B67 /* DFMHotChannelsEntity.h */,
 				F9D0F6601BBFF5BF00284B67 /* DFMHotChannelsEntity.m */,
 				F9D0F6621BBFF5CC00284B67 /* DFMRecChannelsEntity.h */,
@@ -478,7 +473,6 @@
 				F9DC549F1BB2A3D0000400E1 /* DFMUserInfo.m in Sources */,
 				F9DC54A91BB2DCF5000400E1 /* ChannelsTableViewCell.m in Sources */,
 				F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */,
-				F9D0F65E1BBFF5AC00284B67 /* DFMUpChannelsEntity.m in Sources */,
 				F9DC54961BB2A3CF000400E1 /* DFMPlayerViewController.m in Sources */,
 				F9F85B571BB2A08F00D0C0DE /* ViewController.m in Sources */,
 				F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */,

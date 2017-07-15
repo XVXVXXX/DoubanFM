@@ -13,7 +13,6 @@
 
 #import "DFMPlayerController.h"
 
-#import "DFMUpChannelsEntity.h"
 #import "DFMHotChannelsEntity.h"
 #import "DFMRecChannelsEntity.h"
 #import "NSObject+YYModel.h"
