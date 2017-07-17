@@ -8,7 +8,7 @@
 
 typedef NS_ENUM(NSUInteger, DFMChannelType) {
 	DFMChannelTypeMy = 0,
-	DFMChannelTypeRecmmend = 1,
+	DFMChannelTypeRecommend = 1,
 	DFMChannelTypeUpTrending = 2,
 	DFMChannelTypeHot = 3,
 	DFMChannelTypeCount = 4, //用来标记Type的数量
@@ -16,15 +16,16 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
 
 @interface DFMDataCenter : NSObject
 
-@property (nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
-@property (nonatomic, strong, readonly) NSArray<NSString *> *channelTitleList;
-@property (nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *myChannels;
-@property (nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *recommendChannels;
-@property (nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *upTrendingChannels;
-@property (nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *hotChannels;
+@property(nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
+@property(nonatomic, strong, readonly) NSArray<NSString *> *channelTitleList;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *myChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *recommendChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *upTrendingChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *hotChannels;
 
 
 + (instancetype)sharedCenter;
+
 /**
  * 获取所有频道数据
  */

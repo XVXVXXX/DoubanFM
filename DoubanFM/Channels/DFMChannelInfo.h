@@ -10,10 +10,11 @@
 
 @interface DFMChannelInfo : NSObject
 
-@property (nonatomic, copy) NSString *id;
-@property (nonatomic, copy) NSString *name;
+@property(nonatomic, copy) NSString *id;
+@property(nonatomic, copy) NSString *name;
 
 + (instancetype)currentChannel;
+
 + (void)updateCurrentCannel:(DFMChannelInfo *)channel;
 
 @end

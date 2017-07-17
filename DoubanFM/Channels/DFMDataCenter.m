@@ -8,14 +8,14 @@
 #import "NSObject+YYModel.h"
 #import "DFMUser.h"
 
-@interface DFMDataCenter()
-@property (nonatomic, strong) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
-@property (nonatomic, strong) NSArray<NSString *> *channelTitleList;
+@interface DFMDataCenter ()
+@property(nonatomic, strong) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
+@property(nonatomic, strong) NSArray<NSString *> *channelTitleList;
 
-@property (nonatomic, strong) NSArray<DFMChannelInfo *> *myChannels;
-@property (nonatomic, strong) NSArray<DFMChannelInfo *> *recommendChannels;
-@property (nonatomic, strong) NSArray<DFMChannelInfo *> *upTrendingChannels;
-@property (nonatomic, strong) NSArray<DFMChannelInfo *> *hotChannels;
+@property(nonatomic, strong) NSArray<DFMChannelInfo *> *myChannels;
+@property(nonatomic, strong) NSArray<DFMChannelInfo *> *recommendChannels;
+@property(nonatomic, strong) NSArray<DFMChannelInfo *> *upTrendingChannels;
+@property(nonatomic, strong) NSArray<DFMChannelInfo *> *hotChannels;
 @end
 
 @implementation DFMDataCenter
@@ -50,7 +50,7 @@
 		case DFMChannelTypeMy:
 			self.myChannels = array;
 			break;
-		case DFMChannelTypeRecmmend:
+		case DFMChannelTypeRecommend:
 			self.recommendChannels = array;
 		case DFMChannelTypeUpTrending:
 			self.upTrendingChannels = array;
@@ -66,7 +66,7 @@
 - (void)fetchAllChannels {
 //	[self fetchLoginChannels];
 	for (int i = DFMChannelTypeMy; i < DFMChannelTypeCount; ++i) {
-		[self fetchChanelDataWithType:(DFMChannelType)i];
+		[self fetchChanelDataWithType:(DFMChannelType) i];
 	}
 }
 
@@ -75,7 +75,7 @@
 		case DFMChannelTypeMy:
 			[self fetchMyChannels];
 			break;
-		case DFMChannelTypeRecmmend:
+		case DFMChannelTypeRecommend:
 			[self fetchRecommendChannels];
 		case DFMChannelTypeUpTrending:
 			[self fetchUpTrendingChannels];
@@ -92,10 +92,10 @@
 	//我的兆赫，不需要去远端拉取 = =
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		DFMChannelInfo *myPrivateChannel = [[DFMChannelInfo alloc]init];
+		DFMChannelInfo *myPrivateChannel = [[DFMChannelInfo alloc] init];
 		myPrivateChannel.name = @"我的私人";
 		myPrivateChannel.id = @"0";
-		DFMChannelInfo *myRedheartChannel = [[DFMChannelInfo alloc]init];
+		DFMChannelInfo *myRedheartChannel = [[DFMChannelInfo alloc] init];
 		myRedheartChannel.name = @"我的红心";
 		myRedheartChannel.id = @"-3";
 		[DFMDataCenter sharedCenter].myChannels = @[myPrivateChannel, myRedheartChannel];
@@ -110,11 +110,11 @@
 - (void)fetchRecommendChannels {
 	[[AFHTTPRequestOperationManager manager] GET:@"http://douban.fm/j/explore/get_recommend_chl"
 	                                  parameters:nil
-	                                     success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     DFMChannelInfo *channel = [DFMChannelInfo modelWithJSON:[responseObject valueForKeyPath:@"data.res"]];
 		                                     if (channel) {
 			                                     [DFMDataCenter sharedCenter].recommendChannels = @[channel];
-			                                     [[DFMDataCenter sharedCenter] updateChannels:@[channel] type:DFMChannelTypeRecmmend];
+			                                     [[DFMDataCenter sharedCenter] updateChannels:@[channel] type:DFMChannelTypeRecommend];
 		                                     }
 	                                     }
 	                                     failure:nil];
@@ -125,8 +125,8 @@
  */
 - (void)fetchLoginChannels {
 	[[AFHTTPRequestOperationManager manager] GET:@"http://douban.fm/j/explore/get_login_chls"
-	                                  parameters:@{@"uk":[DFMUser currentUser].userInfo.userID}
-	                                     success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+	                                  parameters:@{@"uk": [DFMUser currentUser].userInfo.userID}
+	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.res.rec_chls"]];
 		                                     if (channels.count) {
 			                                     [DFMDataCenter sharedCenter].recommendChannels = channels;
@@ -142,7 +142,7 @@
 - (void)fetchUpTrendingChannels {
 	[[AFHTTPRequestOperationManager manager] GET:@"http://douban.fm/j/explore/up_trending_channels"
 	                                  parameters:nil
-	                                     success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.channels"]];
 		                                     if (channels.count) {
 			                                     [DFMDataCenter sharedCenter].upTrendingChannels = channels;
@@ -158,7 +158,7 @@
 - (void)fetchHotChannelChannels {
 	[[AFHTTPRequestOperationManager manager] GET:@"http://douban.fm/j/explore/hot_channels"
 	                                  parameters:nil
-	                                     success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.channels"]];
 		                                     if (channels.count) {
 			                                     [DFMDataCenter sharedCenter].hotChannels = channels;
