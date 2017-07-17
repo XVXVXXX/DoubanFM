@@ -35,6 +35,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - KVOController (1.2.0)
   - Masonry (0.6.4)
   - MJExtension (2.5.16)
   - MJRefresh (1.4.7)
@@ -48,6 +49,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - BlocksKit
+  - KVOController
   - Masonry (~> 0.6.4)
   - MJExtension (~> 2.5.12)
   - MJRefresh (~> 1.4.5)
@@ -57,12 +59,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MJExtension: b8c1321a77d91bcc007b94d38cbf5383c95ea30e
   MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 0b0344ce41a711bf5cad8b874afb66c667f3dc5f
+PODFILE CHECKSUM: dd574bb78fe2ceb4d6fd7c89be56883d691cc3e7
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
