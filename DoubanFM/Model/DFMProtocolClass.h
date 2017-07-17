@@ -20,11 +20,6 @@
 -(void)logoutSuccess;
 
 /**
- *  播放列表delegate
- */
--(void)reloadTableviewData;
-
-/**
  *  初始化歌曲delegate
  */
 -(void)initSongInformation;

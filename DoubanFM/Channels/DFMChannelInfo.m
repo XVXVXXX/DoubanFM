@@ -8,7 +8,6 @@
 
 #import "DFMChannelInfo.h"
 static DFMChannelInfo *currentChannel;
-static NSArray *channelsTitleArray;
 
 @implementation DFMChannelInfo
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{

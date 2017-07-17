@@ -15,7 +15,7 @@
 #import "DFMPlayerController.h"
 #import "DFMProtocolClass.h"
 
-@interface DFMChannelsTableViewController : UITableViewController <DoubanDelegate>
+@interface DFMChannelsController : UITableViewController <DoubanDelegate>
 
 @property (nonatomic, weak) id<DoubanDelegate> delegate;
 

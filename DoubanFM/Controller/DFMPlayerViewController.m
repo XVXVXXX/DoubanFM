@@ -19,7 +19,7 @@
 #import "DFMChannelInfo.h"
 
 #import "DFMNetworkManager.h"
-#import "DFMChannelsTableViewController.h"
+#import "DFMChannelsController.h"
 #import "DFMLoginViewController.h"
 #import "AppDelegate.h"
 #import "DFMSongInfo.h"
@@ -32,6 +32,8 @@
 #define RGB(r,g,b) RGBA(r,g,b,1)
 
 #define kGoldColor RGB(219, 196, 175)
+
+#define kBGColor RGB(239, 239, 244)
 
 @interface DFMPlayerViewController ()<DoubanDelegate>
 
@@ -63,7 +65,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    self.view.backgroundColor = RGB(239, 239, 244);
+    self.view.backgroundColor = kBGColor;
 	
     [self p_addSubViews];
     [self p_configConstrains];
@@ -80,6 +82,7 @@
 {
     self.albumCoverImage.layer.cornerRadius = self.albumCoverImage.bounds.size.width/2;
     self.albumCoverImage.layer.masksToBounds = YES;
+
     [super viewDidAppear:animated];
 	[self initSongInformation];
 }
@@ -166,11 +169,9 @@
 	                        placeholderImage:nil
 	                                 options:SDWebImageAvoidAutoSetImage
 	                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-		                               self.albumCoverImage.image = nil;
 		                               @strongify(self)
-		                               UIImage *newImage = [image imageByRoundCornerRadius:image.size.width/2];
-		                               self.albumCoverImage.image = newImage;
-		                               self.albumCoverImage.transform = CGAffineTransformMakeRotation(0.0);
+		                               self.albumCoverImage.image = nil;
+		                               self.albumCoverImage.image = image;
 	                               }];
 
     self.songArtistLabel.text = [DFMPlayerController sharedController].currentSong.artist;
@@ -242,9 +243,7 @@
 {
     UIView *superView = self.view;
     [self.channelTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(superView).offset(15);
-        make.right.equalTo(superView).offset(-15);
-        make.height.mas_equalTo(@40);
+	    make.centerX.equalTo(superView);
     }];
     
     UIView __block *lastView = nil;
@@ -307,8 +306,10 @@
     if (!_channelTitleLabel) {
         UILabel* label = [[UILabel alloc]init];
         label.font = [UIFont systemFontOfSize:27.f];
-        label.textAlignment = NSTextAlignmentCenter;
+	    label.adjustsFontSizeToFitWidth = YES;
         label.textColor = kGoldColor;
+	    label.backgroundColor = kBGColor;
+	    label.clipsToBounds = YES;
         _channelTitleLabel = label;
     }
     return _channelTitleLabel;
@@ -318,6 +319,7 @@
 {
     if (!_albumCoverImage) {
         UIImageView *imageView = [[UIImageView alloc]init];
+	    imageView.backgroundColor = kBGColor;
         _albumCoverImage = imageView;
     }
     return _albumCoverImage;
@@ -344,6 +346,7 @@
 {
     if (!_timerProgressBar) {
         _timerProgressBar = [UIProgressView new];
+	    _timerProgressBar.backgroundColor = kBGColor;
         _timerProgressBar.progressTintColor = kGoldColor;
     }
     return _timerProgressBar;
@@ -357,6 +360,7 @@
         label.font = [UIFont systemFontOfSize:17.0f];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = kGoldColor;
+	    label.backgroundColor = kBGColor;
         _timeLabel = label;
     }
     return _timeLabel;
@@ -370,6 +374,8 @@
         label.font = [UIFont systemFontOfSize:22.0f];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = kGoldColor;
+	    label.backgroundColor = kBGColor;
+	    label.clipsToBounds = YES;
         _songTitleLabel = label;
     }
     return _songTitleLabel;
@@ -383,6 +389,8 @@
         label.font = [UIFont systemFontOfSize:17.0f];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = kGoldColor;
+	    label.backgroundColor = kBGColor;
+	    label.clipsToBounds = YES;
         _songArtistLabel = label;
     }
     return _songArtistLabel;
@@ -395,6 +403,7 @@
             UIButton *button = [[UIButton alloc]init];
             [button addTarget:self action:@selector(pauseButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
             [button setBackgroundImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+	        button.backgroundColor = kBGColor;
             button;
         });
     }
@@ -408,6 +417,7 @@
             UIButton *button = [[UIButton alloc]init];
             [button addTarget:self action:@selector(likeButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
             [button setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
+	        button.backgroundColor = kBGColor;
             button;
         });
     }
@@ -421,6 +431,7 @@
             UIButton *button = [[UIButton alloc]init];
             [button addTarget:self action:@selector(deleteButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
             [button setBackgroundImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+	        button.backgroundColor = kBGColor;
             button;
         });
     }
@@ -434,6 +445,7 @@
             UIButton *button = [[UIButton alloc]init];
             [button addTarget:self action:@selector(skipButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
             [button setBackgroundImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
+	        button.backgroundColor = kBGColor;
             button;
         });
     }

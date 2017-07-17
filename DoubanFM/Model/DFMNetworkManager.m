@@ -22,7 +22,6 @@
 #import <MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
 
-#define PLAYLISTURLFORMATSTRING @"http://douban.fm/j/mine/playlist?type=%@&sid=%@&pt=%f&channel=%@&from=mainsite"
 #define LOGINURLSTRING @"http://douban.fm/j/login"
 #define LOGOUTURLSTRING @"http://douban.fm/partner/logout"
 #define CAPTCHAIDURLSTRING @"http://douban.fm/j/new_captcha"
@@ -158,7 +157,6 @@ static NSMutableString *captchaID;
                 [DFMChannelInfo updateCurrentCannel:myPrivateChannel];
             }
         }
-        [self.delegate reloadTableviewData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //FIXME: 或许信息失败有点bug，先这样把 = =
         //        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦,酱紫" otherButtonTitles: nil];

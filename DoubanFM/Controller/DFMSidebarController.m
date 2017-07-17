@@ -8,13 +8,13 @@
 
 #import "DFMSidebarController.h"
 #import "DFMPlayerViewController.h"
-#import "DFMChannelsTableViewController.h"
+#import "DFMChannelsController.h"
 #import "BlocksKit.h"
 
 @interface DFMSidebarController ()<DoubanDelegate>
 @property(nonatomic, strong) CDSideBarController *sideBar;
 @property(nonatomic, strong) DFMPlayerViewController *playerVC;
-@property(nonatomic, strong) DFMChannelsTableViewController *channelsVC;
+@property(nonatomic, strong) DFMChannelsController *channelsVC;
 @property(nonatomic, strong) DFMUserInfoViewController *userInfoVC;
 @end
 
@@ -32,7 +32,7 @@
 
     _playerVC = [[DFMPlayerViewController alloc] init];
     
-    _channelsVC = [[DFMChannelsTableViewController alloc]init];
+    _channelsVC = [[DFMChannelsController alloc]init];
     _channelsVC.delegate = self;
 
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
