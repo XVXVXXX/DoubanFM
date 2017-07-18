@@ -12,21 +12,21 @@
 #import "AppDelegate.h"
 #import "DFMNetworkManager.h"
 #import "DFMProtocolClass.h"
+#import "DFMPlayerDataService.h"
 
 @interface DFMPlayerController : MPMoviePlayerController
 @property id<DoubanDelegate> songInfoDelegate;
 
-@property (nonatomic) DFMPlayListEntity *playList;
-@property (nonatomic, strong)DFMSongInfo *currentSong;
-@property (nonatomic, assign) NSInteger currentSongIndex;
+@property (nonatomic, strong, readonly) NSArray<DFMSongInfo *> *songList;
+@property (nonatomic, strong, readonly) DFMSongInfo *currentSong;
 
 + (instancetype)sharedController;
+- (void)requestPlayListWithType:(DFMPlayerListRequestType)type;
 
--(instancetype)init;
 -(void)start;
 
 //播放操作
--(void)pauseSong;
+
 -(void)restart;
 -(void)like;
 -(void)dislike;

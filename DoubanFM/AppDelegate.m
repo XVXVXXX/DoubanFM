@@ -10,6 +10,9 @@
 #import "DFMChannelInfoEntity.h"
 #import "DFMSongInfo.h"
 #import "DFMChannelDataCenter.h"
+#import "AFURLRequestSerialization.h"
+#import "AFURLResponseSerialization.h"
+#import "AFHTTPRequestOperationManager.h"
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -21,15 +24,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self loadArchiver];
-        //[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-        //后台播放
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setCategory:AVAudioSessionCategoryPlayback error:nil];
-        [session setActive:YES error:nil];
-    });
+	[self loadArchiver];
+	//[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+	//后台播放
+	AVAudioSession *session = [AVAudioSession sharedInstance];
+	[session setCategory:AVAudioSessionCategoryPlayback error:nil];
+	[session setActive:YES error:nil];
+
+	//初始一下network manager
+	[AFHTTPRequestOperationManager manager].requestSerializer = [AFJSONRequestSerializer serializer];
+	[AFHTTPRequestOperationManager manager].responseSerializer = [AFJSONResponseSerializer serializer];
+
     return YES;
 }
 

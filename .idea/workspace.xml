@@ -2,9 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff147f96-f86c-4a20-9471-c9d85c05eda2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.m" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.m" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.h" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMLoginViewController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.m" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMLoginViewController.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.h" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerViewController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerViewController.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMUserInfoViewController.h" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMUserInfoViewController.m" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.h" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.h" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMSongInfo.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.m" afterPath="$PROJECT_DIR$/DoubanFM/Player/DFMSongInfo.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMUserInfo.h" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMUserInfo.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMUserInfo.m" afterPath="$PROJECT_DIR$/DoubanFM/User/DFMUserInfo.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/View/ChannelsTableViewCell.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewCell.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/View/ChannelsTableViewCell.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewCell.m" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/View/ChannelsTableViewCell.xib" afterPath="$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewCell.xib" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/View/ChannelsTableViewController.xib" afterPath="$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/DoubanFM.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/AppDelegate.h" afterPath="$PROJECT_DIR$/DoubanFM/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/AppDelegate.m" afterPath="$PROJECT_DIR$/DoubanFM/AppDelegate.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" afterPath="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h" afterPath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" afterPath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,25 +48,43 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6_10.2_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DFMPlayerViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
+      <file leaf-file-name="DFMSidebarController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="185" column="32" lean-forward="true" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
-              <folding>
-                <element signature="e#142#175#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="235">
+              <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMChannelsController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
+      <file leaf-file-name="DFMNetworkManager.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
+            <state relative-caret-position="540">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFMNetworkManager.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFMPlayerController.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
-                <element signature="e#146#179#0" expanded="true" />
+                <element signature="e#138#169#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,77 +100,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMChannelInfoEntity.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.h">
+      <file leaf-file-name="ChannelsTableViewCell.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewCell.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMChannelsController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
+      <file leaf-file-name="DFMProtocolClass.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-              <folding>
-                <element signature="e#146#169#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DFMProtocolClass.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMSidebarController.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
+      <file leaf-file-name="DFMLoginViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMLoginViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMChannelDataCenter.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m">
+      <file leaf-file-name="DFMUserInfoViewController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
-              <folding>
-                <element signature="e#90#144#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMChannelDataCenter.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h">
+      <file leaf-file-name="DFMUserInfo.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfo.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#90#123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDelegate.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="826">
-              <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,7 +164,6 @@
       <find>channelTitleLabel.</find>
       <find>channelTitleLabel</find>
       <find>delegate</find>
-      <find>appDelegate</find>
       <find>networkManager</find>
       <find>identifier</find>
       <find>zzzz</find>
@@ -151,6 +171,8 @@
       <find>valuefor</find>
       <find>\/\/\n\/\/  ChannelsTableViewController\.h\n\/\/  ProjectFinal\n\/\/\n\/\/  Created by xvxvxxx on 12\/21\/14\.\n\/\/  Copyright \(c\) 2014 谢伟军\. All rights reserved\.\n\/\/\n\n\#import \&lt;UIKit\/UIKit\.h\&gt;\n\#import \&lt;AFNetworking\/AFNetworking\.h\&gt;\n\#import \&quot;ChannelsTableViewCell\.h\&quot;\n\#import \&quot;DFMChannelInfo\.h\&quot;\n\#import \&quot;AppDelegate\.h\&quot;\n\#import \&quot;DFMNetworkManager\.h\&quot;\n\#import \&quot;DFMPlayerController\.h\&quot;\n\#import \&quot;DFMProtocolClass\.h\&quot;\n\n\@interface DFMChannelsController \: UITableViewController \&lt;DoubanDelegate\&gt;\n\n\@property \(nonatomic\, weak\) id\&lt;DoubanDelegate\&gt; delegate\;\n\n\@end\n</find>
       <find>self.dele</find>
+      <find>appDelegate</find>
+      <find>songInfoDelegate</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../mgj/mgjdetail</dir>
@@ -163,7 +185,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMChannelInfo.h" />
-        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMUserInfo.h" />
         <option value="$PROJECT_DIR$/DoubanFM/View/DFMChannelsTableViewCell.m" />
         <option value="$PROJECT_DIR$/DoubanFM/View/ChannelsTableViewCell.m" />
@@ -177,8 +198,6 @@
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMUpChannelsEntity.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMDataService.m" />
@@ -192,16 +211,25 @@
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfo.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMDataCenter.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMDataCenter.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/AppDelegate.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/AppDelegate.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataCenter.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataCenter.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/AppDelegate.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" />
       </list>
     </option>
   </component>
@@ -231,6 +259,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,6 +346,46 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AFNetworking" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AFNetworking" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NSURLConnection" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="DoubanFM" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
@@ -349,7 +418,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="User" />
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,6 +437,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Supporting Files" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanFM" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DoubanFM" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,7 +528,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -555,35 +641,36 @@
       <workItem from="1500002968424" duration="409000" />
       <workItem from="1500003484770" duration="538000" />
       <workItem from="1500088968989" duration="7723000" />
-      <workItem from="1500299493053" duration="16720000" />
+      <workItem from="1500299493053" duration="23539000" />
+      <workItem from="1500396999169" duration="176000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37625000" />
+    <option name="totallyTimeSpent" value="44620000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4089109" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21917808" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41369864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4089109" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44653466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44653466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4128713" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -595,6 +682,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.m</url>
+          <line>94</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.m</url>
+          <line>20</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.m</url>
+          <line>50</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -603,229 +707,15 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMPlayerController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1780">
-          <caret line="89" column="16" lean-forward="false" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Assets.xcassets/albumBlock.imageset/albumBlock.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIImage+YYAdd.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="228" column="22" lean-forward="false" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/UIKit/UIImage+YYAdd.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7160">
-          <caret line="358" column="24" lean-forward="false" selection-start-line="358" selection-start-column="24" selection-end-line="358" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIView.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5280">
-          <caret line="264" column="54" lean-forward="false" selection-start-line="264" selection-start-column="54" selection-end-line="264" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMUserInfo.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMUserInfo.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMDataService.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMDataService.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForKVO.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/objc/message.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/BlocksKit/BlocksKit/Core/NSObject+BKBlockObservation.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="156" column="28" lean-forward="false" selection-start-line="156" selection-start-column="28" selection-end-line="156" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/BlocksKit/BlocksKit/Core/NSObject+BKBlockObservation.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSArray+YYAdd.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSArray+YYAdd.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CDSideBarController/CDSideBarController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Text/YYTextView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="2962" column="8" lean-forward="false" selection-start-line="2962" selection-start-column="8" selection-end-line="2962" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/MJRefresh/MJRefreshExample/MJRefreshExample/MJRefresh/MJRefreshHeader.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="303" column="0" lean-forward="false" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueObserving.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSObject+YYAddForKVO.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pods/KVOController/FBKVOController/FBKVOController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="52" column="101" lean-forward="false" selection-start-line="52" selection-start-column="101" selection-end-line="52" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="383" column="0" lean-forward="false" selection-start-line="383" selection-start-column="0" selection-end-line="383" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,7 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="275" column="30" lean-forward="false" selection-start-line="275" selection-start-column="30" selection-end-line="275" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,34 +758,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMHotChannelsEntity.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMHotChannelsEntity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMHotChannelsEntity.m" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMHotChannelsEntity.h" />
     <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUser.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -917,56 +779,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding>
-            <element signature="e#136#165#0" expanded="true" />
+            <element signature="e#146#169#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
+        <state relative-caret-position="531">
           <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player.m" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player.h" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/ViewController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="185" column="32" lean-forward="true" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Base/Foundation/NSArray+YYAdd.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2779">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/YYKit/YYKit/Model/NSObject+YYModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="1452" column="16" lean-forward="false" selection-start-line="1452" selection-start-column="16" selection-end-line="1452" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="88" column="16" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="136" column="28" lean-forward="false" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlayback.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
-            <element signature="e#142#175#0" expanded="true" />
+            <element signature="e#146#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#90#123#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        <state relative-caret-position="100">
+          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
           <folding>
             <element signature="e#90#144#0" expanded="true" />
           </folding>
@@ -981,10 +876,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        <state relative-caret-position="72">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding>
+            <element signature="e#138#171#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.m" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.h" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerDataService.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMSongInfo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMSongInfo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.m" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.h" />
+    <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -997,31 +968,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
-          <folding>
-            <element signature="e#146#179#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfo.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding>
-            <element signature="e#146#169#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMLoginViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/User/DFMUserInfoViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="235">
+          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/ChannelsTableViewCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Player/DFMPlayerController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="e#138#169#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

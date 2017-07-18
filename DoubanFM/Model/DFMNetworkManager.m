@@ -13,7 +13,6 @@
 
 #import "DFMPlayerController.h"
 
-#import "DFMRecChannelsEntity.h"
 #import "NSObject+YYModel.h"
 #import "DFMChannelDataCenter.h"
 
@@ -38,8 +37,6 @@ static NSMutableString *captchaID;
         _appDelegate = [[UIApplication sharedApplication] delegate];
 
         _manager = [AFHTTPRequestOperationManager manager];
-	    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-	    _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     return self;
 }
@@ -110,56 +107,6 @@ static NSMutableString *captchaID;
         [self.delegate logoutSuccess];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"LOGOUT_ERROR:%@",error);
-    }];
-}
-
-//获取播放列表信息
-//type
-//n : None. Used for get a song list only.
-//e : Ended a song normally.
-//u : Unlike a hearted song.
-//r : Like a song.
-//s : Skip a song.
-//b : Trash a song.
-//p : Use to get a song list when the song in playlist was all played.
-//sid : the song's id
--(void)loadPlayListWithType:(NSString *)type{
-
-	NSMutableString *mString = @"http://douban.fm/j/mine/playlist?from=mainsite".mutableCopy;
-	[mString appendFormat:@"&type=%@",type];
-	[mString appendFormat:@"&sid=%@",[DFMPlayerController sharedController].currentSong.sid];
-	[mString appendFormat:@"&pt=%f", [DFMPlayerController sharedController].currentPlaybackTime];
-	[mString appendFormat:@"&channel=%@",[DFMChannelDataCenter sharedCenter].currentChannel.id];
-
-    [_manager GET:mString parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
-
-	    DFMPlayListEntity *playList = [DFMPlayListEntity modelWithJSON:responseObject];
-	    //喜欢一首歌，要先把这首歌听完，然后才能去播放下个列表的音乐
-        if ([type isEqualToString:@"r"]) {
-	        [DFMPlayerController sharedController].currentSongIndex = -1;
-        }
-        else{
-            if ([playList.song count] != 0) {
-	            [DFMPlayerController sharedController].currentSongIndex = 0;
-	            [DFMPlayerController sharedController].currentSong = playList.song.firstObject;
-                [[DFMPlayerController sharedController] setContentURL:[NSURL URLWithString:[DFMPlayerController sharedController].currentSong.url]];
-                [[DFMPlayerController sharedController] play];
-            }
-            //如果是未登录用户第一次使用红心列表，会导致列表中无歌曲
-            else{
-                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"红心列表中没有歌曲，请您先登陆，或者添加红心歌曲" delegate:self cancelButtonTitle:@"GET" otherButtonTitles: nil];
-                [alertView show];
-                DFMChannelInfoEntity *myPrivateChannel = [[DFMChannelInfoEntity alloc]init];
-                myPrivateChannel.name = @"我的私人";
-                myPrivateChannel.id = @"0";
-	            [DFMChannelDataCenter sharedCenter].currentChannel = myPrivateChannel;
-            }
-        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        //FIXME: 或许信息失败有点bug，先这样把 = =
-        //        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"登陆失败啦" delegate:self cancelButtonTitle:@"哦,酱紫" otherButtonTitles: nil];
-//        [alertView show];
-//        NSLog(@"LOADPLAYLIST_ERROR:%@",error);
     }];
 }
 

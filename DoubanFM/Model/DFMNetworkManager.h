@@ -27,5 +27,4 @@
 
 -(void)loadCaptchaImage;
 
--(void)loadPlayListWithType:(NSString *)type;
 @end

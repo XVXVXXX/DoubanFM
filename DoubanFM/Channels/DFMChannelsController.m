@@ -146,7 +146,8 @@ static NSString *kReuseIdentifier = @"theReuseIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[DFMChannelDataCenter sharedCenter].currentChannel = [[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row];
-	[networkManager loadPlayListWithType:@"n"];
+
+	[[DFMPlayerController sharedController] requestPlayListWithType:DFMPlayerListRequestTypeNormal];
 
 	//切换Tab到播放器页面
 	AppDelegate *app = (AppDelegate *) [[UIApplication sharedApplication] delegate];

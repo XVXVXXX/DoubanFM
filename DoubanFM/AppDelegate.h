@@ -7,7 +7,6 @@
 //
 
 #import "DFMUserInfo.h"
-#import "DFMPlayListEntity.h"
 
 #import <MediaPlayer/MediaPlayer.h>
 

@@ -33,10 +33,10 @@
 }
 
 + (instancetype)sharedCenter {
-	static DFMChannelDataCenter *dataCenter = nil;
+	static __kindof DFMChannelDataCenter *dataCenter = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		dataCenter = [[DFMChannelDataCenter alloc] init];
+		dataCenter = [[self alloc] init];
 	});
 	return dataCenter;
 }
@@ -63,6 +63,14 @@
 			nil;
 	}
 }
+
+- (void)resetChannel {
+	DFMChannelInfoEntity *myPrivateChannel = [[DFMChannelInfoEntity alloc] init];
+	myPrivateChannel.name = @"我的私人";
+	myPrivateChannel.id = @"0";
+	self.currentChannel = myPrivateChannel;
+}
+
 
 - (void)fetchAllChannels {
 //	[self fetchLoginChannels];
@@ -96,12 +104,12 @@
 		DFMChannelInfoEntity *myPrivateChannel = [[DFMChannelInfoEntity alloc] init];
 		myPrivateChannel.name = @"我的私人";
 		myPrivateChannel.id = @"0";
-		DFMChannelInfoEntity *myRedheartChannel = [[DFMChannelInfoEntity alloc] init];
-		myRedheartChannel.name = @"我的红心";
-		myRedheartChannel.id = @"-3";
-		[DFMChannelDataCenter sharedCenter].myChannels = @[myPrivateChannel, myRedheartChannel];
+		DFMChannelInfoEntity *myRedHeartChannel = [[DFMChannelInfoEntity alloc] init];
+		myRedHeartChannel.name = @"我的红心";
+		myRedHeartChannel.id = @"-3";
+		[DFMChannelDataCenter sharedCenter].myChannels = @[myPrivateChannel, myRedHeartChannel];
 
-		[[DFMChannelDataCenter sharedCenter] updateChannels:@[myPrivateChannel, myRedheartChannel] type:DFMChannelTypeMy];
+		[[DFMChannelDataCenter sharedCenter] updateChannels:@[myPrivateChannel, myRedHeartChannel] type:DFMChannelTypeMy];
 	});
 }
 

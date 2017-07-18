@@ -65,12 +65,14 @@
 #pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+
+	//UI
     self.view.backgroundColor = kBGColor;
-	
-    [self p_addSubViews];
-    [self p_configConstrains];
-    [self p_loadPlaylist];
+	[self addSubViews];
+	[self configConstrains];
+
+	[self loadPlaylist];
+
 	[DFMPlayerController sharedController].songInfoDelegate = self;
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.02
                                              target:self
@@ -138,6 +140,7 @@
     else{
 	    [DFMPlayerController sharedController].currentSong.like = @"0";
         [self.likeButton setBackgroundImage:[UIImage imageNamed:@"heart1"] forState:UIControlStateNormal];
+	    [[DFMPlayerController sharedController] dislike];
     }
 }
 
@@ -153,8 +156,9 @@
 }
 
 #pragma mark - SongInfomation
--(void)p_loadPlaylist{
-	[[DFMNetworkManager sharedInstancd] loadPlayListWithType:@"n"];
+-(void)loadPlaylist{
+//	[[DFMNetworkManager sharedInstancd] loadPlayListWithType:@"n"];
+	[[DFMPlayerController sharedController] requestPlayListWithType:DFMPlayerListRequestTypeNormal];
 }
 
 -(void)initSongInformation{
@@ -221,7 +225,7 @@
     }
 }
 
-- (void)p_addSubViews
+- (void)addSubViews
 {
     NSArray *subView = @[self.channelTitleLabel,
                          self.albumCoverImage,
@@ -240,7 +244,7 @@
 }
 
 
-- (void)p_configConstrains
+- (void)configConstrains
 {
     UIView *superView = self.view;
     [self.channelTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

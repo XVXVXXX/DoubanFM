@@ -40,4 +40,9 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
 - (void)fetchChanelDataWithType:(DFMChannelType)type;
 
 - (void)updateChannels:(NSArray<DFMChannelInfoEntity *> *)array type:(DFMChannelType)type;
+
+/**
+ * 重置频道，目前会重置到私人频道
+ */
+- (void)resetChannel;
 @end
