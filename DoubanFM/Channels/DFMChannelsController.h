@@ -17,6 +17,4 @@
 
 @interface DFMChannelsController : UITableViewController <DoubanDelegate>
 
-@property(nonatomic, weak) id <DoubanDelegate> delegate;
-
 @end

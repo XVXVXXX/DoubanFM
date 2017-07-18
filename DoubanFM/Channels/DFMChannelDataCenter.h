@@ -11,13 +11,14 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
 	DFMChannelTypeRecommend = 1,
 	DFMChannelTypeUpTrending = 2,
 	DFMChannelTypeHot = 3,
-	DFMChannelTypeCount = 4, //用来标记Type的数量
+	DFMChannelTypeCount, //用来标记Type的数量
 };
 
 @interface DFMChannelDataCenter : NSObject
 
 @property(nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfoEntity *> *> *allChannelList;
 @property(nonatomic, strong, readonly) NSArray<NSString *> *channelTitleList;
+
 @property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *myChannels;
 @property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *recommendChannels;
 @property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *upTrendingChannels;
@@ -38,5 +39,5 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
  */
 - (void)fetchChanelDataWithType:(DFMChannelType)type;
 
-- (void)updateChannels:(NSArray<DFMChannelInfoEntity *> *)array type:(enum DFMChannelType)type;
+- (void)updateChannels:(NSArray<DFMChannelInfoEntity *> *)array type:(DFMChannelType)type;
 @end

@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff147f96-f86c-4a20-9471-c9d85c05eda2" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfo.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.h" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfo.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/DoubanFM.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/AppDelegate.m" afterPath="$PROJECT_DIR$/DoubanFM/AppDelegate.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" afterPath="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" afterPath="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" afterPath="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.h" afterPath="$PROJECT_DIR$/DoubanFM/Model/DFMRecChannelsEntity.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" afterPath="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,25 +19,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6_10.2_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DFMChannelsController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
+      <file leaf-file-name="DFMPlayerViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
+            <state relative-caret-position="310">
+              <caret line="185" column="32" lean-forward="true" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
               <folding>
-                <element signature="e#146#179#0" expanded="true" />
+                <element signature="e#142#175#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMPlayerViewController.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
+      <file leaf-file-name="DFMChannelsController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="179" column="124" lean-forward="false" selection-start-line="179" selection-start-column="124" selection-end-line="179" selection-end-column="124" />
+            <state relative-caret-position="306">
+              <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
               <folding>
-                <element signature="e#142#175#0" expanded="true" />
+                <element signature="e#146#179#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +66,30 @@
       <file leaf-file-name="DFMChannelsController.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="380">
+              <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding>
+                <element signature="e#146#169#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFMProtocolClass.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DFMSidebarController.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -85,8 +98,8 @@
       <file leaf-file-name="DFMChannelDataCenter.m" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding>
                 <element signature="e#90#144#0" expanded="true" />
               </folding>
@@ -94,35 +107,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFMLoginViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DFMChannelDataCenter.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+            <state relative-caret-position="276">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#90#123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DFMNetworkManager.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-              <folding>
-                <element signature="e#136#165#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,6 +150,7 @@
       <find>recommendChannels</find>
       <find>valuefor</find>
       <find>\/\/\n\/\/  ChannelsTableViewController\.h\n\/\/  ProjectFinal\n\/\/\n\/\/  Created by xvxvxxx on 12\/21\/14\.\n\/\/  Copyright \(c\) 2014 谢伟军\. All rights reserved\.\n\/\/\n\n\#import \&lt;UIKit\/UIKit\.h\&gt;\n\#import \&lt;AFNetworking\/AFNetworking\.h\&gt;\n\#import \&quot;ChannelsTableViewCell\.h\&quot;\n\#import \&quot;DFMChannelInfo\.h\&quot;\n\#import \&quot;AppDelegate\.h\&quot;\n\#import \&quot;DFMNetworkManager\.h\&quot;\n\#import \&quot;DFMPlayerController\.h\&quot;\n\#import \&quot;DFMProtocolClass\.h\&quot;\n\n\@interface DFMChannelsController \: UITableViewController \&lt;DoubanDelegate\&gt;\n\n\@property \(nonatomic\, weak\) id\&lt;DoubanDelegate\&gt; delegate\;\n\n\@end\n</find>
+      <find>self.dele</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../mgj/mgjdetail</dir>
@@ -181,7 +173,6 @@
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMHotChannelsEntity.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlaylist.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.h" />
-        <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMPlayListEntity.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMSongInfo.m" />
@@ -196,13 +187,11 @@
         <option value="$PROJECT_DIR$/DoubanFM/User/DFMUser.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMChannelsTableViewController.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMChannelsController.h" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfo.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMLoginViewController.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfo.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMDataCenter.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMDataCenter.m" />
-        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelInfoEntity.h" />
@@ -210,6 +199,9 @@
         <option value="$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m" />
         <option value="$PROJECT_DIR$/DoubanFM/AppDelegate.m" />
         <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h" />
+        <option value="$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m" />
       </list>
     </option>
   </component>
@@ -563,18 +555,19 @@
       <workItem from="1500002968424" duration="409000" />
       <workItem from="1500003484770" duration="538000" />
       <workItem from="1500088968989" duration="7723000" />
-      <workItem from="1500299493053" duration="16543000" />
+      <workItem from="1500299493053" duration="16720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37448000" />
+    <option name="totallyTimeSpent" value="37625000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4089109" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4089109" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -584,7 +577,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21917808" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41369864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44653466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44653466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -700,14 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMDataService.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -808,14 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="2962" column="8" lean-forward="false" selection-start-line="2962" selection-start-column="8" selection-end-line="2962" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -948,10 +925,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding>
+            <element signature="e#136#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="185" column="32" lean-forward="true" selection-start-line="185" selection-start-column="32" selection-end-line="185" selection-end-column="32" />
+          <folding>
+            <element signature="e#142#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="276">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#90#123#0" expanded="true" />
           </folding>
@@ -960,28 +965,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelDataCenter.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
           <folding>
             <element signature="e#90#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
-          <folding>
-            <element signature="e#146#179#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1002,31 +989,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMNetworkManager.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Model/DFMProtocolClass.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding>
-            <element signature="e#136#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="53" column="26" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+        <state relative-caret-position="180">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMPlayerViewController.m">
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="179" column="124" lean-forward="false" selection-start-line="179" selection-start-column="124" selection-end-line="179" selection-end-column="124" />
+        <state relative-caret-position="306">
+          <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
           <folding>
-            <element signature="e#142#175#0" expanded="true" />
+            <element signature="e#146#179#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Channels/DFMChannelsController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="4" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding>
+            <element signature="e#146#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubanFM/Controller/DFMSidebarController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

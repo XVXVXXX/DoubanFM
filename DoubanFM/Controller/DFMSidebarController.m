@@ -33,7 +33,6 @@
     _playerVC = [[DFMPlayerViewController alloc] init];
     
     _channelsVC = [[DFMChannelsController alloc]init];
-    _channelsVC.delegate = self;
 
 	UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     _userInfoVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"userInfoVC"];
