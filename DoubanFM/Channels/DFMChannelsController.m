@@ -9,7 +9,7 @@
 #import "DFMChannelsController.h"
 #import <MJRefresh/MJRefresh.h>
 #import "YYKit.h"
-#import "DFMDataCenter.h"
+#import "DFMChannelDataCenter.h"
 #import "KVOController.h"
 
 @interface DFMChannelsController () {
@@ -44,7 +44,7 @@
 - (void)setupKVO {
 	@weakify(self);
 
-	[self.KVOController observe:[DFMDataCenter sharedCenter]
+	[self.KVOController observe:[DFMChannelDataCenter sharedCenter]
 	                    keyPath:@"channelTitleList"
 	                    options:NSKeyValueObservingOptionNew
 	                      block:^(id observer, id object, NSDictionary<NSString *, id> *change) {
@@ -52,7 +52,7 @@
 		                      [self.tableView reloadData];
 	                      }];
 
-	[self.KVOController observe:[DFMDataCenter sharedCenter]
+	[self.KVOController observe:[DFMChannelDataCenter sharedCenter]
 	                    keyPath:@"myChannels"
 	                    options:NSKeyValueObservingOptionNew
 	                      block:^(id observer, id object, NSDictionary<NSString *, id> *change) {
@@ -62,7 +62,7 @@
 		                                   withRowAnimation:UITableViewRowAnimationFade];
 	                      }];
 
-	[self.KVOController observe:[DFMDataCenter sharedCenter]
+	[self.KVOController observe:[DFMChannelDataCenter sharedCenter]
 	                    keyPath:@"recommendChannels"
 	                    options:NSKeyValueObservingOptionNew
 	                      block:^(id observer, id object, NSDictionary<NSString *, id> *change) {
@@ -72,7 +72,7 @@
 		                                   withRowAnimation:UITableViewRowAnimationFade];
 	                      }];
 
-	[self.KVOController observe:[DFMDataCenter sharedCenter]
+	[self.KVOController observe:[DFMChannelDataCenter sharedCenter]
 	                    keyPath:@"upTrendingChannels"
 	                    options:NSKeyValueObservingOptionNew
 	                      block:^(id observer, id object, NSDictionary<NSString *, id> *change) {
@@ -82,7 +82,7 @@
 		                                   withRowAnimation:UITableViewRowAnimationFade];
 	                      }];
 
-	[self.KVOController observe:[DFMDataCenter sharedCenter]
+	[self.KVOController observe:[DFMChannelDataCenter sharedCenter]
 	                    keyPath:@"hotChannels"
 	                    options:NSKeyValueObservingOptionNew
 	                      block:^(id observer, id object, NSDictionary<NSString *, id> *change) {
@@ -116,27 +116,27 @@
  * 获取数据
  */
 - (void)fetchData {
-	[[DFMDataCenter sharedCenter] fetchAllChannels];
+	[[DFMChannelDataCenter sharedCenter] fetchAllChannels];
 }
 
 #pragma mark - <UITableViewDataSource>
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return [DFMDataCenter sharedCenter].allChannelList.count;
+	return [DFMChannelDataCenter sharedCenter].allChannelList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [[[DFMDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) section] count];
+	return [[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [[DFMDataCenter sharedCenter].channelTitleList objectOrNilAtIndex:(NSUInteger) section] ?: @"";
+	return [[DFMChannelDataCenter sharedCenter].channelTitleList objectOrNilAtIndex:(NSUInteger) section] ?: @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *reuseIdentifier = @"theReuseIdentifier";
 	ChannelsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-	NSString *title = [[[[DFMDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row] name];
+	NSString *title = [[[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row] name];
 	cell.textLabel.text = title;
 	return cell;
 }
@@ -144,7 +144,7 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[DFMChannelInfo updateCurrentCannel:[[[DFMDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row]];
+	[DFMChannelInfo updateCurrentCannel:[[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row]];
 	[networkManager loadPlayListWithType:@"n"];
 
 	AppDelegate *app = (AppDelegate *) [[UIApplication sharedApplication] delegate];

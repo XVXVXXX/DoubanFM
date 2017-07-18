@@ -4,11 +4,11 @@
 //
 
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
-#import "DFMDataCenter.h"
+#import "DFMChannelDataCenter.h"
 #import "NSObject+YYModel.h"
 #import "DFMUser.h"
 
-@interface DFMDataCenter ()
+@interface DFMChannelDataCenter ()
 @property(nonatomic, strong) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
 @property(nonatomic, strong) NSArray<NSString *> *channelTitleList;
 
@@ -18,7 +18,7 @@
 @property(nonatomic, strong) NSArray<DFMChannelInfo *> *hotChannels;
 @end
 
-@implementation DFMDataCenter
+@implementation DFMChannelDataCenter
 - (instancetype)init {
 	if (self = [super init]) {
 		_allChannelList = [NSMutableArray array];
@@ -32,10 +32,10 @@
 }
 
 + (instancetype)sharedCenter {
-	static DFMDataCenter *dataCenter = nil;
+	static DFMChannelDataCenter *dataCenter = nil;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		dataCenter = [[DFMDataCenter alloc] init];
+		dataCenter = [[DFMChannelDataCenter alloc] init];
 	});
 	return dataCenter;
 }
@@ -98,9 +98,9 @@
 		DFMChannelInfo *myRedheartChannel = [[DFMChannelInfo alloc] init];
 		myRedheartChannel.name = @"我的红心";
 		myRedheartChannel.id = @"-3";
-		[DFMDataCenter sharedCenter].myChannels = @[myPrivateChannel, myRedheartChannel];
+		[DFMChannelDataCenter sharedCenter].myChannels = @[myPrivateChannel, myRedheartChannel];
 
-		[[DFMDataCenter sharedCenter] updateChannels:@[myPrivateChannel, myRedheartChannel] type:DFMChannelTypeMy];
+		[[DFMChannelDataCenter sharedCenter] updateChannels:@[myPrivateChannel, myRedheartChannel] type:DFMChannelTypeMy];
 	});
 }
 
@@ -113,8 +113,8 @@
 	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     DFMChannelInfo *channel = [DFMChannelInfo modelWithJSON:[responseObject valueForKeyPath:@"data.res"]];
 		                                     if (channel) {
-			                                     [DFMDataCenter sharedCenter].recommendChannels = @[channel];
-			                                     [[DFMDataCenter sharedCenter] updateChannels:@[channel] type:DFMChannelTypeRecommend];
+			                                     [DFMChannelDataCenter sharedCenter].recommendChannels = @[channel];
+			                                     [[DFMChannelDataCenter sharedCenter] updateChannels:@[channel] type:DFMChannelTypeRecommend];
 		                                     }
 	                                     }
 	                                     failure:nil];
@@ -129,8 +129,8 @@
 	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.res.rec_chls"]];
 		                                     if (channels.count) {
-			                                     [DFMDataCenter sharedCenter].recommendChannels = channels;
-//			                                     [[DFMDataCenter sharedCenter] updateChannels:channels type:];
+			                                     [DFMChannelDataCenter sharedCenter].recommendChannels = channels;
+//			                                     [[DFMChannelDataCenter sharedCenter] updateChannels:channels type:];
 		                                     }
 	                                     }
 	                                     failure:nil];
@@ -145,8 +145,8 @@
 	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.channels"]];
 		                                     if (channels.count) {
-			                                     [DFMDataCenter sharedCenter].upTrendingChannels = channels;
-			                                     [[DFMDataCenter sharedCenter] updateChannels:channels type:DFMChannelTypeUpTrending];
+			                                     [DFMChannelDataCenter sharedCenter].upTrendingChannels = channels;
+			                                     [[DFMChannelDataCenter sharedCenter] updateChannels:channels type:DFMChannelTypeUpTrending];
 		                                     }
 	                                     }
 	                                     failure:nil];
@@ -161,8 +161,8 @@
 	                                     success:^(AFHTTPRequestOperation *_Nonnull operation, id _Nonnull responseObject) {
 		                                     NSArray *channels = [NSArray modelArrayWithClass:[DFMChannelInfo class] json:[responseObject valueForKeyPath:@"data.channels"]];
 		                                     if (channels.count) {
-			                                     [DFMDataCenter sharedCenter].hotChannels = channels;
-			                                     [[DFMDataCenter sharedCenter] updateChannels:channels type:DFMChannelTypeHot];
+			                                     [DFMChannelDataCenter sharedCenter].hotChannels = channels;
+			                                     [[DFMChannelDataCenter sharedCenter] updateChannels:channels type:DFMChannelTypeHot];
 		                                     }
 	                                     }
 	                                     failure:nil];

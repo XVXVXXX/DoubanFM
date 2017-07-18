@@ -10,7 +10,7 @@
 		994FA50E33D3D035213F4D0A /* libPods-DoubanFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF8D79B6A9E3C79B5860B7F /* libPods-DoubanFM.a */; };
 		9C1A1186505DC80FD36C98E5 /* DFMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16E74F98CB343D515EE1 /* DFMUser.m */; };
 		9C1A1787752DD2A5D95CB08C /* DFMChannelsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */; };
-		9C1A18030724B3893280596A /* DFMDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16851D5CE35F210BF0B3 /* DFMDataCenter.m */; };
+		9C1A18030724B3893280596A /* DFMChannelDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16851D5CE35F210BF0B3 /* DFMChannelDataCenter.m */; };
 		9C1A19148B87FEA00D2FEB66 /* DFMChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfo.m */; };
 		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
 		F9D0F65B1BBFCF7000284B67 /* DFMPlayListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */; };
@@ -56,9 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C1A16851D5CE35F210BF0B3 /* DFMDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMDataCenter.m; sourceTree = "<group>"; };
+		9C1A16851D5CE35F210BF0B3 /* DFMChannelDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelDataCenter.m; sourceTree = "<group>"; };
 		9C1A16E74F98CB343D515EE1 /* DFMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUser.m; sourceTree = "<group>"; };
-		9C1A1822EF53F00A3CFEFC9F /* DFMDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMDataCenter.h; sourceTree = "<group>"; };
+		9C1A1822EF53F00A3CFEFC9F /* DFMChannelDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelDataCenter.h; sourceTree = "<group>"; };
 		9C1A1982B48536104FE025F9 /* DFMChannelsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelsController.h; sourceTree = "<group>"; };
 		9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelInfo.m; sourceTree = "<group>"; };
 		9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelsController.m; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		9C1A1DC4C47F1A8607E36CA0 /* Channels */ = {
 			isa = PBXGroup;
 			children = (
-				9C1A16851D5CE35F210BF0B3 /* DFMDataCenter.m */,
-				9C1A1822EF53F00A3CFEFC9F /* DFMDataCenter.h */,
+				9C1A16851D5CE35F210BF0B3 /* DFMChannelDataCenter.m */,
+				9C1A1822EF53F00A3CFEFC9F /* DFMChannelDataCenter.h */,
 				9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */,
 				9C1A1982B48536104FE025F9 /* DFMChannelsController.h */,
 				9C1A1FAA268600E3FBD12B09 /* DFMChannelInfo.h */,
@@ -507,7 +507,7 @@
 				F9F85B511BB2A08F00D0C0DE /* main.m in Sources */,
 				F9DC54981BB2A3CF000400E1 /* DFMUserInfoViewController.m in Sources */,
 				F9DC549E1BB2A3D0000400E1 /* DFMSongInfo.m in Sources */,
-				9C1A18030724B3893280596A /* DFMDataCenter.m in Sources */,
+				9C1A18030724B3893280596A /* DFMChannelDataCenter.m in Sources */,
 				9C1A1186505DC80FD36C98E5 /* DFMUser.m in Sources */,
 				9C1A1787752DD2A5D95CB08C /* DFMChannelsController.m in Sources */,
 				9C1A19148B87FEA00D2FEB66 /* DFMChannelInfo.m in Sources */,

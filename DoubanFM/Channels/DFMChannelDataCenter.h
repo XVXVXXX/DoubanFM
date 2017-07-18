@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
 	DFMChannelTypeCount = 4, //用来标记Type的数量
 };
 
-@interface DFMDataCenter : NSObject
+@interface DFMChannelDataCenter : NSObject
 
 @property(nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
 @property(nonatomic, strong, readonly) NSArray<NSString *> *channelTitleList;

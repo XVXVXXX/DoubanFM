@@ -13,11 +13,8 @@
 
 #import "DFMPlayerController.h"
 
-#import "DFMHotChannelsEntity.h"
 #import "DFMRecChannelsEntity.h"
 #import "NSObject+YYModel.h"
-
-#import <UIKit/UIKit.h>
 
 #import <MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
