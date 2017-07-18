@@ -10,12 +10,6 @@
 #import "DFMChannelDataCenter.h"
 #import "NSObject+YYModel.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "BlocksKit+UIKit.h"
-#import "DFMUser.h"
-
-@interface DFMPlayerDataService ()
-@property (nonatomic, strong) NSArray<DFMSongInfo *> *songList;
-@end
 
 @implementation DFMPlayerDataService
 

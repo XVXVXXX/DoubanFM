@@ -17,7 +17,6 @@
 @interface DFMPlayerController : MPMoviePlayerController
 @property id<DoubanDelegate> songInfoDelegate;
 
-@property (nonatomic, strong, readonly) NSArray<DFMSongInfo *> *songList;
 @property (nonatomic, strong, readonly) DFMSongInfo *currentSong;
 
 + (instancetype)sharedController;
