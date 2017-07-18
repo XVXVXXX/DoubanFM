@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class DFMChannelInfo;
+@class DFMChannelInfoEntity;
 
 @interface DFMRecChannelsEntity : NSObject
 
-@property (nonatomic, strong) DFMChannelInfo *res;
+@property (nonatomic, strong) DFMChannelInfoEntity *res;
 
 @end

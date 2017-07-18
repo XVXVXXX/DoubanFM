@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AFNetworking/AFNetworking.h>
 #import "ChannelsTableViewCell.h"
-#import "DFMChannelInfo.h"
+#import "DFMChannelInfoEntity.h"
 #import "AppDelegate.h"
 #import "DFMNetworkManager.h"
 #import "DFMPlayerController.h"

@@ -11,7 +11,7 @@
 		9C1A1186505DC80FD36C98E5 /* DFMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16E74F98CB343D515EE1 /* DFMUser.m */; };
 		9C1A1787752DD2A5D95CB08C /* DFMChannelsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */; };
 		9C1A18030724B3893280596A /* DFMChannelDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16851D5CE35F210BF0B3 /* DFMChannelDataCenter.m */; };
-		9C1A19148B87FEA00D2FEB66 /* DFMChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfo.m */; };
+		9C1A19148B87FEA00D2FEB66 /* DFMChannelInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfoEntity.m */; };
 		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
 		F9D0F65B1BBFCF7000284B67 /* DFMPlayListEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F65A1BBFCF7000284B67 /* DFMPlayListEntity.m */; };
 		F9D0F6641BBFF5CC00284B67 /* DFMRecChannelsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D0F6631BBFF5CC00284B67 /* DFMRecChannelsEntity.m */; };
@@ -60,10 +60,10 @@
 		9C1A16E74F98CB343D515EE1 /* DFMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUser.m; sourceTree = "<group>"; };
 		9C1A1822EF53F00A3CFEFC9F /* DFMChannelDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelDataCenter.h; sourceTree = "<group>"; };
 		9C1A1982B48536104FE025F9 /* DFMChannelsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelsController.h; sourceTree = "<group>"; };
-		9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelInfo.m; sourceTree = "<group>"; };
+		9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelInfoEntity.m; sourceTree = "<group>"; };
 		9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMChannelsController.m; sourceTree = "<group>"; };
 		9C1A1D2B8EB6770CDAF1661D /* DFMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUser.h; sourceTree = "<group>"; };
-		9C1A1FAA268600E3FBD12B09 /* DFMChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelInfo.h; sourceTree = "<group>"; };
+		9C1A1FAA268600E3FBD12B09 /* DFMChannelInfoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMChannelInfoEntity.h; sourceTree = "<group>"; };
 		CAF8D79B6A9E3C79B5860B7F /* libPods-DoubanFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoubanFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B6E8E23717617DB503C190 /* Pods-DoubanFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.debug.xcconfig"; sourceTree = "<group>"; };
 		E75A2F48DB42A19E078B4FDB /* Pods-DoubanFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 				9C1A1822EF53F00A3CFEFC9F /* DFMChannelDataCenter.h */,
 				9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */,
 				9C1A1982B48536104FE025F9 /* DFMChannelsController.h */,
-				9C1A1FAA268600E3FBD12B09 /* DFMChannelInfo.h */,
-				9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfo.m */,
+				9C1A1FAA268600E3FBD12B09 /* DFMChannelInfoEntity.h */,
+				9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfoEntity.m */,
 			);
 			path = Channels;
 			sourceTree = "<group>";
@@ -510,7 +510,7 @@
 				9C1A18030724B3893280596A /* DFMChannelDataCenter.m in Sources */,
 				9C1A1186505DC80FD36C98E5 /* DFMUser.m in Sources */,
 				9C1A1787752DD2A5D95CB08C /* DFMChannelsController.m in Sources */,
-				9C1A19148B87FEA00D2FEB66 /* DFMChannelInfo.m in Sources */,
+				9C1A19148B87FEA00D2FEB66 /* DFMChannelInfoEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

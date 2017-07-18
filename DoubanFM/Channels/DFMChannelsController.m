@@ -20,6 +20,8 @@
 
 @implementation DFMChannelsController
 
+static NSString *kReuseIdentifier = @"theReuseIdentifier";
+
 #pragma mark - Life Cycle
 
 - (instancetype)init {
@@ -109,7 +111,7 @@
 	self.tableView.header.textColor = [UIColor grayColor];
 
 	UINib *cell = [UINib nibWithNibName:@"ChannelsTableViewCell" bundle:nil];
-	[self.tableView registerNib:cell forCellReuseIdentifier:@"theReuseIdentifier"];
+	[self.tableView registerNib:cell forCellReuseIdentifier:kReuseIdentifier];
 }
 
 /**
@@ -119,7 +121,7 @@
 	[[DFMChannelDataCenter sharedCenter] fetchAllChannels];
 }
 
-#pragma mark - <UITableViewDataSource>
+#pragma mark - <UITableViewDataSource> <UITableViewDelegate>
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return [DFMChannelDataCenter sharedCenter].allChannelList.count;
@@ -134,8 +136,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *reuseIdentifier = @"theReuseIdentifier";
-	ChannelsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+	ChannelsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kReuseIdentifier forIndexPath:indexPath];
 	NSString *title = [[[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row] name];
 	cell.textLabel.text = title;
 	return cell;
@@ -144,13 +145,12 @@
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[DFMChannelInfo updateCurrentCannel:[[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row]];
+	[DFMChannelDataCenter sharedCenter].currentChannel = [[[DFMChannelDataCenter sharedCenter].allChannelList objectOrNilAtIndex:(NSUInteger) indexPath.section] objectOrNilAtIndex:(NSUInteger) indexPath.row];
 	[networkManager loadPlayListWithType:@"n"];
 
+	//切换Tab到播放器页面
 	AppDelegate *app = (AppDelegate *) [[UIApplication sharedApplication] delegate];
 	((UITabBarController *) (app.window.rootViewController)).selectedIndex = 0;
-
-//	[self.delegate menuButtonClicked:0];
 }
 
 @end

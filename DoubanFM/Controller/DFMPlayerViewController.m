@@ -16,7 +16,7 @@
 
 #import "DFMPlayerViewController.h"
 #import "DFMPlayerController.h"
-#import "DFMChannelInfo.h"
+#import "DFMChannelInfoEntity.h"
 
 #import "DFMNetworkManager.h"
 #import "DFMChannelsController.h"
@@ -27,6 +27,7 @@
 #import "DFMProtocolClass.h"
 #import "YYKitMacro.h"
 #import "UIImage+YYAdd.h"
+#import "DFMChannelDataCenter.h"
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define RGB(r,g,b) RGBA(r,g,b,1)
@@ -176,7 +177,7 @@
 
     self.songArtistLabel.text = [DFMPlayerController sharedController].currentSong.artist;
     self.songTitleLabel.text = [DFMPlayerController sharedController].currentSong.title;
-    self.channelTitleLabel.text = [NSString stringWithFormat:@"♪%@♪",[DFMChannelInfo currentChannel].name];
+    self.channelTitleLabel.text = [NSString stringWithFormat:@"♪%@♪",[DFMChannelDataCenter sharedCenter].currentChannel.name];
     
     //初始化timeLabel的总时间
     int TotalTimeSeconds = [[DFMPlayerController sharedController].currentSong.length intValue]%60;

@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "DFMChannelInfo.h"
+#import "DFMChannelInfoEntity.h"
 #import "DFMSongInfo.h"
+#import "DFMChannelDataCenter.h"
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
@@ -44,11 +45,11 @@
     _userInfo = [unarchiver decodeObjectForKey:@"userInfo"];
     [unarchiver finishDecoding];
     
-    if ([DFMChannelInfo currentChannel].id == nil) {
-        DFMChannelInfo *currentChannel = [[DFMChannelInfo alloc]init];
+    if ([DFMChannelDataCenter sharedCenter].currentChannel.id == nil) {
+        DFMChannelInfoEntity *currentChannel = [[DFMChannelInfoEntity alloc]init];
         currentChannel.name = @"我的私人";
         currentChannel.id = @"0";
-        [DFMChannelInfo updateCurrentCannel:currentChannel];
+	    [DFMChannelDataCenter sharedCenter].currentChannel = currentChannel;
     }
     if (_userInfo == nil) {
         _userInfo = [[DFMUserInfo alloc]init];

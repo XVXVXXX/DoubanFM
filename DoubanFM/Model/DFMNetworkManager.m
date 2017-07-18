@@ -9,12 +9,13 @@
 #import "DFMNetworkManager.h"
 #import "AppDelegate.h"
 #import "DFMSongInfo.h"
-#import "DFMChannelInfo.h"
+#import "DFMChannelInfoEntity.h"
 
 #import "DFMPlayerController.h"
 
 #import "DFMRecChannelsEntity.h"
 #import "NSObject+YYModel.h"
+#import "DFMChannelDataCenter.h"
 
 #import <MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
@@ -128,7 +129,7 @@ static NSMutableString *captchaID;
 	[mString appendFormat:@"&type=%@",type];
 	[mString appendFormat:@"&sid=%@",[DFMPlayerController sharedController].currentSong.sid];
 	[mString appendFormat:@"&pt=%f", [DFMPlayerController sharedController].currentPlaybackTime];
-	[mString appendFormat:@"&channel=%@",[DFMChannelInfo currentChannel].id];
+	[mString appendFormat:@"&channel=%@",[DFMChannelDataCenter sharedCenter].currentChannel.id];
 
     [_manager GET:mString parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
 
@@ -148,10 +149,10 @@ static NSMutableString *captchaID;
             else{
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"HeyMan" message:@"红心列表中没有歌曲，请您先登陆，或者添加红心歌曲" delegate:self cancelButtonTitle:@"GET" otherButtonTitles: nil];
                 [alertView show];
-                DFMChannelInfo *myPrivateChannel = [[DFMChannelInfo alloc]init];
+                DFMChannelInfoEntity *myPrivateChannel = [[DFMChannelInfoEntity alloc]init];
                 myPrivateChannel.name = @"我的私人";
                 myPrivateChannel.id = @"0";
-                [DFMChannelInfo updateCurrentCannel:myPrivateChannel];
+	            [DFMChannelDataCenter sharedCenter].currentChannel = myPrivateChannel;
             }
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

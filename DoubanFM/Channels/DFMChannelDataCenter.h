@@ -4,7 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DFMChannelInfo.h"
+#import "DFMChannelInfoEntity.h"
 
 typedef NS_ENUM(NSUInteger, DFMChannelType) {
 	DFMChannelTypeMy = 0,
@@ -16,13 +16,14 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
 
 @interface DFMChannelDataCenter : NSObject
 
-@property(nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfo *> *> *allChannelList;
+@property(nonatomic, strong, readonly) NSMutableArray<NSArray<DFMChannelInfoEntity *> *> *allChannelList;
 @property(nonatomic, strong, readonly) NSArray<NSString *> *channelTitleList;
-@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *myChannels;
-@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *recommendChannels;
-@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *upTrendingChannels;
-@property(nonatomic, strong, readonly) NSArray<DFMChannelInfo *> *hotChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *myChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *recommendChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *upTrendingChannels;
+@property(nonatomic, strong, readonly) NSArray<DFMChannelInfoEntity *> *hotChannels;
 
+@property(nonatomic, strong) DFMChannelInfoEntity *currentChannel;
 
 + (instancetype)sharedCenter;
 
@@ -37,5 +38,5 @@ typedef NS_ENUM(NSUInteger, DFMChannelType) {
  */
 - (void)fetchChanelDataWithType:(DFMChannelType)type;
 
-- (void)updateChannels:(NSArray<DFMChannelInfo *> *)array type:(enum DFMChannelType)type;
+- (void)updateChannels:(NSArray<DFMChannelInfoEntity *> *)array type:(enum DFMChannelType)type;
 @end
