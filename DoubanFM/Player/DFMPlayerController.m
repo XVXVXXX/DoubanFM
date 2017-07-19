@@ -8,9 +8,9 @@
 
 #import "DFMPlayerController.h"
 #import "DFMSongInfo.h"
-#import "DFMPlayerDataService.h"
 #import "BlocksKit+UIKit.h"
 #import "NSArray+YYAdd.h"
+#import "DFMChannelDataCenter.h"
 
 @interface DFMPlayerController ()
 @property(nonatomic, strong) NSArray<DFMSongInfo *> *songList;
@@ -18,26 +18,21 @@
 @end
 
 @implementation DFMPlayerController
-- (instancetype)init {
-	if (self = [super init]) {
-		[[NSNotificationCenter defaultCenter] addObserver:self
-		                                         selector:@selector(start)
-		                                             name:MPMoviePlayerPlaybackDidFinishNotification
-		                                           object:nil];
-
-		[[NSNotificationCenter defaultCenter] addObserver:self
-		                                         selector:@selector(initSongInformation)
-		                                             name:MPMoviePlayerLoadStateDidChangeNotification
-		                                           object:nil];
-	}
-	return self;
-}
 
 + (instancetype)sharedController {
 	static DFMPlayerController *sharedInstance;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		sharedInstance = [[self alloc] init];
+		[[NSNotificationCenter defaultCenter] addObserver:sharedInstance
+		                                         selector:@selector(start)
+		                                             name:MPMoviePlayerPlaybackDidFinishNotification
+		                                           object:nil];
+
+		[[NSNotificationCenter defaultCenter] addObserver:sharedInstance
+		                                         selector:@selector(initSongInformation)
+		                                             name:MPMoviePlayerLoadStateDidChangeNotification
+		                                           object:nil];
 	});
 	return sharedInstance;
 }
@@ -48,10 +43,11 @@
 
 - (void)start {
 	NSInteger currentIndex = [self.songList indexOfObject:self.currentSong];
-	self.currentSong = [self.songList objectOrNilAtIndex:++currentIndex];
-	if (self.currentSong) {
-		[self setContentURL:[NSURL URLWithString:[[self currentSong] valueForKey:@"url"]]];
+	DFMSongInfo *nextSong = [self.songList objectOrNilAtIndex:++currentIndex];
+	if (nextSong) {
+		self.contentURL = [NSURL URLWithString:self.currentSong.url];
 		[self play];
+		self.currentSong = nextSong;
 	} else {
 		//播放完了整个列表
 		[self requestPlayListWithType:DFMPlayerListRequestTypeAllPlayer];
@@ -66,17 +62,7 @@
 }
 
 - (void)like {
-	[DFMPlayerDataService loadPlayListWithType:DFMPlayerListRequestTypeLike
-	                                   success:^(NSArray<DFMSongInfo *> *songList) {
-		                                   if (songList.count) {
-			                                   NSMutableArray *mList = [NSMutableArray arrayWithArray:songList];
-			                                   [mList insertObject:self.currentSong atIndex:0];
-			                                   self.songList = mList.copy;
-		                                   }
-	                                   }
-	                                   failure:^(NSError *error) {
-		                                   [UIAlertView bk_alertViewWithTitle:error.localizedDescription];
-	                                   }];
+	[self requestPlayListWithType:DFMPlayerListRequestTypeLike];
 }
 
 - (void)dislike {
@@ -92,33 +78,43 @@
 }
 
 - (void)requestPlayListWithType:(DFMPlayerListRequestType)type {
-	if (type == DFMPlayerListRequestTypeLike) {
-		NSLog(@"此处不接受Like操作 %s %d", __FILE__, __LINE__);
-		return;
-	}
+	BOOL shouldNotPlayNext = (type == DFMPlayerListRequestTypeLike || type == DFMPlayerListRequestTypeUnlike);
 
 	[DFMPlayerDataService loadPlayListWithType:type
 	                                   success:^(NSArray<DFMSongInfo *> *songList) {
-		                                   [self reloadPlayList:songList];
+		                                   [self reloadPlayList:songList shouldPlayNextSong:!shouldNotPlayNext];
 	                                   }
 	                                   failure:^(NSError *error) {
 		                                   [UIAlertView bk_alertViewWithTitle:error.localizedDescription];
 	                                   }];
 }
 
-- (void)reloadPlayList:(NSArray<DFMSongInfo *> *)songList {
+- (void)reloadPlayList:(NSArray<DFMSongInfo *> *)songList shouldPlayNextSong:(BOOL)shouldPlay{
 	if (songList.count <= 0) {
-		[UIAlertView bk_alertViewWithTitle:@"获取播放列表失败，请稍后重试"];
+		//红心频道
+		if ([[DFMChannelDataCenter sharedCenter].currentChannel.id isEqualToString:@"-3"]) {
+		    [UIAlertView bk_alertViewWithTitle:@"我的红心中还没有歌曲哦，赶快去加心吧"];
+			[[DFMChannelDataCenter sharedCenter] resetChannel];
+		}
+		else {
+			[UIAlertView bk_alertViewWithTitle:@"获取播放列表失败，请稍后重试"];
+		}
 		return;
 	}
 
-	self.songList = songList;
-
 	//其他都是直接去播放下一曲
-	DFMSongInfo *song = songList.firstObject;
-	[DFMPlayerController sharedController].currentSong = song;
-	[[DFMPlayerController sharedController] setContentURL:[NSURL URLWithString:song.url]];
-	[[DFMPlayerController sharedController] play];
+	if (shouldPlay) {
+		self.songList = songList;
+		DFMSongInfo *song = songList.firstObject;
+		self.contentURL = [NSURL URLWithString:song.url];
+		[self play];
+		self.currentSong = song;
+	}
+	else {
+		NSMutableArray *mList = [NSMutableArray arrayWithArray:songList];
+		[mList insertObject:self.currentSong atIndex:0];
+		self.songList = mList.copy;
+	}
 }
 
 @end

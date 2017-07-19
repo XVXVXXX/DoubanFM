@@ -56,7 +56,7 @@
     NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];
     //添加储存的文件名
     if ([data writeToFile:appdelegatePath atomically:YES]) {
-        NSLog(@"UesrInfo存储成功");
+        NSLog(@"UserInfo存储成功");
     }
 }
 @end

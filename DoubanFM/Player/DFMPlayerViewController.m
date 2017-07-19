@@ -11,23 +11,17 @@
 #import <UIImageView+WebCache.h>
 #import <Masonry/Masonry.h>
 
-#import <AFNetworking/AFNetworking.h>
 #import <MediaPlayer/MediaPlayer.h>
 
 #import "DFMPlayerViewController.h"
 #import "DFMPlayerController.h"
 #import "DFMChannelInfoEntity.h"
 
-#import "DFMNetworkManager.h"
-#import "DFMChannelsController.h"
-#import "DFMLoginViewController.h"
-#import "AppDelegate.h"
 #import "DFMSongInfo.h"
-#import "DFMPlayerController.h"
-#import "DFMProtocolClass.h"
 #import "YYKitMacro.h"
 #import "UIImage+YYAdd.h"
 #import "DFMChannelDataCenter.h"
+#import "BlocksKit.h"
 
 #define RGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define RGB(r,g,b) RGBA(r,g,b,1)
@@ -74,11 +68,28 @@
 	[self loadPlaylist];
 
 	[DFMPlayerController sharedController].songInfoDelegate = self;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:0.02
-                                             target:self
-                                           selector:@selector(updateProgress)
-                                           userInfo:nil
-                                            repeats:YES];
+
+	@weakify(self);
+	_timer = [NSTimer bk_scheduledTimerWithTimeInterval:0.01
+	                                              block:^(NSTimer *timer) {
+		                                              @strongify(self);
+		                                              NSInteger currentTimeMinutes = (NSInteger)[DFMPlayerController sharedController].currentPlaybackTime/60;
+		                                              NSInteger currentTimeSeconds = (NSInteger)[DFMPlayerController sharedController].currentPlaybackTime%60;
+		                                              NSString *currentTimeString;
+		                                              //专辑图片旋转
+		                                              self.albumCoverImage.transform = CGAffineTransformRotate(self.albumCoverImage.transform, (CGFloat)(M_PI / 1440));
+		                                              if (currentTimeSeconds < 10) {
+			                                              currentTimeString = [NSString stringWithFormat:@"%d:0%d",currentTimeMinutes,currentTimeSeconds];
+		                                              }
+		                                              else{
+			                                              currentTimeString = [NSString stringWithFormat:@"%d:%d",currentTimeMinutes,currentTimeSeconds];
+		                                              }
+
+		                                              NSString *timeLabelString = [NSString stringWithFormat:@"%@/%@",currentTimeString,_totalTimeString];
+		                                              self.timeLabel.text = timeLabelString;
+		                                              self.timerProgressBar.progress = (float) [DFMPlayerController sharedController].currentPlaybackTime/[[DFMPlayerController sharedController].currentSong.length intValue];
+	                                              }
+	                                            repeats:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -124,7 +135,7 @@
 - (void)skipButtonDidTapped:(UIButton *)sender{
     [_timer setFireDate:[NSDate distantFuture]];
 	[[DFMPlayerController sharedController] pause];
-    if(_isPlaying == NO){
+    if(!_isPlaying){
         self.albumCoverImage.alpha = 1.0f;
         self.albumCoverMaskImage.image = [UIImage imageNamed:@"albumBlock"];
     }
@@ -157,7 +168,6 @@
 
 #pragma mark - SongInfomation
 -(void)loadPlaylist{
-//	[[DFMNetworkManager sharedInstancd] loadPlayListWithType:@"n"];
 	[[DFMPlayerController sharedController] requestPlayListWithType:DFMPlayerListRequestTypeNormal];
 }
 
@@ -209,17 +219,14 @@
     if (NSClassFromString(@"MPNowPlayingInfoCenter")) {
         if ([DFMPlayerController sharedController].currentSong.title != nil) {
             NSMutableDictionary * dict = [[NSMutableDictionary alloc] init];
-            [dict setObject:[DFMPlayerController sharedController].currentSong.title
-                     forKey:MPMediaItemPropertyTitle];
-            [dict setObject:[DFMPlayerController sharedController].currentSong.artist
-                     forKey:MPMediaItemPropertyArtist];
+
+	        dict[MPMediaItemPropertyTitle] = [DFMPlayerController sharedController].currentSong.title;
+	        dict[MPMediaItemPropertyArtist] = [DFMPlayerController sharedController].currentSong.artist;
             UIImage *tempImage = _albumCoverImage.image;
             if (tempImage != nil) {
-                [dict setObject:[[MPMediaItemArtwork alloc]initWithImage:tempImage] forKey:MPMediaItemPropertyArtwork];
+	            dict[MPMediaItemPropertyArtwork] = [[MPMediaItemArtwork alloc] initWithImage: tempImage];
             }
-            [dict
-             setObject:[NSNumber numberWithFloat:[[DFMPlayerController sharedController].currentSong.length floatValue]]
-             forKey:MPMediaItemPropertyPlaybackDuration];
+	        dict[MPMediaItemPropertyPlaybackDuration] = @([[DFMPlayerController sharedController].currentSong.length floatValue]);
             [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];
         }
     }
@@ -473,24 +480,6 @@
                 break;
         }
     }
-}
-
--(void)updateProgress{
-    int currentTimeMinutes = (unsigned) [DFMPlayerController sharedController].currentPlaybackTime/60;
-    int currentTimeSeconds = (unsigned) [DFMPlayerController sharedController].currentPlaybackTime%60;
-    NSMutableString *currentTimeString;
-    //专辑图片旋转
-    self.albumCoverImage.transform = CGAffineTransformRotate(self.albumCoverImage.transform, (CGFloat)(M_PI / 1440));
-    if (currentTimeSeconds < 10) {
-        currentTimeString = [NSMutableString stringWithFormat:@"%d:0%d",currentTimeMinutes,currentTimeSeconds];
-    }
-    else{
-        currentTimeString = [NSMutableString stringWithFormat:@"%d:%d",currentTimeMinutes,currentTimeSeconds];
-    }
-    
-    NSMutableString *timeLabelString = [NSMutableString stringWithFormat:@"%@/%@",currentTimeString,_totalTimeString];
-    self.timeLabel.text = timeLabelString;
-    self.timerProgressBar.progress = (float) [DFMPlayerController sharedController].currentPlaybackTime/[[DFMPlayerController sharedController].currentSong.length intValue];
 }
 @end
 

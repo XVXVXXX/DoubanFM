@@ -11,23 +11,23 @@
 		9C1A1057C03F8A7FCAB2362C /* DFMPlayerDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1AF96553F122A8309393 /* DFMPlayerDataService.m */; };
 		9C1A10E8ABB83E0A352DF66E /* DFMSongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A174AD1B216E5E4F4300B /* DFMSongInfo.m */; };
 		9C1A1186505DC80FD36C98E5 /* DFMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16E74F98CB343D515EE1 /* DFMUser.m */; };
+		9C1A12834A420F149B49F50C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A1BF6D1D9466548E21C33 /* LaunchScreen.xib */; };
 		9C1A12D55B576E3834C95E54 /* DFMUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1CB3E13DAD2EA0C7BAA6 /* DFMUserInfoViewController.m */; };
 		9C1A1676A90F37F4AA716804 /* ChannelsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A1A9DF81B7B21D62E85B9 /* ChannelsTableViewCell.xib */; };
 		9C1A17180353C8814A76AF63 /* DFMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A15B3D07801B83C0CDC89 /* DFMUserInfo.m */; };
 		9C1A1787752DD2A5D95CB08C /* DFMChannelsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1A6597651EDA07DC16CC /* DFMChannelsController.m */; };
 		9C1A18030724B3893280596A /* DFMChannelDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A16851D5CE35F210BF0B3 /* DFMChannelDataCenter.m */; };
+		9C1A185A6B5CF76839A87D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A109124E483E3E4DE8C9C /* Main.storyboard */; };
 		9C1A18B7BA69F838ACBBECA6 /* ChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1823BFA6210E00CEE30A /* ChannelsTableViewCell.m */; };
 		9C1A19148B87FEA00D2FEB66 /* DFMChannelInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A19EA7E0D3DE1C0742996 /* DFMChannelInfoEntity.m */; };
 		9C1A1969B98B2685641D9310 /* DFMPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1F461DF999FAB2508BE0 /* DFMPlayerController.m */; };
 		9C1A1CA2E69523417484B4AA /* DFMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A1AF151BCEA9195F0F797 /* DFMPlayerViewController.m */; };
 		9C1A1E663E64DCEE87A29BAE /* DFMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1A10A006E69BE40D3B666B /* DFMLoginViewController.m */; };
 		9C1A1EF4E5AE5371AB710A4E /* ChannelsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1A1D7FA630C2FB034454C2 /* ChannelsTableViewController.xib */; };
-		F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */; };
 		F9DC54761BB2A3A9000400E1 /* CDSideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */; };
 		F9DC54971BB2A3CF000400E1 /* DFMSidebarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC547F1BB2A3CF000400E1 /* DFMSidebarController.m */; };
 		F9DC549B1BB2A3D0000400E1 /* DFMNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC54881BB2A3CF000400E1 /* DFMNetworkManager.m */; };
 		F9DC549D1BB2A3D0000400E1 /* DFMProtocolClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DC548C1BB2A3CF000400E1 /* DFMProtocolClass.m */; };
-		F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DC54A21BB2A416000400E1 /* Main.storyboard */; };
 		F9F85B511BB2A08F00D0C0DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B501BB2A08F00D0C0DE /* main.m */; };
 		F9F85B541BB2A08F00D0C0DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F85B531BB2A08F00D0C0DE /* AppDelegate.m */; };
 		F9F85B5C1BB2A08F00D0C0DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F85B5B1BB2A08F00D0C0DE /* Assets.xcassets */; };
@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C1A109124E483E3E4DE8C9C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9C1A10A006E69BE40D3B666B /* DFMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMLoginViewController.m; sourceTree = "<group>"; };
 		9C1A1100633F1A3FC69C6536 /* DFMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMPlayerViewController.h; sourceTree = "<group>"; };
 		9C1A130DFB756760C43CB289 /* DFMSongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMSongInfo.h; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		9C1A1A9DF81B7B21D62E85B9 /* ChannelsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsTableViewCell.xib; sourceTree = "<group>"; };
 		9C1A1AF151BCEA9195F0F797 /* DFMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayerViewController.m; sourceTree = "<group>"; };
 		9C1A1AF96553F122A8309393 /* DFMPlayerDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMPlayerDataService.m; sourceTree = "<group>"; };
+		9C1A1BF6D1D9466548E21C33 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		9C1A1CB3E13DAD2EA0C7BAA6 /* DFMUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMUserInfoViewController.m; sourceTree = "<group>"; };
 		9C1A1D2B8EB6770CDAF1661D /* DFMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMUser.h; sourceTree = "<group>"; };
 		9C1A1D7FA630C2FB034454C2 /* ChannelsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelsTableViewController.xib; sourceTree = "<group>"; };
@@ -83,7 +85,6 @@
 		CAF8D79B6A9E3C79B5860B7F /* libPods-DoubanFM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DoubanFM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B6E8E23717617DB503C190 /* Pods-DoubanFM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.debug.xcconfig"; sourceTree = "<group>"; };
 		E75A2F48DB42A19E078B4FDB /* Pods-DoubanFM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubanFM.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoubanFM/Pods-DoubanFM.release.xcconfig"; sourceTree = "<group>"; };
-		F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F9DC54741BB2A3A9000400E1 /* CDSideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDSideBarController.h; sourceTree = "<group>"; };
 		F9DC54751BB2A3A9000400E1 /* CDSideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDSideBarController.m; sourceTree = "<group>"; };
 		F9DC547E1BB2A3CF000400E1 /* DFMSidebarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMSidebarController.h; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		F9DC54881BB2A3CF000400E1 /* DFMNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DFMNetworkManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F9DC548B1BB2A3CF000400E1 /* DFMProtocolClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFMProtocolClass.h; sourceTree = "<group>"; };
 		F9DC548C1BB2A3CF000400E1 /* DFMProtocolClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFMProtocolClass.m; sourceTree = "<group>"; };
-		F9DC54A21BB2A416000400E1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F9F85B4C1BB2A08F00D0C0DE /* DoubanFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubanFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F85B501BB2A08F00D0C0DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9F85B521BB2A08F00D0C0DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,15 +227,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F9DC54911BB2A3CF000400E1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F9DC54A21BB2A416000400E1 /* Main.storyboard */,
-				F987A2CA1CC1E0C200D9D21E /* LaunchScreen.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		F9F85B431BB2A08F00D0C0DE = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +255,6 @@
 			children = (
 				F9DC54771BB2A3CF000400E1 /* Controller */,
 				F9DC54821BB2A3CF000400E1 /* Model */,
-				F9DC54911BB2A3CF000400E1 /* View */,
 				F9F85B521BB2A08F00D0C0DE /* AppDelegate.h */,
 				F9F85B531BB2A08F00D0C0DE /* AppDelegate.m */,
 				F9F85B5B1BB2A08F00D0C0DE /* Assets.xcassets */,
@@ -274,6 +264,8 @@
 				9C1A1DC4C47F1A8607E36CA0 /* Channels */,
 				9C1A1EFAEF237C8E58D72D1D /* User */,
 				9C1A1E0568767B4ADE79A6F4 /* Player */,
+				9C1A1BF6D1D9466548E21C33 /* LaunchScreen.xib */,
+				9C1A109124E483E3E4DE8C9C /* Main.storyboard */,
 			);
 			path = DoubanFM;
 			sourceTree = "<group>";
@@ -412,11 +404,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F85B5F1BB2A08F00D0C0DE /* LaunchScreen.storyboard in Resources */,
-				F9DC54A31BB2A416000400E1 /* Main.storyboard in Resources */,
 				F9F85B5C1BB2A08F00D0C0DE /* Assets.xcassets in Resources */,
-				F987A2CB1CC1E0C200D9D21E /* LaunchScreen.xib in Resources */,
 				9C1A1676A90F37F4AA716804 /* ChannelsTableViewCell.xib in Resources */,
 				9C1A1EF4E5AE5371AB710A4E /* ChannelsTableViewController.xib in Resources */,
+				9C1A12834A420F149B49F50C /* LaunchScreen.xib in Resources */,
+				9C1A185A6B5CF76839A87D73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
