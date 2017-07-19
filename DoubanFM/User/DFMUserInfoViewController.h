@@ -10,10 +10,17 @@
 #import <AFNetworking/AFNetworking.h>
 #import "UIKit+AFNetworking.h"
 #import "DFMLoginViewController.h"
-#import "DFMNetworkManager.h"
+#import "DFMUserManager.h"
 #import "AppDelegate.h"
-#import "DFMProtocolClass.h"
-@interface DFMUserInfoViewController : UIViewController <DoubanDelegate,UIAlertViewDelegate>
+
+@protocol DFMUserInfoViewControllerProtocol <NSObject>
+/**
+ *  初始化用户信息delegate
+ */
+-(void)setUserInfo;
+@end
+
+@interface DFMUserInfoViewController : UIViewController <UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *loginImage;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *playedLabel;

@@ -1,14 +1,14 @@
 //
-//  DFMUserInfo.m
+//  DFMUserInfoEntity.m
 //  ProjectFinal
 //
 //  Created by xvxvxxx on 12/29/14.
 //  Copyright (c) 2014 谢伟军. All rights reserved.
 //
 
-#import "DFMUserInfo.h"
+#import "DFMUserInfoEntity.h"
 
-@implementation DFMUserInfo
+@implementation DFMUserInfoEntity
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
     if (self = [super init]) {
         self.isNotLogin = [dictionary valueForKey:@"r"];

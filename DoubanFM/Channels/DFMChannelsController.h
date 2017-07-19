@@ -11,10 +11,9 @@
 #import "ChannelsTableViewCell.h"
 #import "DFMChannelInfoEntity.h"
 #import "AppDelegate.h"
-#import "DFMNetworkManager.h"
+#import "DFMUserManager.h"
 #import "DFMPlayerController.h"
-#import "DFMProtocolClass.h"
 
-@interface DFMChannelsController : UITableViewController <DoubanDelegate>
+@interface DFMChannelsController : UITableViewController
 
 @end

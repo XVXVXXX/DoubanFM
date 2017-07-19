@@ -4,9 +4,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DFMUserInfo.h"
+#import "DFMUserInfoEntity.h"
 
 @interface DFMUser : NSObject
+@property (nonatomic, strong, readonly) DFMUserInfoEntity *userInfo;
+
 + (instancetype)currentUser;
-@property (nonatomic, strong, readonly) DFMUserInfo *userInfo;
+- (void)loadArchiverData;
 @end

@@ -12,9 +12,7 @@
 #import "DFMChannelDataCenter.h"
 #import "KVOController.h"
 
-@interface DFMChannelsController () {
-	DFMNetworkManager *networkManager;
-}
+@interface DFMChannelsController ()
 
 @end
 
@@ -35,10 +33,6 @@ static NSString *kReuseIdentifier = @"theReuseIdentifier";
 
 	[self setupTableView];
 	[self setupKVO];
-
-	//初始化工具类
-	networkManager = [[DFMNetworkManager alloc] init];
-	networkManager.delegate = self;
 
 	[self.tableView.header beginRefreshing];
 }

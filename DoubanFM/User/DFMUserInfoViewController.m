@@ -8,10 +8,12 @@
 
 #import "DFMUserInfoViewController.h"
 #import "CDSideBarController.h"
+#import "BlocksKit+UIKit.h"
+#import "DFMUser.h"
+
 @interface DFMUserInfoViewController (){
-    DFMNetworkManager *networkManager;
+    DFMUserManager *networkManager;
     UIStoryboard *mainStoryboard;
-    AppDelegate *appDelegate;
 }
 
 @end
@@ -21,20 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    appDelegate = [[UIApplication sharedApplication]delegate];
     //给登陆图片添加手势
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loginImageTapped)];
     [singleTap setNumberOfTapsRequired:1];
     self.loginImage.userInteractionEnabled = YES;
     [self.loginImage addGestureRecognizer:singleTap];
     
-    networkManager = [[DFMNetworkManager alloc]init];
-    networkManager.delegate = (id)self;
-    
+    networkManager = [DFMUserManager sharedInstance];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+	UIAlertView *alertView1 = [UIAlertView bk_alertViewWithTitle:@"我抱歉的通知您，本应用在使用的登录接口已经被干掉了，目前无法登录"];
+	[alertView1 show];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[alertView1 dismissWithClickedButtonIndex:-1 animated:YES];
+	});
     [self setUserInfo];
 }
 
@@ -77,14 +82,15 @@
 }
 
 -(void)setUserInfo{
-    if (appDelegate.userInfo.cookies) {
-        [_loginImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img3.douban.com/icon/ul%@-1.jpg",appDelegate.userInfo.userID]]];
+	DFMUserInfoEntity *userInfo = [DFMUser currentUser].userInfo;
+    if (userInfo.cookies) {
+        [_loginImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://img3.douban.com/icon/ul%@-1.jpg",userInfo.userID]]];
         _loginImage.userInteractionEnabled = NO;
 
-        _usernameLabel.text = appDelegate.userInfo.name;
-        _playedLabel.text = appDelegate.userInfo.played;
-        _likedLabel.text = appDelegate.userInfo.liked;
-        _bannedLabel.text = appDelegate.userInfo.banned;
+        _usernameLabel.text = userInfo.name;
+        _playedLabel.text = userInfo.played;
+        _likedLabel.text = userInfo.liked;
+        _bannedLabel.text = userInfo.banned;
         _logoutButton.hidden = NO;
     }
     else{

@@ -1,5 +1,5 @@
 //
-//  DFMUserInfo.h
+//  DFMUserInfoEntity.h
 //  ProjectFinal
 //
 //  Created by xvxvxxx on 12/29/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DFMUserInfo : NSObject <NSCoding>
+@interface DFMUserInfoEntity : NSObject <NSCoding>
 @property (nonatomic, copy) NSString *isNotLogin;
 
 @property (nonatomic, copy) NSString *cookies;

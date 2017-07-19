@@ -10,16 +10,26 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
-#import "DFMNetworkManager.h"
-#import "DFMProtocolClass.h"
+#import "DFMUserManager.h"
 #import "DFMPlayerDataService.h"
+
+@protocol DFMPlayerControllerDelegate <NSObject>
+/**
+ *  初始化歌曲delegate
+ */
+-(void)initSongInformation;
+@end
 
 @interface DFMPlayerController : MPMoviePlayerController
 
-@property id<DoubanDelegate> songInfoDelegate;
+@property id<DFMPlayerControllerDelegate> songInfoDelegate;
+
 @property (nonatomic, strong, readonly) DFMSongInfo *currentSong;
 
 + (instancetype)sharedController;
+
+- (void)setupAVSessions;
+
 - (void)requestPlayListWithType:(DFMPlayerListRequestType)type;
 
 /**

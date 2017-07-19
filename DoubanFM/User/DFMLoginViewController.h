@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AFNetworking/AFNetworking.h>
-#import "DFMNetworkManager.h"
+#import "DFMUserManager.h"
 #import "AppDelegate.h"
-#import "DFMProtocolClass.h"
 
-@interface DFMLoginViewController : UIViewController <DoubanDelegate>
+@protocol DFMUserInfoViewControllerProtocol;
 
-@property (weak, nonatomic)id<DoubanDelegate>delegate;
+@interface DFMLoginViewController : UIViewController
+
+@property (weak, nonatomic)id<DFMUserInfoViewControllerProtocol>delegate;
 
 @end

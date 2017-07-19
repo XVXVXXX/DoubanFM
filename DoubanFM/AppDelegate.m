@@ -13,52 +13,28 @@
 #import "AFURLRequestSerialization.h"
 #import "AFURLResponseSerialization.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "DFMUser.h"
+#import "DFMPlayerController.h"
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface AppDelegate ()
-@end
-
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[self loadArchiver];
-	//[application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-	//后台播放
-	AVAudioSession *session = [AVAudioSession sharedInstance];
-	[session setCategory:AVAudioSessionCategoryPlayback error:nil];
-	[session setActive:YES error:nil];
+
+	[[DFMPlayerController sharedController] setupAVSessions];
+	[[DFMUser currentUser] loadArchiverData];
 
 	//初始一下network manager
-	[AFHTTPRequestOperationManager manager].requestSerializer = [AFJSONRequestSerializer serializer];
-	[AFHTTPRequestOperationManager manager].responseSerializer = [AFJSONResponseSerializer serializer];
+	[self setupNetWorkManager];
 
-    return YES;
+	return YES;
 }
 
-
-
-
-- (void)loadArchiver{
-    NSString *homePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *appdelegatePath = [homePath stringByAppendingPathComponent:@"appdelegate.archiver"];
-    //添加储存的文件名
-    NSData *data = [[NSData alloc]initWithContentsOfFile:appdelegatePath];
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc]initForReadingWithData:data];
-    _userInfo = [unarchiver decodeObjectForKey:@"userInfo"];
-    [unarchiver finishDecoding];
-    
-    if ([DFMChannelDataCenter sharedCenter].currentChannel.id == nil) {
-        DFMChannelInfoEntity *currentChannel = [[DFMChannelInfoEntity alloc]init];
-        currentChannel.name = @"我的私人";
-        currentChannel.id = @"0";
-	    [DFMChannelDataCenter sharedCenter].currentChannel = currentChannel;
-    }
-    if (_userInfo == nil) {
-        _userInfo = [[DFMUserInfo alloc]init];
-    }
+- (void)setupNetWorkManager {
+	[AFHTTPRequestOperationManager manager].requestSerializer = [AFJSONRequestSerializer serializer];
+	[AFHTTPRequestOperationManager manager].responseSerializer = [AFJSONResponseSerializer serializer];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -82,7 +58,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self.userInfo archiverUserInfo];
 }
 
 

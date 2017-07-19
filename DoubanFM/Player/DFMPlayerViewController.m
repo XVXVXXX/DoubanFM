@@ -30,7 +30,7 @@
 
 #define kBGColor RGB(239, 239, 244)
 
-@interface DFMPlayerViewController ()<DoubanDelegate>
+@interface DFMPlayerViewController ()<DFMPlayerControllerDelegate>
 
 @property (assign, nonatomic) BOOL isPlaying;
 @property (strong, nonatomic) NSTimer *timer;
@@ -60,6 +60,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+	[DFMPlayerController sharedController].songInfoDelegate = self;
 	//UI
     self.view.backgroundColor = kBGColor;
 	[self addSubViews];

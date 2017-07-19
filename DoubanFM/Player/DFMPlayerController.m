@@ -38,6 +38,7 @@
 }
 
 - (void)initSongInformation {
+
 	[self.songInfoDelegate initSongInformation];
 }
 
@@ -93,11 +94,20 @@
 	if (songList.count <= 0) {
 		//红心频道
 		if ([[DFMChannelDataCenter sharedCenter].currentChannel.id isEqualToString:@"-3"]) {
-		    [UIAlertView bk_alertViewWithTitle:@"我的红心中还没有歌曲哦，赶快去加心吧"];
+			UIAlertView *alertView1 = [UIAlertView bk_alertViewWithTitle:@"我的红心中还没有歌曲哦，赶快去加心吧"];
+			[alertView1 show];
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				[alertView1 dismissWithClickedButtonIndex:-1 animated:YES];
+			});
+
 			[[DFMChannelDataCenter sharedCenter] resetChannel];
 		}
 		else {
-			[UIAlertView bk_alertViewWithTitle:@"获取播放列表失败，请稍后重试"];
+			[[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:[UIAlertController alertControllerWithTitle:@"获取播放列表失败，请稍后重试"
+			                                                                                                                           message:nil
+			                                                                                                                    preferredStyle:UIAlertControllerStyleAlert]
+			                                                                             animated:YES
+			                                                                           completion:nil];
 		}
 		return;
 	}
@@ -117,4 +127,10 @@
 	}
 }
 
+- (void)setupAVSessions {
+	AVAudioSession *session = [AVAudioSession sharedInstance];
+	[session setCategory:AVAudioSessionCategoryPlayback error:nil];
+	[session setActive:YES error:nil];
+	[[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+}
 @end

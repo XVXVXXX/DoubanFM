@@ -11,7 +11,7 @@
 #import "DFMChannelsController.h"
 #import "BlocksKit.h"
 
-@interface DFMSidebarController ()<DoubanDelegate>
+@interface DFMSidebarController ()
 @property(nonatomic, strong) CDSideBarController *sideBar;
 @property(nonatomic, strong) DFMPlayerViewController *playerVC;
 @property(nonatomic, strong) DFMChannelsController *channelsVC;
@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	//隐藏掉系统的TabBar，否侧下面会有一块Bar出现
+	self.tabBar.hidden = YES;
 
 	NSArray<UIImage *> *imageList = [@[@"menuPlayer", @"menuChannel", @"menuLogin", @"menuClose"] bk_map:^id(NSString *obj) {
 		return [UIImage imageNamed:obj];
@@ -38,10 +40,6 @@
     _userInfoVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"userInfoVC"];
 
     self.viewControllers = @[_playerVC, _channelsVC, _userInfoVC];
-
-	//隐藏掉系统的TabBar，否侧下面会有一块Bar出现
-	self.tabBar.hidden = YES;
-
 	[_sideBar insertMenuButtonOnView:self.view atPosition:CGPointMake(self.view.frame.size.width - 50, 30)];
 }
 
